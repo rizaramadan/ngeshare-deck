@@ -1,0 +1,2817 @@
+<!doctype html>
+<html lang="id">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="color-scheme" content="light">
+<title>Presentasi ngeShare</title>
+<style>
+:root{--paper:#f7f6f0;--ink:#173e34;--muted:#52655e;--accent:#c6502c;--line:#d8dfd5;--soft:#e8eee4;--white:#fffefa;font-family:ui-sans-serif,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;color:var(--ink);background:var(--paper)}
+*{box-sizing:border-box}body{margin:0}button,select,input{font:inherit}button,select{color:var(--ink);background:transparent;border:1px solid var(--line);border-radius:10px;padding:9px 13px}button{cursor:pointer}button:hover:not(:disabled){background:var(--soft)}button:disabled{opacity:.35;cursor:default}button:focus-visible,select:focus-visible,summary:focus-visible{outline:3px solid var(--accent);outline-offset:3px}[hidden]{display:none!important}
+.app{height:100vh;height:100dvh;display:grid;grid-template-rows:auto minmax(0,1fr) auto}header{display:flex;align-items:center;justify-content:space-between;gap:16px;padding:20px 4vw;border-bottom:1px solid var(--line)}.brand{font-size:25px;font-weight:800;letter-spacing:-1.3px}.brand-dot{color:var(--accent)}.label{font-size:12px;color:var(--muted);margin-left:18px}.tools{display:flex;gap:7px}.tools button{font-size:12px}main{overflow:auto;scroll-behavior:smooth;min-height:0}.slide{max-width:1360px;margin:0 auto;padding:clamp(28px,4vh,64px) clamp(22px,5vw,80px);min-height:100%;display:flex;flex-direction:column;justify-content:center}.eyebrow{text-transform:uppercase;letter-spacing:2px;font-size:12px;font-weight:750;color:var(--accent);margin:0 0 20px}h1{font-size:clamp(32px,4vw,58px);line-height:1.1;letter-spacing:-1.8px;max-width:1050px;margin:0 0 20px;text-wrap:balance;white-space:pre-line}p{margin:0}.lead{font-size:clamp(17px,1.7vw,23px);line-height:1.55;max-width:960px;color:var(--muted)}.cards{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:18px;margin-top:32px}.cards.four{grid-template-columns:repeat(4,minmax(0,1fr))}.card{border-top:2px solid var(--line);padding:22px 0 8px}.card-index{font-size:12px;color:var(--accent);font-weight:700;display:block;margin-bottom:16px}.card h2,.step h2{font-size:clamp(19px,1.75vw,25px);line-height:1.25;margin:0 0 12px;letter-spacing:-.4px}.card p,.step p{font-size:clamp(16px,1.4vw,20px);line-height:1.55;color:var(--muted)}.steps{list-style:none;padding:0;margin:28px 0 0;display:grid;grid-template-columns:1fr 1fr;gap:22px 40px;counter-reset:step}.step{display:grid;grid-template-columns:40px 1fr;gap:15px;counter-increment:step}.step:before{content:counter(step,decimal-leading-zero);height:36px;width:36px;display:grid;place-items:center;border:1px solid var(--line);border-radius:50%;font-size:12px;color:var(--accent)}.step h2{margin-bottom:6px}.callout{margin-top:28px;padding:17px 22px;background:var(--soft);border-radius:10px;font-size:clamp(16px,1.5vw,20px);line-height:1.5;font-weight:600;max-width:1080px}.footnote{font-size:13px;color:var(--muted);line-height:1.6;margin-top:22px;max-width:960px}blockquote{margin:28px 0 0;font-size:clamp(22px,2.4vw,34px);line-height:1.45;max-width:1050px;white-space:pre-line;border-left:3px solid var(--accent);padding-left:24px}.hero h1{font-size:clamp(38px,5.1vw,74px);max-width:1150px}.hero .lead{max-width:820px}.hero{background:linear-gradient(110deg,transparent 68%,#e8eee460)}footer{padding:14px 4vw 18px;border-top:1px solid var(--line);display:grid;grid-template-columns:1fr auto 1fr;gap:16px;align-items:center;background:var(--paper)}.progress-wrap{display:flex;align-items:center;gap:14px}.count{font-size:13px;font-variant-numeric:tabular-nums;white-space:nowrap}.track{height:3px;background:var(--line);width:120px}.fill{height:100%;width:0;background:var(--accent);transition:width .2s}.navigation{display:flex;gap:8px}.navigation button{min-width:100px}.next{background:var(--ink);color:white;border-color:var(--ink)}.next:hover:not(:disabled){background:#295448}select{width:100%;max-width:310px;justify-self:end;font-size:12px}.empty{max-width:680px;margin:12vh auto;padding:30px}.empty h1{font-size:42px}.empty p{line-height:1.7;color:var(--muted);margin:20px 0}.empty button{background:var(--ink);color:white}.sr-only{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0}dialog{color:var(--ink);background:var(--paper);border:1px solid var(--line);border-radius:18px;padding:30px;width:min(680px,90vw);max-height:80vh}dialog::backdrop{background:#0c241f88}dialog h2{margin:0 0 20px}dialog p{white-space:pre-line;line-height:1.7;color:var(--muted)}dialog button{margin-top:24px}.error{position:fixed;z-index:5;top:80px;left:50%;transform:translateX(-50%);background:#fff0e9;color:#842d13;border:1px solid #d69b82;border-radius:12px;padding:18px;max-width:90vw;box-shadow:0 10px 40px #0002}.error button{margin-left:15px}.print-title{display:none}
+@media screen and (min-width:1500px){.slide{max-width:1480px}}
+@media screen and (max-width:760px){header{padding:14px 20px;align-items:flex-start}.brand{font-size:23px}.label{display:block;margin:5px 0 0;font-size:10px}.tools{gap:5px;flex-wrap:wrap;justify-content:flex-end;max-width:190px}.tools button{padding:7px 9px;font-size:11px}.slide{justify-content:flex-start;padding:30px 22px 36px}.eyebrow{font-size:10px;letter-spacing:1.4px;margin-bottom:18px}h1{letter-spacing:-1px}.cards,.cards.four{grid-template-columns:1fr;gap:8px;margin-top:24px}.card{padding:16px 0 8px}.card-index{display:none}.card h2{margin-bottom:8px}.steps{grid-template-columns:1fr;gap:22px}.callout{margin-top:22px;padding:16px}.hero{justify-content:center}.hero h1{font-size:clamp(36px,8vw,55px)}blockquote{font-size:23px;padding-left:18px}footer{grid-template-columns:1fr auto;padding:12px 20px;gap:12px}.track{width:55px}select{grid-column:1/-1;max-width:none}.navigation button{min-width:76px;padding:9px 10px;font-size:13px}.progress-wrap{gap:8px}.count{font-size:12px}.footnote{font-size:12px}}
+@media(prefers-reduced-motion:reduce){main{scroll-behavior:auto}.fill{transition:none}.slide:not([hidden]){animation:none}.slide:not([hidden]) .anim-in{animation:none}.bar-fill,.hbar-fill{transition:none}}
+@keyframes deckIn{from{opacity:0}to{opacity:1}}
+.slide:not([hidden]){animation:deckIn .45s ease both}
+.slide:not([hidden]) .anim-in{animation:deckIn .55s ease both}
+.bar-fill,.hbar-fill{transition:width .6s ease}
+@media print{@page{size:A4 landscape;margin:12mm}html,body{background:white}.app{display:block;height:auto}header,footer,dialog,.error,.empty,.sr-only{display:none!important}main{overflow:visible}.slide,.slide[hidden]{display:flex!important;min-height:180mm;max-width:none;padding:8mm 3mm;break-after:page;break-inside:avoid;justify-content:center;background:white}.slide:last-child{break-after:auto}.eyebrow{font-size:10pt;margin-bottom:5mm}h1,.hero h1{font-size:30pt;letter-spacing:-1px;margin-bottom:5mm}.lead{font-size:14pt}.cards{margin-top:8mm;gap:6mm}.card{padding-top:5mm}.card h2,.step h2{font-size:16pt}.card p,.step p{font-size:12pt}.callout{font-size:13pt;margin-top:6mm;padding:4mm}.footnote{font-size:9pt;margin-top:5mm}blockquote{font-size:19pt}.steps{gap:6mm 10mm;margin-top:8mm}*{-webkit-print-color-adjust:exact;print-color-adjust:exact}}
+.slide .compare{display:grid;grid-template-columns:1fr 1fr;gap:18px;margin-top:30px}
+.compare-col{border:1px solid var(--line);border-radius:16px;padding:22px 24px}
+.compare-col.is-muted{border-style:dashed}
+.compare-col.is-accent{background:var(--soft);border-color:transparent}
+.compare-label{font-size:12px;font-weight:800;letter-spacing:2px;text-transform:uppercase;color:var(--muted);margin:0 0 14px}
+.compare-col.is-accent .compare-label{color:var(--accent)}
+.compare-col ul{list-style:none;margin:0;padding:0;display:grid;gap:11px}
+.compare-col li{font-size:clamp(15px,1.35vw,19px);line-height:1.5;display:grid;grid-template-columns:16px 1fr;gap:10px;color:var(--muted)}
+.compare-col.is-accent li{color:var(--ink)}
+.compare-col li:before{content:"•";color:var(--accent);font-weight:800}
+.slide .loop{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:14px;margin-top:30px}
+.loop-step{position:relative;border:1px solid var(--line);border-radius:16px;padding:18px 20px;background:var(--white)}
+.loop-step:not(:nth-last-child(2)):after{content:"→";position:absolute;right:-11px;top:50%;transform:translateY(-50%);color:var(--accent);font-weight:800;background:var(--paper);padding:0 2px;z-index:1}
+.loop-step h2{font-size:clamp(15px,1.25vw,18px);line-height:1.3;margin:0 0 8px;letter-spacing:-.3px}
+.loop-step p{font-size:clamp(13px,1.1vw,15px);line-height:1.5;color:var(--muted)}
+.loop-return{grid-column:1/-1;text-align:center;color:var(--accent);font-weight:800;font-size:17px;line-height:1}
+.slide .bars{margin-top:30px;display:grid;gap:17px}
+.bar-row{display:grid;gap:7px}
+.bar-head{display:flex;justify-content:space-between;gap:16px;align-items:baseline}
+.bar-label{font-size:clamp(15px,1.3vw,18px);line-height:1.35}
+.bar-value{font-variant-numeric:tabular-nums;font-weight:800;font-size:clamp(16px,1.4vw,20px);color:var(--accent);white-space:nowrap}
+.bar-track{height:13px;background:var(--soft);border-radius:999px;overflow:hidden}
+.bar-fill{height:100%;background:var(--accent);border-radius:999px;min-width:6px}
+@media screen and (max-width:760px){.slide .compare{grid-template-columns:1fr;gap:12px;margin-top:22px}.compare-col{padding:16px 18px}.slide .loop{grid-template-columns:1fr;gap:12px;margin-top:22px}.loop-step{padding:14px 16px}.loop-step:not(:nth-last-child(2)):after{content:"↓";right:auto;left:50%;top:auto;bottom:-15px;transform:translateX(-50%)}.slide .bars{gap:13px;margin-top:22px}.bar-track{height:10px}}
+@media print{.slide .compare{gap:6mm;margin-top:8mm}.compare-col{padding:4mm}.compare-col li{font-size:11pt}.slide .loop{gap:4mm;margin-top:8mm}.loop-step{padding:4mm}.loop-step:after{display:none}.loop-step h2{font-size:12pt}.loop-step p{font-size:10pt}.loop-return{font-size:13pt}.slide .bars{margin-top:8mm;gap:4mm}.bar-label{font-size:12pt}.bar-value{font-size:13pt}.bar-track{height:4mm}}
+.slide .map-wrap{display:grid;gap:14px;margin-top:14px}
+.map-top{display:grid;grid-template-columns:minmax(0,1.6fr) minmax(210px,1fr);gap:22px;align-items:start}
+.map-figure{margin:0;min-width:0;max-width:640px}
+.map-svg{width:100%;height:auto;display:block;overflow:visible}
+.province{fill:#e4eae2;stroke:var(--paper);stroke-width:1}
+.province.is-on{fill:#c9d7ca}
+.map-frame{fill:none;stroke:var(--accent);stroke-width:1.5;stroke-dasharray:6 5;opacity:.6}
+.map-bubble circle{fill:var(--accent);fill-opacity:.92;stroke:var(--paper);stroke-width:1}
+.map-bubble text{fill:#fffefa;font-weight:750;text-anchor:middle;dominant-baseline:central}
+.map-zoom{border:1px solid var(--line);border-radius:14px;padding:10px 12px 8px;background:var(--white)}
+.map-zoom p{margin:0 0 4px;font-size:11px;text-transform:uppercase;letter-spacing:1.4px;color:var(--muted);font-weight:750}
+.map-caption{margin:6px 0 0;font-size:13px;line-height:1.45;color:var(--muted)}
+.map-legend{display:grid;grid-template-columns:repeat(auto-fit,minmax(170px,1fr));gap:0 18px}
+.legend-row{display:flex;justify-content:space-between;align-items:baseline;gap:10px;border-bottom:1px solid var(--line);padding:4px 0}
+.legend-name{font-size:clamp(12px,1vw,14px);line-height:1.3}
+.legend-value{font-variant-numeric:tabular-nums;font-weight:800;color:var(--accent);font-size:clamp(12px,1vw,14px)}
+.legend-note{grid-column:1/-1;font-size:12px;line-height:1.5;color:var(--muted);margin-top:6px}
+@media screen and (max-width:760px){.map-top{grid-template-columns:1fr;gap:14px}.slide .map-wrap{gap:12px;margin-top:16px}.map-caption{font-size:12px}}
+@media screen and (max-height:840px){.slide .map-wrap{gap:10px;margin-top:10px}.map-figure{max-width:500px}.legend-row{padding:2px 0}.map-zoom{padding:6px 9px 4px}.map-caption{margin-top:5px}.legend-note{margin-top:4px;font-size:11px}}
+@media screen and (max-height:840px){main .slide{padding-top:24px;padding-bottom:24px}main .slide .lines-svg{max-width:640px}main .slide .lines-wrap{margin-top:14px}main .chart-legend{margin-top:8px;gap:4px 14px}main .slide .hbars{gap:2px;margin-top:10px}main .hbar-track{height:10px}main .slide .hbar-label{line-height:1.15}main .callout{margin-top:16px}main .footnote{margin-top:12px}main .eyebrow{margin-bottom:12px}main .lead{font-size:17px}}
+@media print{.slide:not([hidden]){animation:none}.slide:not([hidden]) .anim-in{animation:none}.bar-fill,.hbar-fill{transition:none!important}
+.slide .map-wrap{gap:5mm;margin-top:5mm}.map-top{grid-template-columns:1.6fr 1fr;gap:6mm}.map-caption{font-size:9pt}.legend-name,.legend-value{font-size:10pt}.legend-note{font-size:8pt}.map-zoom{padding:3mm}.map-zoom p{font-size:8pt}}
+.slide .lines-wrap{margin-top:20px}
+.lines-svg{width:100%;max-width:780px;height:auto;display:block}
+.lines-svg text{fill:var(--muted);font-size:11px;font-family:inherit}
+.lines-svg .grid-line{stroke:var(--line);stroke-width:1}
+.lines-svg .axis-line{stroke:var(--muted);stroke-width:1}
+.chart-legend{display:flex;flex-wrap:wrap;gap:6px 18px;margin-top:12px}
+.chart-legend span{display:inline-flex;align-items:center;gap:7px;font-size:13px;color:var(--muted)}
+.swatch{width:13px;height:13px;border-radius:4px;display:inline-block;flex:none}
+.donut-wrap{display:grid;grid-template-columns:220px 1fr;gap:24px;align-items:center;margin-top:24px}
+.donut-svg{width:100%;max-width:230px;height:auto;display:block}
+.donut-legend{display:grid;gap:10px;align-content:center}
+.donut-row{display:grid;grid-template-columns:auto auto auto;justify-content:start;gap:10px;align-items:baseline}
+.donut-name{font-size:clamp(14px,1.2vw,17px)}
+.donut-value{font-variant-numeric:tabular-nums;font-weight:800;color:var(--accent);font-size:clamp(14px,1.2vw,17px);white-space:nowrap}
+.slide .hbars{margin-top:20px;display:grid;gap:7px}
+.hbar-row{display:grid;grid-template-columns:minmax(140px,220px) minmax(0,1fr) auto;gap:12px;align-items:center}
+.hbar-label{font-size:clamp(12px,1.05vw,15px);line-height:1.25}
+.hbar-track{height:11px;background:var(--soft);border-radius:999px;overflow:hidden}
+.hbar-fill{height:100%;background:var(--accent);border-radius:999px;min-width:5px}
+.hbar-value{font-variant-numeric:tabular-nums;font-weight:800;color:var(--accent);font-size:clamp(13px,1.15vw,16px);white-space:nowrap}
+table.dtable{width:100%;border-collapse:collapse;margin-top:24px;font-size:clamp(13px,1.2vw,16px)}
+.dtable th,.dtable td{text-align:left;padding:8px 12px;border-bottom:1px solid var(--line);vertical-align:top}
+.dtable th{font-size:12px;font-weight:800;letter-spacing:2px;text-transform:uppercase;color:var(--muted)}
+.dtable td{font-variant-numeric:tabular-nums;line-height:1.5}
+.dtable td+td,.dtable th+th{text-align:right}
+@media screen and (max-width:760px){.donut-wrap{grid-template-columns:1fr;gap:12px}.donut-svg{max-width:190px}.hbar-row{grid-template-columns:1fr;gap:5px}.hbar-label{font-size:13px}.chart-legend span{font-size:12px}}
+@media print{.slide .lines-wrap,.slide .hbars,table.dtable{margin-top:6mm}.hbar-label,.hbar-value,.donut-name,.donut-value{font-size:10pt}.dtable th,.dtable td{font-size:10pt;padding:2mm 3mm}.chart-legend span{font-size:9pt}}
+</style>
+</head>
+<body>
+<div class="app">
+<header><div><span class="brand" id="brand">ngeShare</span><span class="brand-dot" aria-hidden="true"> ●</span><span class="label" id="label">Onboarding calon fasilitator</span></div><div class="tools"><button id="load" title="Buka konten JSON dari perangkat">Buka JSON</button><button id="notes" disabled>Catatan</button><button id="fullscreen">Layar penuh</button><button id="print" disabled>Cetak / PDF</button></div></header>
+<main id="main" aria-label="Slide presentasi">
+<div class="empty" id="empty"><p class="eyebrow">Renderer siap digunakan</p><h1>Buka konten, mulai presentasi.</h1><p>Pilih <strong>content.json</strong> dari folder presentasi. Semua diproses di perangkat ini, tanpa koneksi internet atau unggahan ke server.</p><button id="load-empty">Pilih file JSON</button><p>Untuk versi siap dibagikan, buka <strong>presentasi.html</strong>.</p></div>
+</main>
+<footer id="footer" hidden><div class="progress-wrap"><span class="count" id="count"></span><div class="track" aria-hidden="true"><div class="fill" id="fill"></div></div></div><nav class="navigation" aria-label="Navigasi slide"><button id="prev" aria-label="Slide sebelumnya">← Kembali</button><button id="next" class="next" aria-label="Slide berikutnya">Lanjut →</button></nav><select id="jump" aria-label="Pilih slide"></select></footer>
+</div>
+<input type="file" id="file" accept=".json,application/json" hidden>
+<div id="status" class="sr-only" aria-live="polite" aria-atomic="true"></div>
+<div class="error" id="error" role="alert" hidden><span id="error-text"></span><button id="dismiss">Tutup</button></div>
+<dialog id="note-dialog" aria-labelledby="note-title"><h2 id="note-title">Catatan pembicara</h2><p id="note-content"></p><button id="close-notes">Tutup catatan</button></dialog>
+<!-- Geometri peta: garis provinsi + centroid. Dihasilkan oleh tools/build-map.py; jangan diedit manual. -->
+<script id="map-geometry" type="application/json">{"viewBox":"0 0 1000 383","bounds":{"lonMin":94.5,"lonMax":141.5,"latMax":6.5,"latMin":-11.5},"provinces":[{"name":"ACEH","d":"M74.0 39.8L74.9 40.4L73.4 41.9L75.3 41.6L74.6 42.9L75.9 41.4L76.2 43.4L77.1 42.1L80.5 44.3L79.9 47.0L75.9 47.8L75.0 53.8L73.4 55.5L72.4 55.1L72.6 57.0L70.2 59.0L75.1 67.4L71.8 69.2L74.1 71.9L73.0 73.1L73.5 76.6L76.8 78.9L77.2 81.7L76.1 83.5L78.5 88.9L77.7 92.6L73.4 90.0L69.7 90.6L67.3 87.2L65.9 77.2L61.1 74.8L53.2 62.8L47.7 58.5L42.5 58.5L37.1 51.8L32.4 49.1L27.7 43.8L28.7 43.8L22.1 39.3L15.1 26.0L16.0 23.5L14.8 20.7L15.4 19.7L18.3 19.7L19.8 17.9L21.6 19.3L23.7 18.6L29.5 21.2L29.5 22.9L33.8 26.3L40.0 27.7L49.9 26.0L55.0 26.9L57.4 28.9L63.8 26.6L72.4 34.3L74.4 39.6L74.0 39.8ZM11.8 18.1L11.3 15.9L13.7 17.7L11.8 18.1ZM13.8 17.8L14.7 19.1L13.1 19.1L13.8 17.8ZM61.4 88.1L62.1 89.3L61.3 88.5L61.4 88.1ZM58.7 89.7L59.2 89.9L58.4 89.5L58.7 89.7ZM58.0 92.4L55.6 91.1L59.5 90.9L60.5 94.9L58.0 92.4ZM55.7 93.3L56.6 94.3L55.6 95.7L54.8 94.1L55.7 93.3ZM16.0 13.2L17.0 14.1L17.7 12.8L18.6 14.8L16.7 15.3L15.2 12.6L16.0 13.2ZM26.1 80.0L25.4 79.3L27.5 78.1L27.3 76.1L29.2 76.3L30.2 77.3L29.4 78.2L34.1 79.7L35.1 81.1L34.2 82.2L36.0 82.6L35.6 81.4L40.1 86.1L40.6 84.9L42.5 88.0L38.7 88.2L38.5 86.8L33.5 83.6L30.8 83.6L27.4 81.3L26.1 80.0ZM34.3 79.7L34.6 80.1L34.0 79.8L34.3 79.7ZM39.7 81.6L40.4 82.0L39.4 81.8L39.7 81.6ZM30.6 84.1L31.1 84.6L30.2 84.5L30.6 84.1ZM40.0 84.5L40.2 84.9L39.6 84.7L40.0 84.5ZM42.2 86.4L42.9 86.7L42.6 87.0L42.2 86.4ZM36.2 89.0L35.3 88.0L36.1 87.3L36.7 88.6L36.2 89.0ZM37.4 88.1L36.6 88.1L37.4 87.8L37.4 88.1ZM45.3 91.7L45.8 92.5L44.9 92.0L45.3 91.7ZM45.8 93.1L46.6 93.8L45.7 94.5L44.9 93.5L45.8 93.1Z"},{"name":"BALI","d":"M440.4 324.2L440.8 326.2L438.0 326.4L439.7 325.0L439.2 322.8L434.0 318.3L427.3 317.0L424.4 313.2L424.2 310.6L433.4 312.7L440.1 309.8L445.8 312.0L451.3 317.1L449.2 319.3L443.9 320.8L440.9 324.0L440.4 324.2ZM446.8 322.8L449.5 324.6L448.8 325.9L445.8 324.5L446.8 322.8Z"},{"name":"BANTEN","d":"M250.5 261.9L251.0 262.0L250.1 261.9L250.5 261.9ZM245.6 263.4L248.1 266.5L250.3 265.0L254.8 266.9L258.2 266.1L259.9 266.9L259.3 269.6L261.0 273.7L255.4 273.6L254.7 272.6L253.8 273.4L253.8 280.8L255.6 282.3L253.0 285.1L253.1 286.9L251.3 287.2L244.5 283.3L234.9 284.6L230.3 283.0L228.5 283.8L227.9 281.9L229.0 282.2L231.3 279.7L233.4 283.6L237.2 276.2L238.6 277.3L240.4 276.4L241.0 271.0L244.5 264.3L245.6 263.4ZM247.9 264.3L247.9 264.8L247.6 264.4L247.9 264.3ZM241.7 264.8L241.5 265.6L241.0 264.9L241.7 264.8ZM228.7 279.2L227.3 280.5L227.2 278.3L225.5 279.0L229.0 277.1L228.7 279.2Z"},{"name":"BENGKULU","d":"M171.6 227.2L165.5 222.6L166.1 220.5L164.2 216.0L151.5 207.3L145.3 196.8L141.3 194.2L139.0 191.0L144.5 186.8L150.2 190.4L150.0 193.0L152.6 192.1L156.6 196.3L160.9 197.1L165.0 202.8L169.4 203.7L170.0 207.3L172.0 209.1L176.4 208.2L178.8 210.2L180.8 210.0L179.9 214.2L178.8 215.2L176.9 213.3L175.2 217.9L172.8 219.2L177.1 222.8L180.9 223.7L179.4 225.4L182.5 227.7L182.4 228.8L190.7 230.3L189.5 234.4L191.4 235.7L194.0 234.8L193.6 236.0L197.4 240.3L193.5 243.0L189.8 241.9L186.2 237.5L178.7 233.8L176.5 231.0L171.6 227.2ZM166.6 252.5L167.8 253.2L166.8 254.4L167.5 255.1L165.4 255.7L161.4 251.9L162.8 250.7L166.6 252.5Z"},{"name":"DAERAH ISTIMEWA YOGYAKARTA","d":"M344.7 312.5L330.5 306.4L332.5 301.2L335.4 301.0L335.8 302.1L339.3 298.8L340.3 303.6L346.5 304.7L345.9 308.9L347.6 312.9L344.7 312.5Z"},{"name":"DKI JAKARTA","d":"M260.0 270.7L259.3 268.1L265.4 267.9L264.0 274.0L261.2 272.7L260.0 270.7Z"},{"name":"GORONTALO","d":"M593.8 127.3L580.9 129.6L579.2 127.2L576.8 126.6L571.1 128.2L571.2 126.2L567.3 123.7L571.5 120.0L575.0 120.2L581.5 117.5L585.4 118.4L589.8 116.5L594.7 116.3L603.2 121.3L605.3 119.3L605.2 117.8L608.8 118.6L611.4 120.6L612.0 122.8L616.7 124.8L617.5 126.2L616.3 131.3L613.7 131.8L607.7 127.3L599.9 128.2L596.0 127.4L593.8 127.3ZM599.2 117.0L599.2 117.3L599.0 117.1L599.2 117.0ZM601.6 118.9L602.3 119.7L601.2 119.0L601.6 118.9ZM603.4 119.2L604.1 120.2L603.9 119.4L603.4 119.2ZM578.8 127.6L578.3 127.7L578.5 127.4L578.8 127.6Z"},{"name":"JAMBI","d":"M161.4 197.2L156.8 196.4L152.6 192.1L150.0 193.0L150.2 190.4L144.6 186.8L144.3 183.1L141.1 178.1L141.0 174.0L148.8 174.0L153.0 169.9L152.9 165.5L155.6 164.2L157.2 161.7L155.9 161.6L155.8 159.1L159.2 157.0L163.9 158.5L166.1 157.8L167.7 160.2L173.3 162.1L181.0 154.4L183.4 154.2L188.5 155.4L191.2 154.7L195.1 158.6L198.0 159.5L198.1 160.9L200.2 159.2L204.4 160.2L204.9 161.5L204.8 160.6L210.0 160.1L212.5 173.6L210.1 173.2L209.5 175.3L204.1 176.3L199.5 175.4L194.1 177.3L192.3 178.8L192.7 183.8L190.5 184.6L190.4 188.5L185.6 183.8L184.3 185.8L185.2 187.7L183.5 188.5L178.2 187.5L178.2 189.7L176.4 192.3L172.2 195.4L169.4 195.8L165.0 194.1L162.2 196.3L161.4 197.2ZM207.3 160.2L206.6 160.9L206.6 160.3L207.3 160.2ZM206.5 160.3L206.5 160.8L206.2 160.4L206.5 160.3Z"},{"name":"JAWA BARAT","d":"M299.3 281.0L302.3 283.2L304.9 281.8L303.3 285.4L303.8 289.5L299.3 290.8L299.1 293.3L299.2 294.4L301.7 295.1L302.8 300.4L304.3 301.6L301.6 301.8L301.5 302.8L298.2 302.1L296.7 304.7L284.0 302.9L274.5 297.8L256.6 296.1L253.3 295.4L252.6 293.8L253.2 291.2L254.5 291.1L256.4 287.8L255.6 286.5L253.0 286.6L253.9 283.4L255.6 282.3L253.8 280.8L253.8 273.4L254.7 272.6L255.4 273.6L260.9 273.7L261.8 272.7L261.6 273.7L264.0 274.0L264.0 271.7L266.3 267.6L266.1 264.2L269.5 265.7L273.2 265.3L275.9 269.0L280.1 271.2L284.9 270.0L284.9 271.0L290.0 273.1L291.7 271.8L291.1 270.8L294.7 271.1L295.4 273.5L298.7 276.3L299.3 281.0Z"},{"name":"JAWA TENGAH","d":"M365.8 282.0L363.1 286.1L364.3 286.9L363.9 290.2L360.0 293.8L360.8 295.3L354.2 292.8L353.5 296.1L354.9 302.3L357.1 303.1L357.7 305.4L356.3 307.4L354.1 307.1L353.4 309.9L350.1 309.9L348.9 313.0L346.5 311.7L346.5 304.7L340.3 303.6L339.3 298.8L335.8 302.1L335.4 301.0L332.5 301.2L332.6 303.1L330.0 306.2L322.2 303.9L317.3 303.8L316.8 302.4L312.2 301.5L308.9 303.3L309.1 301.2L308.2 302.8L307.5 301.4L307.2 302.6L304.5 301.5L304.7 300.5L304.0 301.5L301.7 295.1L299.1 294.3L299.3 290.8L303.8 289.5L303.3 285.4L305.0 281.8L307.4 283.6L310.0 282.1L310.7 283.8L314.4 284.6L319.6 282.5L327.3 285.5L333.5 283.9L339.3 286.3L345.3 275.2L352.1 275.1L354.2 279.9L358.7 281.0L361.5 279.2L363.0 279.6L365.8 282.0ZM335.2 260.2L335.0 260.9L334.7 260.4L335.2 260.2ZM340.1 261.1L339.3 263.6L338.5 262.6L339.4 261.9L340.1 261.1ZM304.0 302.9L304.2 301.7L305.6 301.6L309.6 303.7L304.0 302.9Z"},{"name":"JAWA TIMUR","d":"M406.2 302.5L413.4 302.2L415.8 300.2L417.2 302.3L420.0 302.1L424.5 304.3L422.1 317.5L424.4 322.1L427.8 323.7L426.2 325.1L422.2 324.3L422.8 322.9L420.3 321.0L419.6 322.2L416.0 322.3L415.2 321.1L414.0 321.6L414.0 320.5L410.9 320.5L410.6 318.9L408.8 319.8L408.9 318.8L407.4 319.1L403.8 316.6L401.9 317.1L398.6 314.6L395.3 314.6L391.8 317.0L390.0 316.4L386.2 318.1L379.4 315.6L367.9 313.9L367.7 315.5L366.2 314.7L366.5 316.4L365.5 316.7L364.2 315.3L360.8 315.4L360.1 314.0L354.3 314.6L353.1 313.2L350.9 313.9L349.0 312.6L350.1 309.9L353.4 309.9L354.1 307.1L356.3 307.4L357.7 305.4L357.1 303.1L354.9 302.3L353.5 296.1L354.2 292.8L360.8 295.3L360.0 293.8L363.9 290.2L364.3 286.9L363.1 286.1L365.8 282.0L368.9 283.0L371.6 282.2L374.9 285.2L379.3 284.3L383.3 285.3L383.9 283.7L385.5 285.3L386.4 292.0L388.6 291.4L390.3 293.2L389.6 297.5L390.9 298.6L390.4 299.6L399.6 303.9L404.0 302.1L406.2 302.5ZM427.9 245.6L427.7 246.8L427.4 246.0L427.9 245.6ZM423.7 253.8L424.2 254.5L423.7 254.3L423.7 253.8ZM423.6 256.0L424.2 257.2L423.3 256.8L423.6 256.0ZM443.8 287.1L442.6 286.2L442.4 287.5L441.9 285.9L440.5 285.9L441.1 283.7L444.8 283.8L448.4 285.7L447.8 286.5L444.2 285.1L443.2 285.8L444.8 287.0L443.8 287.1ZM412.2 284.5L417.5 286.8L412.9 287.7L413.8 288.3L412.0 289.2L412.6 290.1L406.5 290.0L404.5 292.7L397.4 292.1L396.6 290.3L396.2 291.4L395.5 290.6L396.8 292.0L395.8 292.1L387.7 291.0L386.7 288.8L390.7 284.9L404.4 285.1L412.2 284.5ZM449.6 287.3L448.4 286.1L450.8 287.5L449.6 287.3ZM418.7 286.5L418.7 287.4L418.3 287.2L418.7 286.5ZM446.0 286.7L445.3 287.1L445.3 286.8L446.0 286.7ZM447.8 287.0L447.4 288.0L446.9 287.5L447.8 287.0ZM449.6 288.0L448.9 288.4L448.9 288.1L449.6 288.0ZM450.2 288.1L450.4 288.7L450.0 288.5L450.2 288.1ZM420.7 289.3L422.1 288.5L423.5 290.8L421.6 290.7L420.7 289.3ZM413.9 288.4L416.3 289.6L413.7 289.2L413.9 288.4ZM450.8 288.4L451.3 288.7L450.9 288.8L450.8 288.4ZM454.0 291.6L451.9 290.5L452.8 289.6L455.0 290.7L455.5 289.4L455.2 291.4L454.0 291.6ZM427.5 290.8L425.0 290.4L428.0 290.3L427.5 290.8ZM413.3 290.9L413.9 292.2L412.4 291.6L413.3 290.9ZM409.7 291.6L410.9 292.0L410.5 292.3L409.7 291.6ZM386.9 259.9L388.0 262.4L385.5 263.3L384.4 261.9L385.4 260.6L386.9 259.9ZM402.0 318.2L402.1 319.1L399.2 318.9L399.9 318.0L402.0 318.2ZM387.2 317.7L387.4 318.4L386.7 318.2L387.2 317.7Z"},{"name":"KALIMANTAN BARAT","d":"M306.9 126.4L305.1 121.0L307.9 118.2L306.5 113.5L307.9 113.3L309.4 109.8L309.6 106.2L313.7 103.2L316.3 99.4L317.8 100.6L316.8 99.8L318.0 98.7L316.4 99.1L317.2 98.2L314.8 100.4L315.7 97.0L321.0 96.0L322.2 94.0L320.0 97.4L323.0 100.4L322.6 103.9L326.3 106.8L326.2 108.0L328.9 108.6L329.3 110.7L331.1 111.5L330.7 112.7L333.8 113.2L335.6 117.1L338.2 117.2L341.9 120.1L343.3 119.0L346.9 119.1L349.1 116.4L356.1 115.3L361.3 116.3L362.9 118.0L365.2 116.0L369.5 116.9L371.2 114.5L375.4 113.8L376.7 107.5L382.8 104.7L390.2 105.6L393.5 104.7L395.0 105.7L393.1 108.3L395.7 107.6L397.3 109.0L400.4 109.0L402.6 111.0L405.1 110.2L407.0 112.4L414.4 107.4L417.8 107.2L419.2 108.4L418.1 109.0L417.4 113.7L414.6 113.9L412.7 115.9L412.2 119.3L413.3 120.8L410.1 126.3L403.3 132.5L399.4 133.2L402.5 135.6L403.0 139.7L402.3 141.7L398.0 145.5L399.3 147.3L398.3 149.0L396.7 147.8L393.5 148.7L382.5 153.9L381.6 152.6L378.8 153.9L376.5 151.4L375.7 153.8L372.8 153.3L373.0 155.2L370.4 154.8L370.6 156.8L364.4 159.3L362.8 161.9L363.3 163.8L359.8 164.7L357.0 168.6L355.0 168.8L355.1 170.5L354.2 169.6L353.6 171.3L350.7 171.0L348.0 173.0L349.2 174.8L351.2 174.4L350.5 179.9L352.9 180.7L351.7 186.0L353.6 194.7L354.7 195.6L343.8 203.0L342.8 201.9L343.0 198.6L336.3 202.1L335.3 201.3L335.3 197.1L333.0 194.1L334.0 192.0L337.5 192.3L335.8 191.7L338.3 187.4L335.4 192.5L333.9 191.9L332.8 187.4L331.1 186.1L332.6 181.5L327.7 177.2L330.4 174.0L331.1 167.0L327.8 164.0L328.9 162.0L325.9 161.5L324.1 159.3L324.5 156.7L322.0 155.3L322.9 154.2L321.4 153.9L322.5 153.7L320.8 153.6L322.7 153.2L320.2 153.4L324.7 150.6L321.0 152.3L317.2 151.7L316.6 150.9L318.5 149.9L316.7 150.7L317.1 149.6L313.9 151.2L311.2 149.8L310.6 145.7L312.0 146.2L310.4 144.3L312.9 142.9L312.1 137.6L315.9 138.8L312.3 136.7L310.3 133.0L306.8 131.4L306.5 128.1L306.9 126.4ZM302.2 121.2L302.7 122.7L302.0 121.8L302.2 121.2ZM319.1 166.2L316.6 165.0L318.3 159.6L324.7 159.7L325.0 162.7L319.1 166.2ZM314.0 163.5L313.3 164.7L313.3 163.8L314.0 163.5ZM311.9 165.2L312.3 165.9L311.8 165.5L311.9 165.2ZM307.9 172.2L305.5 174.0L305.1 172.0L304.0 172.0L306.3 170.9L307.9 172.2ZM303.1 174.5L301.6 174.9L301.8 174.5L303.1 174.5ZM332.3 195.8L332.3 196.8L330.7 196.8L331.9 195.2L332.3 195.8ZM334.1 199.6L332.6 199.8L333.3 199.0L334.1 199.6ZM305.6 127.4L305.5 128.2L305.0 127.7L305.6 127.4ZM312.6 137.3L313.6 137.9L312.3 137.5L312.6 137.3ZM312.1 140.5L312.3 142.4L311.2 140.8L312.0 139.6L312.1 140.5ZM311.1 141.4L310.4 141.6L310.9 140.8L311.1 141.4ZM310.9 141.9L312.2 142.6L310.3 142.3L310.9 141.9ZM311.6 142.7L312.6 143.0L310.2 143.9L310.5 145.3L309.8 142.9L311.6 142.7ZM316.4 151.5L318.7 152.9L316.2 152.2L316.4 151.5ZM318.8 151.7L320.9 152.9L319.0 153.1L317.6 152.0L319.6 152.4L318.3 151.8L318.8 151.7ZM316.6 152.2L317.1 152.7L315.9 152.3L316.6 152.2ZM315.1 153.3L323.7 156.0L323.9 159.0L323.0 159.9L320.9 157.4L317.9 156.4L317.1 158.2L315.1 157.6L313.6 155.6L313.8 152.4L315.1 153.3ZM318.0 152.6L320.4 153.6L318.4 153.9L317.3 152.7L318.0 152.6ZM320.9 153.6L321.4 154.1L320.6 153.5L320.9 153.6ZM320.6 153.5L320.6 154.1L320.2 153.9L320.6 153.5ZM321.3 154.2L322.0 155.2L320.7 153.9L321.3 154.2Z"},{"name":"KALIMANTAN SELATAN","d":"M425.8 213.7L425.9 212.8L422.4 212.0L422.4 210.9L427.5 198.3L431.1 196.2L433.5 190.7L442.4 185.7L443.1 183.1L442.1 180.9L443.6 179.4L442.8 176.8L444.7 168.8L447.3 168.7L452.3 166.0L451.2 168.4L450.4 169.0L449.9 167.8L447.6 170.8L449.7 171.2L451.6 176.3L451.2 181.6L453.6 182.2L452.8 185.1L454.0 189.1L456.8 187.1L469.2 189.7L468.3 192.8L466.2 191.3L462.3 192.1L464.3 193.1L462.2 194.1L463.0 194.7L462.2 195.4L465.0 192.6L466.3 193.2L465.2 199.5L463.2 202.2L462.0 202.2L459.9 198.2L460.0 201.4L459.1 201.0L459.9 201.6L458.6 201.5L458.5 202.9L460.2 202.0L463.3 204.9L458.9 205.0L458.9 206.1L461.0 205.6L461.4 207.1L459.1 207.6L456.8 215.1L429.5 227.2L428.1 226.8L428.0 216.0L426.7 214.0L425.8 213.7ZM460.6 200.0L461.8 200.9L460.6 200.8L460.6 200.0ZM460.3 201.6L461.1 202.9L460.1 201.9L460.3 201.6ZM458.4 213.8L459.9 208.6L463.5 206.5L462.8 210.1L464.1 212.2L463.2 213.3L464.7 217.6L463.2 219.5L464.0 221.6L459.4 225.2L458.2 224.0L459.2 219.8L457.6 216.7L458.4 213.8ZM459.0 209.6L458.7 210.4L458.7 209.7L459.0 209.6ZM465.9 215.3L465.1 216.0L464.1 214.0L466.2 209.8L466.7 211.1L465.9 215.3ZM458.3 211.1L458.0 211.9L457.8 211.3L458.3 211.1ZM464.7 215.3L464.5 214.7L464.9 215.0L464.7 215.3ZM453.2 231.1L453.5 231.4L453.1 231.3L453.2 231.1ZM452.2 238.1L451.3 238.9L451.4 238.4L452.2 238.1Z"},{"name":"KALIMANTAN TENGAH","d":"M452.3 166.0L447.3 168.7L444.7 168.8L442.8 176.8L443.6 179.4L442.1 180.9L443.1 183.1L442.4 185.7L433.5 190.7L431.1 196.2L427.5 198.3L422.4 212.0L416.5 209.5L410.5 211.9L407.0 212.0L406.0 211.6L407.1 204.9L400.9 208.1L394.3 201.6L392.4 204.7L394.4 205.0L384.3 211.6L377.9 208.8L369.2 213.7L367.4 212.9L368.6 203.1L366.0 197.8L365.8 200.9L362.7 202.6L359.9 200.1L350.7 203.5L345.4 201.9L354.7 195.5L353.6 194.7L351.7 186.0L352.9 180.7L350.5 179.9L351.2 174.4L349.2 174.8L348.0 173.0L350.7 171.0L353.6 171.3L354.2 169.6L355.1 170.5L355.0 168.8L357.0 168.6L359.8 164.7L363.3 163.8L362.8 161.9L364.4 159.3L370.6 156.8L370.4 154.8L373.0 155.2L372.8 153.3L375.7 153.8L376.5 151.4L378.8 153.9L381.6 152.6L382.5 153.9L393.5 148.7L396.7 147.8L398.3 149.0L399.3 147.3L398.0 145.5L402.3 141.7L403.0 139.7L402.5 135.6L399.4 133.2L403.3 132.5L411.6 124.1L417.2 123.4L419.1 126.8L423.7 127.7L429.8 122.8L432.4 122.3L433.5 123.4L434.2 121.4L435.7 122.5L439.0 130.1L437.2 131.9L434.2 131.5L431.7 136.2L433.9 137.4L434.8 142.3L437.1 142.4L442.6 139.0L441.4 147.8L443.7 150.7L444.5 155.7L446.8 156.3L452.2 162.4L454.2 162.9L452.6 164.5L452.3 166.0ZM402.1 207.5L401.4 208.6L401.4 208.0L402.1 207.5Z"},{"name":"KALIMANTAN TIMUR","d":"M479.1 163.1L474.7 165.6L475.2 163.5L474.1 164.1L473.0 161.8L474.4 158.7L473.2 159.2L472.1 162.5L473.8 163.6L471.3 163.4L474.0 164.7L473.7 167.3L468.9 169.5L468.5 173.0L464.4 174.5L462.2 173.1L464.1 174.1L463.7 175.2L461.2 173.8L463.4 175.6L461.3 176.2L460.9 175.3L461.3 176.2L459.9 176.9L467.0 176.0L466.3 178.0L463.9 177.9L462.7 179.1L463.9 177.9L464.9 178.0L463.9 179.0L464.7 179.4L465.0 178.0L466.7 178.1L467.1 182.2L465.1 183.2L464.5 181.9L460.9 181.7L462.1 182.3L461.1 182.5L464.4 182.0L464.9 183.3L460.8 185.5L465.8 183.3L465.9 185.3L464.3 186.8L465.2 187.2L465.6 185.6L468.4 184.4L469.1 185.1L467.3 186.7L468.7 186.7L468.3 185.7L469.9 184.4L469.2 189.7L456.8 187.1L454.0 189.1L452.8 185.1L453.6 182.2L451.2 181.6L451.6 176.3L449.7 171.2L447.6 170.8L449.9 167.8L450.4 169.0L451.2 168.4L454.2 162.9L452.2 162.4L446.8 156.3L444.4 155.5L443.7 150.7L441.4 147.8L441.0 144.8L442.6 139.0L437.1 142.4L434.8 142.3L433.9 137.4L431.7 136.2L434.2 131.5L437.2 131.9L439.0 130.1L435.8 122.5L434.2 121.4L433.5 123.4L432.4 122.3L429.8 122.8L423.7 127.7L419.1 126.8L417.2 123.4L411.6 124.1L413.3 120.5L412.2 119.3L412.7 116.0L414.6 113.9L417.4 113.7L418.1 108.9L423.5 106.0L426.4 107.8L427.4 107.1L429.1 109.5L434.5 111.1L438.9 115.0L446.1 115.0L447.0 109.5L456.0 107.4L461.6 98.9L461.3 96.7L462.8 95.1L464.0 89.4L466.4 88.4L468.1 85.7L473.8 87.0L484.7 82.9L491.5 85.4L497.0 89.5L500.0 86.5L502.0 89.1L501.6 90.4L498.7 91.9L492.2 91.3L494.2 94.0L492.3 94.0L491.9 92.7L492.2 94.7L496.5 95.6L496.6 96.8L497.4 96.4L497.0 98.0L496.2 96.8L496.7 99.4L497.3 98.3L498.5 99.9L501.0 100.3L500.5 101.2L502.7 103.4L508.7 106.7L508.7 108.5L512.5 109.6L516.3 112.8L515.4 113.7L517.8 116.0L520.1 115.8L521.0 117.3L516.9 121.3L514.4 120.1L510.5 120.8L509.9 118.9L510.2 120.6L507.9 121.2L501.4 119.1L501.6 117.9L499.2 117.0L500.6 121.7L498.2 120.5L494.9 122.0L491.7 129.3L490.5 129.3L488.7 134.8L489.8 135.6L488.5 136.1L490.1 137.6L487.6 143.0L488.4 148.1L487.6 150.1L484.7 150.6L484.7 155.2L482.6 154.5L481.9 156.0L484.0 155.4L484.0 157.6L482.3 158.6L479.1 163.1ZM490.9 68.0L489.8 65.6L492.9 65.6L492.6 69.3L490.9 68.0ZM504.3 87.6L504.6 88.3L504.1 87.7L504.3 87.6ZM513.6 90.5L512.1 89.3L513.9 92.3L512.1 90.7L512.1 89.1L513.6 90.5ZM493.3 91.9L492.4 91.4L493.3 91.6L493.3 91.9ZM498.3 92.4L498.0 91.3L498.5 92.0L498.3 92.4ZM497.9 93.1L496.0 93.1L495.8 91.8L499.1 93.1L498.1 93.7L497.9 93.1ZM496.4 91.7L497.5 92.3L497.1 92.4L496.4 91.7ZM497.6 91.7L497.8 92.2L497.2 91.7L497.6 91.7ZM494.2 92.2L495.8 92.0L495.5 93.6L494.1 93.8L494.2 92.2ZM511.4 92.3L512.0 93.3L510.7 92.9L511.4 92.3ZM497.3 92.7L498.0 94.0L496.4 93.3L497.3 92.7ZM494.8 95.0L493.9 94.1L495.8 93.4L498.1 94.7L495.6 95.2L494.8 95.0ZM492.7 93.8L492.9 94.5L492.3 94.3L492.7 93.8ZM510.4 108.8L509.9 107.1L511.3 108.8L510.4 108.8ZM509.7 108.5L509.4 107.8L509.9 107.8L509.7 108.5ZM488.1 147.3L489.2 145.3L488.3 147.7L488.1 147.3ZM489.8 146.8L488.1 149.0L490.2 146.3L489.8 146.8ZM489.8 151.1L487.6 149.7L491.6 147.0L491.6 148.4L488.3 149.7L491.2 149.3L491.0 150.6L489.8 151.1ZM487.5 153.1L484.8 150.7L488.8 150.0L489.5 150.5L488.6 151.0L490.9 151.6L487.5 151.5L488.7 152.8L486.6 151.5L487.6 152.5L487.5 153.1ZM488.7 155.7L487.5 155.0L487.5 157.2L485.1 151.4L486.5 153.6L488.7 155.7ZM488.9 151.6L489.5 152.4L488.5 151.7L488.9 151.6ZM489.1 152.1L490.0 153.0L488.8 152.9L489.1 152.1ZM488.1 154.0L486.9 152.8L488.0 152.4L491.9 154.6L489.0 153.9L489.9 155.6L488.1 154.0ZM485.1 153.3L486.0 156.1L484.9 155.3L485.1 153.3ZM486.3 157.5L485.9 154.9L486.0 156.9L486.3 157.5ZM484.7 155.8L484.6 157.2L484.3 155.8L484.7 155.8ZM488.7 155.6L489.2 156.2L488.6 155.9L488.7 155.6ZM500.2 122.4L500.3 123.2L499.9 122.7L500.2 122.4ZM466.2 183.6L468.2 183.2L468.6 184.2L465.7 184.7L466.2 183.6Z"},{"name":"KALIMANTAN UTARA","d":"M492.5 78.8L492.1 78.6L492.3 78.6L492.5 78.8ZM492.1 78.9L491.7 78.6L492.1 78.8L492.1 78.9ZM494.1 78.7L492.4 78.5L493.4 77.8L494.3 78.7L494.1 78.7ZM490.9 76.4L490.6 76.4L490.9 76.4L490.9 76.4ZM491.4 76.3L491.6 76.2L491.5 76.3L491.4 76.3ZM493.7 76.1L491.0 76.5L493.4 76.0L493.7 76.1ZM492.2 75.0L491.9 74.8L492.2 74.9L492.2 75.0ZM491.8 72.9L490.5 73.1L491.7 72.9L491.8 72.9ZM488.3 73.0L488.5 72.8L488.5 72.9L488.3 73.0ZM492.3 73.1L492.0 72.8L492.4 73.0L492.3 73.1ZM489.1 72.7L488.2 73.3L489.0 72.7L489.1 72.7ZM491.1 72.8L491.7 72.7L491.6 72.8L491.1 72.8ZM490.4 72.6L489.3 73.0L490.0 72.5L490.4 72.6ZM490.4 72.5L490.2 72.4L490.5 72.5L490.4 72.5ZM489.6 72.4L489.1 72.6L489.5 72.3L489.6 72.4ZM490.9 72.5L491.2 72.2L491.1 72.4L490.9 72.5ZM490.0 72.2L489.7 72.1L490.1 72.2L490.0 72.2ZM491.6 72.3L491.1 72.0L491.8 72.2L491.6 72.3ZM489.8 67.0L489.7 67.0L489.8 66.9L489.8 67.0ZM489.2 65.9L489.5 67.2L488.5 67.2L488.4 66.0L489.2 65.9ZM491.7 65.2L493.0 66.0L492.4 69.5L489.7 66.5L491.5 65.2L491.7 65.2ZM487.6 65.1L487.3 65.0L487.4 65.0L487.6 65.1ZM488.0 64.9L488.5 65.2L487.9 64.9L488.0 64.9ZM486.2 64.6L485.8 64.5L486.1 64.6L486.2 64.6ZM492.8 63.5L492.4 63.4L492.8 63.4L492.8 63.5ZM490.9 63.0L490.6 62.9L491.0 63.0L490.9 63.0ZM497.1 65.1L494.8 62.7L496.3 62.5L497.3 64.8L497.1 65.1ZM491.9 62.4L489.5 62.2L490.7 62.1L491.9 62.4ZM489.3 62.5L488.5 62.1L489.3 62.4L489.3 62.5ZM490.4 62.3L489.7 61.6L490.5 62.2L490.4 62.3ZM489.9 60.9L489.2 60.5L489.8 60.8L489.9 60.9ZM489.2 60.2L487.9 60.2L489.2 60.0L489.2 60.2ZM495.4 58.6L494.5 58.5L494.7 58.4L495.4 58.6ZM496.3 58.5L495.5 58.0L496.3 58.4L496.3 58.5ZM496.4 57.4L493.8 56.2L496.0 57.0L496.4 57.4ZM491.0 50.1L490.3 50.9L490.8 50.1L491.0 50.1ZM493.4 53.9L491.2 51.5L492.7 50.0L494.7 51.8L494.0 53.7L493.4 53.9ZM494.7 49.2L497.7 49.3L498.2 52.2L496.9 52.4L493.8 49.3L494.7 49.2ZM470.7 46.1L473.4 45.1L479.1 46.5L484.0 45.3L488.6 49.4L491.3 49.5L489.9 51.1L487.4 50.4L493.3 55.1L495.5 58.4L494.4 58.6L496.4 59.5L492.8 61.5L489.2 59.4L487.9 60.0L489.8 61.0L487.7 62.8L491.9 64.3L489.9 64.2L489.0 65.4L485.5 64.1L489.9 68.3L485.3 70.2L488.2 71.1L488.2 73.4L492.0 73.3L489.4 75.8L492.9 74.8L493.5 75.8L490.5 76.5L494.0 77.3L491.5 78.6L495.3 80.0L495.6 82.4L499.2 86.5L497.0 89.5L491.5 85.4L484.7 82.9L473.8 87.0L469.3 86.8L468.1 85.6L466.4 88.4L464.0 89.4L462.8 95.1L461.3 96.7L461.6 98.9L455.8 107.7L447.0 109.5L446.2 114.9L438.9 115.0L434.5 111.1L428.9 109.4L427.4 107.1L430.0 102.6L430.3 98.8L433.6 97.5L433.9 95.3L432.4 95.4L431.6 93.0L432.0 90.6L434.4 90.2L435.3 88.0L441.3 85.1L439.9 82.9L438.2 82.7L439.4 78.8L438.2 78.0L442.2 73.3L444.6 74.7L446.7 73.7L448.1 71.0L447.9 66.5L448.7 64.8L450.1 64.9L448.5 61.4L449.4 56.1L448.3 54.7L449.8 53.9L451.2 49.1L454.9 46.9L455.0 44.9L459.1 47.4L461.1 45.0L465.1 45.0L466.9 47.0L469.5 44.6L470.6 46.1L470.7 46.1Z"},{"name":"KEPULAUAN BANGKA BELITUNG","d":"M230.8 177.6L231.8 175.2L230.2 174.4L233.4 171.5L236.3 170.9L237.1 173.3L238.8 173.3L236.4 174.6L240.6 176.9L241.9 176.6L239.5 175.1L238.4 170.8L242.9 170.2L245.7 172.4L245.2 173.9L248.7 178.6L248.0 182.8L251.1 189.8L262.7 193.0L259.8 194.6L257.3 200.0L257.6 201.3L260.5 202.3L260.4 204.0L255.6 204.6L253.7 201.5L243.6 198.3L242.3 194.6L243.2 190.9L240.5 188.7L239.7 183.7L235.3 182.7L234.9 181.3L236.3 180.0L234.9 181.2L235.5 182.4L229.7 184.1L228.6 182.4L226.1 182.5L226.1 180.0L230.8 177.6ZM267.0 198.7L267.8 200.3L266.4 199.6L267.0 198.7ZM262.6 198.8L262.9 199.1L262.3 199.0L262.6 198.8ZM263.4 202.6L259.8 201.4L261.8 199.7L264.1 200.9L263.4 202.6ZM259.5 201.6L259.8 202.0L259.5 202.0L259.5 201.6ZM289.4 205.7L289.0 207.4L286.9 208.0L286.5 205.7L284.0 203.4L283.6 205.7L278.9 207.3L279.3 205.2L277.9 202.1L279.0 200.2L277.2 200.4L278.8 197.1L279.5 197.7L280.0 192.8L283.3 192.1L287.0 193.0L287.7 195.0L289.1 193.6L293.0 196.8L293.6 199.3L291.7 202.4L291.7 205.2L289.4 205.7ZM292.6 203.1L292.4 203.8L292.2 203.5L292.6 203.1ZM294.9 207.9L295.6 208.5L295.4 208.6L294.9 207.9ZM274.8 197.7L273.8 198.4L274.1 197.9L274.8 197.7ZM276.4 198.3L276.3 198.8L276.1 198.4L276.4 198.3ZM275.7 198.3L276.0 200.1L274.7 201.0L273.2 199.7L275.7 198.3ZM276.7 198.8L276.4 199.5L276.2 199.2L276.7 198.8ZM275.9 200.5L275.3 201.8L275.1 201.0L275.9 200.5ZM277.3 201.4L277.1 202.3L276.9 201.6L277.3 201.4ZM276.7 202.8L276.4 203.3L276.3 202.8L276.7 202.8ZM284.1 204.3L284.2 204.8L283.8 204.5L284.1 204.3Z"},{"name":"KEPULAUAN RIAU","d":"M202.0 114.2L202.4 113.0L203.7 114.5L203.7 113.0L205.1 113.4L204.3 117.4L200.9 116.9L199.7 115.1L200.8 115.2L200.4 114.0L202.0 114.2ZM197.9 114.9L198.1 115.2L197.7 115.0L197.9 114.9ZM198.9 115.6L198.7 116.4L198.6 115.7L198.9 115.6ZM206.0 115.6L205.7 116.6L205.4 116.1L206.0 115.6ZM196.8 116.5L197.7 116.0L198.0 117.6L197.5 117.5L196.8 116.5ZM200.1 116.3L200.1 117.0L199.7 116.4L200.1 116.3ZM198.6 117.3L199.3 116.2L201.6 118.0L200.9 118.9L198.6 117.3ZM205.9 116.4L205.4 117.1L205.4 116.7L205.9 116.4ZM202.0 117.0L201.7 116.9L202.0 116.8L202.0 117.0ZM207.4 117.1L207.6 117.6L207.1 117.5L207.4 117.1ZM205.4 117.6L206.3 118.2L205.4 118.4L205.4 117.6ZM203.5 117.7L203.6 118.9L203.1 118.3L203.5 117.7ZM205.9 121.7L203.8 117.9L205.7 119.8L207.8 120.0L207.3 120.9L205.9 121.7ZM206.7 118.8L206.2 119.1L206.5 118.7L206.7 118.8ZM206.3 121.5L208.0 121.4L208.7 123.3L206.3 123.0L205.8 121.7L206.3 121.5ZM208.7 122.1L209.7 122.5L208.5 122.2L208.7 122.1ZM207.8 125.1L206.6 123.0L208.3 125.3L207.8 125.1ZM209.1 123.9L208.8 124.2L208.8 123.7L209.1 123.9ZM206.9 126.4L207.2 127.0L206.8 126.8L206.9 126.4ZM189.1 113.5L189.6 114.3L188.9 113.8L189.1 113.5ZM188.8 114.1L190.2 117.3L188.3 116.9L187.5 115.2L188.8 114.1ZM190.3 117.8L191.0 118.7L189.9 118.0L190.3 117.8ZM189.7 118.1L189.8 118.9L189.5 118.3L189.7 118.1ZM190.4 118.7L191.2 120.1L189.6 119.3L190.4 118.7ZM196.9 119.1L197.1 119.5L196.7 119.3L196.9 119.1ZM200.7 122.0L198.1 119.2L200.1 120.6L200.7 122.0ZM191.6 122.9L190.6 124.7L189.4 124.5L188.2 121.3L188.7 119.3L191.2 121.4L191.6 122.9ZM196.8 119.4L198.5 122.3L196.2 120.2L196.8 119.4ZM189.8 119.7L192.1 122.0L189.8 120.4L189.8 119.7ZM195.1 119.9L195.6 120.8L194.8 119.7L195.1 119.9ZM195.8 120.1L195.7 120.5L195.6 120.1L195.8 120.1ZM195.7 121.2L196.0 122.3L194.9 120.7L195.7 121.2ZM192.3 121.4L192.4 122.2L192.1 121.8L192.3 121.4ZM201.4 122.0L201.1 122.1L201.3 121.8L201.4 122.0ZM194.8 122.5L195.5 122.9L195.2 123.2L194.8 122.5ZM196.7 122.6L196.6 123.7L195.6 123.2L195.6 122.8L196.7 122.6ZM191.9 123.6L190.7 125.1L191.2 123.8L191.9 123.6ZM195.4 124.9L195.9 125.2L195.2 125.3L195.4 124.9ZM194.6 125.1L195.0 125.2L194.3 125.1L194.6 125.1ZM193.5 127.0L194.0 127.8L193.1 126.4L193.5 127.0ZM194.4 127.0L194.3 127.3L194.0 127.1L194.4 127.0ZM206.8 115.8L207.2 114.4L209.3 113.9L208.8 113.1L212.8 113.4L214.6 112.2L216.2 118.8L214.0 121.0L211.5 119.0L212.7 118.4L210.8 117.8L212.7 117.5L211.5 117.1L212.7 116.3L211.0 115.6L210.2 116.8L207.5 116.9L206.8 115.8ZM274.7 114.8L274.2 115.1L274.6 114.6L274.7 114.8ZM276.7 116.0L277.0 116.0L276.7 116.3L276.7 116.0ZM219.6 117.7L218.9 116.4L220.3 117.4L219.6 117.7ZM277.3 116.5L278.8 117.2L277.6 117.6L277.3 116.5ZM275.1 117.5L275.9 118.7L275.3 118.5L275.1 117.5ZM216.7 119.2L216.5 120.3L216.2 120.0L216.7 119.2ZM209.9 120.3L209.7 121.0L209.6 120.3L209.9 120.3ZM213.8 121.4L214.6 121.8L213.0 122.5L213.0 121.8L213.8 121.4ZM214.8 121.4L215.7 121.6L214.6 122.3L214.8 121.4ZM217.2 121.5L218.1 122.3L216.8 121.9L217.2 121.5ZM216.9 122.1L218.3 122.7L217.8 123.0L216.9 122.1ZM216.2 122.3L214.9 123.4L215.2 122.6L216.2 122.3ZM271.1 135.2L270.7 136.2L270.3 135.6L271.1 135.2ZM210.8 128.2L211.2 128.5L210.7 128.5L210.8 128.2ZM213.2 129.3L214.1 129.5L213.5 130.6L213.2 129.3ZM210.9 131.9L209.1 130.3L210.6 131.6L210.9 131.9ZM212.1 130.5L212.6 130.9L211.9 130.9L212.1 130.5ZM208.6 130.9L208.9 131.8L208.5 131.7L208.6 130.9ZM209.1 131.3L210.4 132.5L209.7 132.4L209.1 131.3ZM209.8 132.6L209.9 132.9L209.6 132.5L209.8 132.6ZM212.7 132.7L213.0 133.0L212.5 132.6L212.7 132.7ZM211.6 133.0L212.2 133.5L211.6 133.3L211.6 133.0ZM213.1 133.5L217.1 137.9L212.3 133.1L213.1 133.5ZM207.1 134.1L207.0 135.0L206.4 134.7L207.1 134.1ZM212.2 134.5L212.4 134.9L212.0 134.7L212.2 134.5ZM208.5 134.8L209.3 136.0L208.5 135.6L208.5 134.8ZM211.4 136.9L210.7 134.8L212.7 138.0L211.4 136.9ZM213.7 136.1L214.1 136.8L213.5 136.3L213.7 136.1ZM217.9 136.5L218.2 136.6L217.9 136.7L217.9 136.5ZM212.6 136.4L212.7 136.8L212.4 136.4L212.6 136.4ZM218.5 137.0L217.9 137.6L217.8 137.3L218.5 137.0ZM216.2 140.7L218.9 142.7L219.7 141.1L223.4 144.8L220.2 145.2L217.1 142.7L213.2 144.2L211.3 143.3L212.9 141.1L212.6 138.2L214.2 138.6L213.9 137.7L216.0 139.4L215.4 140.0L216.2 140.7ZM213.5 137.7L213.3 138.3L213.0 138.0L213.5 137.7ZM220.0 139.1L220.8 140.0L219.9 139.4L220.0 139.1ZM217.7 140.4L218.4 141.5L218.0 141.3L217.7 140.4ZM212.1 144.2L211.9 145.3L210.3 144.7L212.1 144.2ZM207.1 145.4L207.1 145.9L206.8 145.6L207.1 145.4ZM209.0 146.0L209.5 147.8L209.5 146.6L210.3 147.1L212.3 145.4L214.8 148.1L212.8 152.1L211.3 150.6L209.7 152.8L209.2 149.3L207.3 148.6L208.0 146.7L209.0 146.0ZM205.4 145.5L205.5 146.1L205.2 145.8L205.4 145.5ZM206.1 146.0L207.1 146.5L206.1 146.6L206.1 146.0ZM206.3 146.7L206.9 147.4L206.3 147.3L206.3 146.7ZM286.5 39.0L285.7 38.4L287.4 36.7L286.5 39.0ZM289.8 59.0L291.3 57.8L293.1 59.3L291.7 57.4L288.5 56.7L286.4 53.1L291.9 48.3L292.2 50.5L295.8 53.9L294.7 55.8L296.0 56.2L293.5 60.5L290.6 61.1L289.1 60.0L289.8 59.0ZM285.1 55.0L285.4 55.7L285.0 55.5L285.1 55.0ZM287.3 57.1L288.1 58.2L287.5 57.9L287.3 57.1ZM289.7 58.2L289.9 58.4L289.7 58.5L289.7 58.2ZM288.4 59.3L289.1 60.0L288.2 60.1L288.4 59.3ZM288.4 60.2L289.0 61.0L288.3 61.0L288.4 60.2ZM289.5 60.9L288.7 62.1L288.9 61.4L289.5 60.9ZM288.2 61.8L288.2 62.6L287.9 62.2L288.2 61.8ZM289.1 62.1L289.3 62.3L289.0 62.3L289.1 62.1ZM252.0 65.6L251.5 67.6L251.7 65.9L252.0 65.6ZM250.6 65.9L250.9 66.2L250.4 66.1L250.6 65.9ZM248.6 68.1L249.5 66.1L248.9 68.3L248.6 68.1ZM250.2 67.1L251.1 66.4L250.7 69.7L249.5 69.0L250.2 67.1ZM253.4 67.9L253.1 68.3L253.0 68.0L253.4 67.9ZM254.3 69.1L254.4 69.7L254.0 69.4L254.3 69.1ZM249.0 69.6L250.8 70.7L250.6 72.9L249.2 71.9L249.0 69.6ZM251.2 69.5L251.0 69.9L250.9 69.6L251.2 69.5ZM255.0 70.0L255.3 70.6L254.8 70.4L255.0 70.0ZM251.4 71.0L251.2 72.7L250.7 71.9L251.4 71.0ZM246.5 71.1L246.6 71.9L246.3 71.4L246.5 71.1ZM253.6 71.3L254.0 71.7L253.3 71.6L253.6 71.3ZM247.2 71.6L247.3 72.0L247.0 71.8L247.2 71.6ZM237.3 71.9L237.8 72.5L237.0 72.6L237.3 71.9ZM238.0 72.0L238.2 72.3L237.7 72.1L238.0 72.0ZM238.3 72.3L239.0 72.7L238.5 72.9L238.3 72.3ZM252.3 72.5L252.2 73.4L251.9 73.1L252.3 72.5ZM244.3 72.6L244.2 74.1L243.9 73.6L244.3 72.6ZM241.2 74.6L240.9 76.9L238.8 77.2L239.8 77.9L238.8 78.4L237.8 74.3L239.1 73.4L239.2 75.1L241.2 74.6ZM305.2 73.4L305.6 74.2L305.2 74.2L305.2 73.4ZM253.4 73.7L253.4 74.2L253.0 73.9L253.4 73.7ZM282.7 74.0L283.3 74.9L282.1 75.1L281.9 74.3L282.7 74.0ZM305.7 74.3L306.1 77.0L304.6 77.8L303.7 76.8L305.7 74.3ZM247.4 75.8L247.9 76.2L247.1 76.0L247.4 75.8ZM238.1 76.1L238.0 76.4L237.8 76.2L238.1 76.1ZM249.4 79.9L248.9 78.5L250.1 80.3L249.4 79.9ZM248.3 79.5L248.8 79.9L248.6 80.0L248.3 79.5ZM299.1 80.4L298.6 81.9L299.6 80.9L299.1 80.4ZM309.6 85.2L308.0 83.9L310.9 85.0L309.6 85.2ZM307.4 85.1L307.1 86.2L307.4 84.4L307.4 85.1ZM308.2 85.0L308.5 85.3L308.3 85.4L308.2 85.0ZM308.5 85.8L308.2 85.5L308.5 85.5L308.5 85.8Z"},{"name":"LAMPUNG","d":"M240.8 257.0L240.4 261.6L238.7 264.0L238.4 262.8L235.8 261.8L235.3 258.9L232.1 257.9L229.7 254.2L228.6 257.2L227.0 257.2L228.1 260.0L226.7 260.7L228.1 261.3L226.6 261.9L215.0 255.3L213.3 256.3L217.7 264.5L214.5 264.8L211.1 259.8L208.5 258.3L208.5 256.9L200.1 249.6L200.4 247.6L193.5 242.8L198.1 240.2L200.3 243.8L200.7 242.2L204.5 243.0L206.3 241.7L209.2 241.9L209.9 240.4L208.3 237.9L210.0 230.9L215.4 228.0L218.9 229.0L223.7 227.1L226.4 222.1L229.3 220.8L230.5 217.6L231.0 219.2L234.5 220.0L236.3 222.1L236.3 224.5L237.5 224.4L238.3 226.3L240.8 226.2L241.1 232.1L242.8 232.7L241.7 240.3L242.6 243.4L240.9 251.6L240.8 257.0ZM228.0 258.8L228.0 259.4L227.8 259.0L228.0 258.8ZM234.6 262.8L234.1 263.9L233.9 263.3L234.6 262.8ZM234.0 264.3L233.7 265.4L233.3 264.8L234.0 264.3ZM232.9 268.8L232.5 269.5L232.3 269.0L232.9 268.8Z"},{"name":"MALUKU","d":"M718.9 215.4L718.4 217.7L714.8 219.0L717.9 215.6L712.7 218.8L711.0 217.5L713.3 214.7L716.4 214.6L718.8 212.6L720.1 212.9L720.2 215.7L718.9 215.4ZM676.7 216.4L674.1 215.2L670.4 209.9L670.6 205.9L672.1 204.5L674.5 206.1L676.6 204.1L687.0 203.4L693.8 206.9L694.0 208.1L692.1 208.0L693.1 210.1L695.0 209.3L697.2 210.4L696.2 216.2L692.6 216.8L686.0 220.4L681.2 219.1L676.7 216.4ZM695.2 219.6L696.6 220.0L696.2 221.4L694.5 220.1L695.2 219.6ZM852.7 251.7L852.3 253.2L851.1 253.0L852.7 251.7ZM853.2 252.3L852.4 253.1L852.7 252.4L853.2 252.3ZM853.6 253.1L853.0 253.1L853.4 252.8L853.6 253.1ZM850.9 255.0L851.1 253.6L853.3 253.7L853.3 254.7L853.6 253.7L855.3 256.8L851.7 256.8L850.8 255.2L851.8 255.0L850.9 255.0ZM846.2 255.0L845.9 256.5L845.8 255.1L846.2 255.0ZM851.1 255.5L851.3 255.9L850.9 255.7L851.1 255.5ZM846.9 259.6L848.1 260.0L850.1 256.0L850.8 256.9L851.1 256.0L855.6 262.1L854.7 262.8L856.8 262.8L855.3 264.1L856.3 265.3L854.0 264.5L853.9 263.1L852.9 264.6L853.7 263.0L849.6 266.4L846.9 266.4L846.8 263.8L848.4 261.7L849.8 261.8L846.0 260.9L844.9 260.0L845.8 258.8L846.9 259.6ZM856.0 259.4L855.6 260.5L853.5 260.1L851.7 256.9L855.0 257.1L856.7 258.9L856.0 259.4ZM845.6 258.0L847.8 256.8L846.3 258.4L845.6 258.0ZM854.7 260.7L856.2 260.4L856.2 261.7L855.3 261.8L854.7 260.7ZM857.7 260.4L857.1 260.8L857.2 260.3L857.7 260.4ZM844.6 260.7L845.6 262.3L844.6 262.3L844.6 260.7ZM856.5 261.6L856.3 261.9L856.4 261.4L856.5 261.6ZM853.5 264.8L857.1 268.0L854.9 270.0L856.8 269.4L855.8 272.9L853.8 274.0L852.1 273.4L852.4 272.2L850.6 272.3L850.1 270.7L847.8 270.7L846.2 268.3L846.4 267.0L849.5 266.4L851.8 264.2L853.1 264.8L852.5 265.6L853.5 264.8ZM845.3 266.9L846.4 267.3L845.5 268.8L849.4 271.9L847.9 273.2L843.9 270.0L844.7 268.7L842.9 268.3L843.7 266.1L845.2 266.3L845.3 266.9ZM846.3 268.5L846.4 269.1L846.1 268.7L846.3 268.5ZM845.2 270.7L847.4 274.7L850.2 275.2L851.2 277.1L850.3 278.0L851.7 278.5L850.3 280.5L849.0 280.3L850.0 280.7L847.5 283.2L848.5 283.4L844.6 286.0L843.6 284.5L844.5 283.7L842.4 284.1L841.5 282.4L842.9 275.5L844.3 276.3L843.5 277.4L844.7 276.3L845.4 279.1L846.7 279.4L845.4 279.0L845.0 275.1L843.4 275.8L842.9 274.8L842.5 269.5L845.2 270.7ZM858.8 269.9L858.7 270.7L858.5 270.4L858.8 269.9ZM845.0 270.1L845.2 270.6L844.8 270.4L845.0 270.1ZM849.3 270.8L849.8 271.6L849.0 271.2L849.3 270.8ZM849.0 271.3L849.4 271.5L848.9 271.5L849.0 271.3ZM849.4 271.6L849.6 272.0L849.1 271.7L849.4 271.6ZM850.3 275.4L848.1 273.8L850.0 271.8L853.1 274.2L852.0 277.4L850.7 276.4L851.2 274.9L850.3 275.4ZM857.5 274.0L859.4 272.1L858.0 275.2L857.5 274.0ZM847.6 272.9L847.2 273.7L847.4 272.1L847.6 272.9ZM858.0 272.2L857.2 273.7L857.2 273.1L858.0 272.2ZM852.0 272.5L851.9 273.1L851.6 272.9L852.0 272.5ZM856.5 273.6L856.2 275.2L856.0 274.1L856.5 273.6ZM856.8 273.8L857.2 274.9L856.8 274.7L856.8 273.8ZM856.4 276.7L854.9 278.0L854.0 276.2L855.2 275.4L856.4 276.7ZM853.9 275.5L853.0 277.0L852.9 276.2L853.9 275.5ZM852.8 276.3L852.2 277.3L852.8 276.1L852.8 276.3ZM858.0 276.2L857.7 278.0L856.9 276.9L858.0 276.2ZM855.8 277.6L855.9 278.1L855.5 277.9L855.8 277.6ZM855.1 278.5L856.6 279.2L854.7 282.7L853.7 282.1L854.6 280.4L855.1 278.5ZM853.2 278.7L853.0 279.4L852.8 278.9L853.2 278.7ZM856.8 278.8L857.4 279.5L856.6 279.4L856.8 278.8ZM850.9 280.5L850.7 281.1L850.5 280.8L850.9 280.5ZM851.2 281.1L851.7 281.9L850.7 282.2L851.2 281.1ZM856.5 284.5L855.0 284.3L856.6 284.1L856.5 284.5ZM854.8 287.3L854.9 287.8L854.7 287.6L854.8 287.3ZM850.9 288.6L851.5 289.4L850.5 289.1L850.9 288.6ZM733.9 196.4L733.6 196.8L733.7 196.4L733.9 196.4ZM728.8 198.9L735.1 197.8L736.8 201.5L738.7 201.2L742.1 197.7L745.3 197.3L756.1 202.2L763.5 201.9L768.1 205.3L769.4 210.7L773.1 211.8L772.5 212.5L774.1 214.8L772.8 217.1L773.4 220.7L755.7 212.4L753.8 209.3L745.2 208.5L745.4 212.1L735.8 209.4L732.7 209.7L733.3 207.0L731.6 206.5L727.2 209.8L727.2 211.3L722.6 211.9L718.5 206.5L716.6 207.0L716.7 203.5L714.7 204.9L713.9 209.4L712.5 210.2L711.1 214.2L711.5 209.6L709.3 205.5L715.2 203.5L715.3 201.5L714.3 201.6L716.2 199.2L723.6 198.6L728.8 198.9ZM726.6 215.6L724.8 212.7L728.3 213.0L728.3 215.3L726.7 214.3L726.6 215.6ZM722.4 213.0L725.0 214.6L721.4 215.7L721.6 213.5L722.4 213.0ZM729.2 215.7L729.5 217.0L729.0 216.8L729.2 215.7ZM755.5 272.3L756.0 272.8L755.4 272.6L755.5 272.3ZM788.9 280.2L789.9 280.8L787.8 283.1L787.5 282.2L788.9 280.2ZM745.4 281.1L744.5 282.1L744.6 281.3L745.4 281.1ZM787.0 284.4L786.5 285.6L786.6 284.7L787.0 284.4ZM737.2 286.2L737.2 287.1L736.7 286.6L737.2 286.2ZM797.9 286.9L795.9 289.0L796.1 288.2L797.9 286.9ZM726.2 288.8L727.7 289.7L726.5 291.9L723.9 290.3L725.4 288.6L726.2 288.8ZM785.8 288.7L786.1 289.2L785.8 289.2L785.8 288.7ZM792.6 291.1L792.3 289.8L796.1 289.4L797.6 291.8L796.8 292.7L795.1 290.8L792.6 291.1ZM782.1 296.9L786.2 294.6L787.9 290.3L790.5 289.8L790.4 291.1L791.7 290.3L792.4 292.0L790.0 292.8L790.6 296.4L791.6 296.2L789.8 301.0L784.3 305.8L782.8 309.2L782.8 306.9L781.5 308.7L778.9 308.5L779.2 301.8L782.4 302.2L779.9 301.6L780.5 299.8L782.1 296.9ZM784.9 291.5L784.6 292.4L784.4 292.2L784.9 291.5ZM782.1 293.7L783.0 294.5L782.3 295.3L781.0 294.9L782.1 293.7ZM783.5 295.5L783.6 296.1L783.3 295.9L783.5 295.5ZM779.5 295.9L777.9 298.4L775.9 297.7L776.4 296.4L779.5 295.9ZM772.8 297.3L773.1 297.8L772.5 297.6L772.8 297.3ZM699.3 301.2L698.4 300.6L699.3 297.9L701.8 298.3L700.2 300.0L699.3 301.2ZM775.9 299.2L773.3 299.2L773.2 297.9L776.2 298.1L775.6 298.8L775.9 299.2ZM776.6 298.0L776.7 298.3L776.4 298.2L776.6 298.0ZM779.5 298.2L779.9 298.8L779.3 298.6L779.5 298.2ZM748.4 298.5L749.3 299.4L748.1 299.1L748.4 298.5ZM687.7 301.9L687.8 303.3L681.9 304.8L680.2 308.0L671.7 306.1L665.7 308.7L666.1 305.6L669.1 301.3L674.1 302.7L683.5 299.1L685.6 301.4L687.4 301.2L687.7 301.9ZM778.7 300.8L778.8 302.0L775.9 303.0L776.0 301.7L777.6 301.6L778.7 300.8ZM755.4 302.1L755.9 303.1L755.1 302.7L755.4 302.1ZM778.5 302.6L778.1 303.6L778.0 303.3L778.5 302.6ZM756.9 303.3L755.9 303.6L756.1 303.3L756.9 303.3ZM750.1 309.7L746.4 306.4L747.1 304.4L752.3 305.2L750.9 309.4L750.1 309.7ZM745.1 305.2L745.6 307.5L745.0 306.9L745.1 305.2ZM664.6 307.8L664.6 309.8L664.3 308.1L664.6 307.8ZM778.4 308.8L778.7 309.6L778.3 309.3L778.4 308.8ZM782.8 309.4L782.3 309.8L782.6 309.2L782.8 309.4ZM774.0 313.2L777.0 310.2L778.3 310.9L778.0 312.0L780.2 311.1L771.4 315.8L774.0 313.2ZM715.4 312.0L712.9 314.0L708.6 312.7L707.7 310.9L714.7 311.4L715.4 312.0ZM705.5 313.6L704.3 313.0L706.1 311.8L707.5 312.4L707.3 313.1L705.5 313.6ZM728.9 312.0L729.8 312.8L729.5 312.8L728.9 312.0ZM727.4 312.0L728.1 312.5L727.5 312.5L727.4 312.0ZM733.3 313.5L730.3 312.7L733.3 312.5L734.4 314.1L733.3 313.5ZM714.9 312.9L717.3 312.9L717.8 314.3L714.6 314.1L714.9 312.9ZM798.4 248.3L798.2 248.6L798.3 248.0L798.4 248.3ZM822.0 255.6L815.9 266.1L821.7 250.7L823.2 251.7L822.0 255.6ZM798.3 251.3L797.3 252.9L797.3 251.7L798.3 251.3ZM804.7 255.8L805.9 256.5L804.8 257.1L804.7 255.8ZM815.1 258.5L814.9 259.6L813.6 258.3L814.9 255.8L815.1 258.5ZM813.4 257.2L813.1 257.1L813.4 256.9L813.4 257.2ZM814.4 261.6L814.5 264.7L813.3 265.0L813.2 263.7L812.6 264.9L812.7 260.8L810.9 257.3L812.2 258.1L813.0 257.3L814.3 262.0L814.4 261.6ZM804.7 257.5L804.9 257.9L804.5 257.7L804.7 257.5ZM814.9 260.1L814.9 261.1L814.5 260.2L814.9 260.1ZM814.6 260.4L814.5 261.2L814.4 260.4L814.6 260.4ZM810.0 262.1L810.6 262.4L810.3 262.5L810.0 262.1ZM810.8 262.6L810.5 263.0L810.4 262.7L810.8 262.6ZM809.1 262.5L809.7 263.2L809.1 262.9L809.1 262.5ZM807.9 266.0L807.1 266.7L807.0 266.1L807.9 266.0ZM709.6 202.5L710.9 200.3L712.8 200.8L711.2 202.9L709.1 202.9L709.6 202.5ZM705.4 206.6L707.5 205.4L708.5 206.0L708.3 207.6L705.1 207.0L705.4 206.6ZM703.2 207.4L703.4 207.7L703.0 207.5L703.2 207.4ZM705.1 210.0L701.9 208.5L703.7 207.6L705.5 209.7L705.1 210.0ZM771.9 208.5L772.3 209.2L771.6 209.0L771.9 208.5ZM775.2 220.7L774.9 221.4L774.7 221.1L775.2 220.7ZM785.5 222.3L785.9 225.1L784.4 222.9L785.5 222.3ZM781.0 223.0L781.8 224.6L781.3 224.2L781.0 223.0ZM782.6 224.9L785.1 227.1L783.0 226.1L782.6 224.9ZM789.9 232.7L791.1 234.9L789.5 232.4L789.9 232.7ZM752.7 234.2L753.0 234.8L752.5 234.6L752.7 234.2ZM753.4 235.4L752.4 235.1L754.2 234.2L754.3 235.3L753.4 235.4ZM756.3 235.8L756.3 236.4L756.0 235.9L756.3 235.8ZM792.3 238.4L792.3 240.2L792.0 238.6L792.3 238.4Z"},{"name":"MALUKU UTARA","d":"M703.7 119.9L702.0 119.3L702.0 115.9L699.9 115.7L700.1 112.1L702.6 107.6L702.3 105.2L703.9 102.9L703.2 101.9L711.8 91.0L714.1 91.5L709.4 99.0L713.0 101.3L713.0 110.4L710.7 113.8L705.4 116.5L705.4 119.7L708.5 121.5L710.3 120.7L712.4 115.2L716.9 113.5L716.6 111.9L714.8 111.9L714.8 111.0L716.8 108.8L722.8 105.3L728.1 104.8L727.3 107.2L728.9 108.6L727.7 115.6L719.9 118.9L718.7 119.9L719.4 120.9L718.1 120.4L717.0 121.5L719.7 124.4L727.2 126.6L727.0 130.9L730.6 132.1L732.0 133.9L722.5 129.7L718.8 129.9L714.4 128.2L711.0 128.6L709.9 132.0L711.1 132.5L710.4 138.4L713.8 147.2L717.3 153.2L722.4 157.8L718.4 156.8L717.7 154.3L713.2 152.9L709.9 146.1L706.1 144.0L707.1 131.7L704.7 130.6L702.7 126.5L704.9 120.0L703.7 119.9ZM678.4 109.5L678.6 111.1L677.8 110.2L678.4 109.5ZM673.2 117.4L673.7 117.9L672.9 117.5L673.2 117.4ZM700.4 130.5L700.9 131.6L699.7 132.4L698.9 131.0L700.4 130.5ZM694.1 135.3L694.4 135.6L693.9 135.5L694.1 135.3ZM701.5 139.5L700.1 137.9L700.6 135.3L701.4 136.8L701.5 139.5ZM695.2 138.6L695.8 138.8L695.0 138.6L695.2 138.6ZM696.2 140.5L697.3 139.9L697.0 141.0L695.7 140.8L696.2 140.5ZM694.3 142.1L693.5 143.7L693.4 142.9L694.3 142.1ZM698.1 143.2L698.0 143.5L697.8 143.2L698.1 143.2ZM692.7 143.1L693.4 143.8L692.3 144.5L692.4 144.1L692.7 143.1ZM693.9 146.6L693.8 144.3L698.0 144.1L696.9 144.5L697.1 148.8L694.2 149.3L694.8 148.4L693.7 147.4L693.9 146.6ZM703.1 144.6L703.6 144.9L703.0 144.9L703.1 144.6ZM705.4 152.3L705.8 153.4L709.8 153.4L710.8 155.0L710.0 155.9L707.9 156.8L705.0 154.1L701.6 155.8L701.7 151.7L700.2 151.5L697.7 148.3L698.3 145.3L699.4 145.0L701.1 147.2L702.6 144.7L703.6 145.0L706.2 148.0L704.2 151.0L705.4 152.3ZM697.9 145.6L697.5 145.7L697.7 145.4L697.9 145.6ZM707.1 147.2L707.4 147.4L707.1 147.5L707.1 147.2ZM697.4 148.6L697.7 149.5L697.3 149.2L697.4 148.6ZM697.2 149.0L697.2 149.6L696.9 149.2L697.2 149.0ZM719.9 150.0L721.6 150.3L719.5 150.1L719.9 150.0ZM696.5 149.6L696.8 150.0L696.3 150.0L696.5 149.6ZM700.3 152.3L698.4 151.2L699.7 151.3L700.3 152.3ZM697.7 153.0L698.6 155.0L695.0 154.3L695.6 151.4L696.8 152.0L697.7 153.0ZM698.4 151.5L698.6 152.3L698.1 151.6L698.4 151.5ZM725.4 151.6L725.5 152.2L725.1 151.8L725.4 151.6ZM714.8 156.1L715.0 156.6L714.5 156.4L714.8 156.1ZM720.3 159.1L721.6 160.1L719.9 160.1L719.3 158.4L720.3 159.1ZM720.9 159.3L721.1 159.4L720.7 159.3L720.9 159.3ZM720.0 160.3L720.3 160.7L719.9 160.7L720.0 160.3ZM719.9 161.9L720.1 162.2L719.8 162.0L719.9 161.9ZM721.3 162.2L721.1 162.5L721.0 162.3L721.3 162.2ZM700.2 162.5L700.6 164.3L699.9 162.7L700.2 162.5ZM703.2 163.2L706.3 164.4L706.2 165.6L701.5 165.0L702.3 163.4L703.2 163.2ZM711.8 169.7L716.3 172.8L716.1 174.2L713.3 175.1L706.8 174.2L704.2 175.3L700.1 173.5L700.3 168.5L702.2 169.2L705.1 166.6L710.5 168.6L711.8 169.7ZM699.9 167.9L698.5 169.3L697.5 168.4L698.3 167.4L699.9 167.9ZM726.4 170.5L726.2 170.3L726.5 170.2L726.4 170.5ZM720.2 172.4L720.4 173.4L719.1 173.4L719.4 172.7L720.2 172.4ZM704.9 177.0L703.6 178.0L703.9 177.2L704.9 177.0ZM730.0 126.3L731.1 127.9L730.4 127.4L730.0 126.3ZM733.1 134.4L733.6 134.8L732.7 134.2L733.1 134.4ZM740.1 137.2L746.3 142.6L741.8 138.4L740.1 137.2ZM746.7 138.3L747.9 139.8L746.5 139.3L746.7 138.3ZM743.0 140.0L743.2 140.8L742.8 140.3L743.0 140.0ZM720.2 121.2L719.6 121.8L719.7 121.4L720.2 121.2ZM726.5 126.0L727.0 126.2L726.3 126.3L726.5 126.0ZM726.6 89.5L725.0 93.5L718.3 96.2L719.0 94.6L717.0 89.8L719.6 85.7L724.8 82.0L727.5 85.3L726.6 89.5ZM716.2 89.6L715.4 88.7L716.3 86.9L716.8 89.2L716.2 89.6ZM708.0 89.5L709.0 90.0L708.4 91.1L707.6 90.2L708.0 89.5ZM706.9 91.6L708.0 92.3L707.9 92.5L706.9 91.6ZM708.0 93.1L708.2 93.5L707.8 93.3L708.0 93.1ZM712.8 100.2L713.2 100.7L712.6 99.9L712.8 100.2ZM713.7 101.0L714.0 101.2L713.5 101.2L713.7 101.0ZM648.9 174.8L650.4 176.0L651.3 174.3L652.7 174.4L653.3 176.5L655.1 175.1L655.9 178.4L649.8 178.5L649.1 179.7L646.0 178.6L636.3 181.6L634.8 178.5L636.2 173.6L641.3 173.2L646.8 174.7L648.9 174.8ZM648.8 173.6L649.4 173.7L648.9 173.9L648.8 173.6ZM631.0 175.2L631.1 176.4L630.7 175.8L631.0 175.2ZM633.9 175.4L634.3 176.3L633.7 175.8L633.9 175.4ZM669.3 179.1L657.9 179.8L658.2 178.4L656.8 177.6L656.3 178.5L655.9 177.3L657.5 176.1L662.5 177.2L677.8 176.9L672.1 178.3L669.3 179.1ZM680.0 176.6L680.0 177.5L677.6 177.2L680.0 176.6ZM634.9 181.3L634.2 180.4L635.4 180.2L635.6 181.7L634.9 181.3ZM669.6 180.9L669.3 184.2L671.8 189.8L671.3 191.0L667.6 185.3L667.1 182.8L668.2 180.3L669.6 180.9ZM635.6 181.0L635.9 182.4L635.5 181.8L635.6 181.0ZM698.3 119.0L698.3 119.6L697.9 119.2L698.3 119.0ZM698.5 119.9L699.8 120.6L699.3 122.1L697.7 121.5L698.5 119.9ZM700.2 128.1L700.4 129.1L699.6 128.8L700.2 128.1ZM700.1 122.3L701.3 123.1L700.1 125.1L699.2 123.9L700.1 122.3Z"},{"name":"NUSA TENGGARA BARAT","d":"M517.7 278.1L517.9 278.4L517.6 278.3L517.7 278.1ZM525.4 283.4L524.9 284.0L524.9 283.6L525.4 283.4ZM502.4 293.6L502.3 293.8L502.1 293.7L502.4 293.6ZM503.5 313.6L506.6 316.4L509.9 313.7L513.8 314.7L514.9 317.0L513.9 320.2L516.3 315.1L521.3 315.1L522.4 318.4L522.0 322.1L524.0 321.9L524.8 320.4L525.4 321.5L524.1 324.6L516.2 323.3L514.7 324.4L515.5 325.1L519.0 324.7L520.4 325.9L517.9 326.5L515.3 325.4L509.9 327.4L507.8 325.1L509.1 323.8L508.5 321.0L508.6 322.9L503.9 326.7L500.1 326.7L497.6 328.6L493.4 328.1L486.5 331.0L483.0 330.1L479.0 332.1L472.9 329.8L473.0 327.0L474.8 325.8L473.3 322.6L474.9 319.5L478.8 319.2L481.1 316.4L487.0 318.6L487.8 316.9L490.7 317.1L490.9 319.2L491.5 317.6L492.2 320.5L494.4 320.5L495.9 324.0L499.2 324.3L501.6 322.5L505.7 322.5L504.9 320.3L501.7 318.1L499.6 318.4L493.4 313.6L494.1 311.7L498.4 310.2L503.0 311.4L503.5 313.6ZM494.6 310.6L494.7 311.1L494.4 310.8L494.6 310.6ZM521.3 313.0L522.4 311.2L523.9 312.5L521.5 313.8L521.3 313.0ZM527.2 317.2L528.1 317.1L528.1 318.2L527.2 318.5L527.2 317.2ZM526.1 322.4L526.0 323.2L525.7 322.8L526.1 322.4ZM504.4 322.2L504.5 322.4L504.1 322.3L504.4 322.2ZM455.7 325.0L458.2 323.8L458.8 324.9L458.2 317.8L463.2 313.7L467.2 313.4L472.7 315.9L471.6 320.4L467.7 325.7L470.0 326.8L469.6 327.5L466.7 328.1L467.3 326.0L465.7 326.9L465.5 328.9L465.5 327.7L461.1 328.0L460.6 326.9L457.8 326.8L457.5 327.8L453.8 325.9L453.6 324.5L455.3 324.4L455.7 325.0ZM455.8 324.0L456.1 324.8L455.6 324.5L455.8 324.0ZM488.1 298.1L487.9 298.7L487.7 298.3L488.1 298.1ZM484.9 298.4L485.9 298.5L484.7 298.7L484.9 298.4ZM491.4 314.3L490.0 316.8L488.7 316.1L489.0 312.5L490.6 311.6L493.4 312.4L491.4 314.3ZM479.7 316.6L478.2 317.7L478.5 317.1L479.7 316.6ZM492.5 318.9L492.8 318.1L493.2 319.6L492.6 319.9L492.5 318.9ZM494.8 320.6L494.2 318.6L495.1 320.1L494.8 320.6ZM496.2 320.4L496.4 320.6L496.0 320.5L496.2 320.4ZM499.8 322.0L500.1 323.3L498.9 321.6L499.8 322.0ZM472.3 314.6L472.4 315.1L472.0 314.7L472.3 314.6ZM472.7 315.1L473.3 315.9L472.6 315.5L472.7 315.1Z"},{"name":"NUSA TENGGARA TIMUR","d":"M632.4 354.5L630.0 354.8L631.1 354.1L628.1 356.9L623.4 358.7L616.1 358.6L617.7 354.8L622.8 352.0L619.0 352.0L618.7 349.9L620.6 347.9L620.7 343.2L628.6 336.9L630.5 338.9L632.7 337.8L633.6 340.5L635.1 340.1L637.8 333.5L640.8 333.1L642.5 330.9L647.6 328.9L648.6 331.2L651.5 329.2L652.9 330.4L652.8 333.3L648.7 333.6L650.8 339.6L648.4 341.3L648.6 343.4L636.0 354.7L632.4 354.5ZM615.1 358.2L613.2 358.3L612.8 356.9L616.0 353.5L617.2 354.8L614.7 355.6L614.8 357.3L615.1 358.2ZM582.5 364.2L578.4 363.3L582.6 360.1L585.1 360.5L584.8 362.8L582.5 364.2ZM575.9 363.8L577.3 364.0L574.9 364.6L575.9 363.8ZM618.9 303.8L619.0 304.4L618.6 304.2L618.9 303.8ZM615.0 316.4L616.4 315.7L613.7 315.0L615.1 313.9L618.3 313.7L616.9 316.2L618.1 316.4L618.6 314.7L619.9 314.7L619.3 313.2L621.1 314.0L623.0 312.1L626.1 313.8L622.6 314.7L620.7 317.7L619.6 317.2L618.0 320.7L616.8 319.5L614.8 321.0L613.1 319.7L611.1 320.3L613.5 317.0L615.0 316.4ZM540.6 318.6L542.5 318.3L543.0 316.6L544.9 317.9L545.1 316.1L546.0 316.5L546.8 315.0L551.7 313.7L552.5 314.8L555.3 314.0L558.2 316.0L563.4 315.9L564.3 317.3L569.5 318.4L574.8 321.6L576.0 319.8L576.8 320.4L577.0 318.6L580.9 319.4L585.6 317.9L585.5 319.8L591.3 322.2L595.2 321.5L595.6 318.6L604.1 314.4L605.1 312.8L604.3 312.3L600.6 313.3L603.1 310.0L605.7 311.3L606.8 315.0L604.6 315.5L604.0 318.1L601.8 317.5L602.8 321.1L595.1 324.1L587.6 324.1L580.3 327.3L578.2 326.6L577.5 327.8L576.4 325.6L572.1 325.3L571.1 327.8L567.5 327.4L564.5 328.9L560.4 326.2L558.6 327.5L555.2 325.9L548.4 326.7L545.3 324.9L540.2 326.8L538.3 324.8L538.2 320.9L539.9 318.3L540.6 318.6ZM545.4 315.7L545.8 316.0L544.9 315.9L545.4 315.7ZM543.2 316.2L542.9 316.5L543.0 316.0L543.2 316.2ZM539.4 316.5L539.7 317.1L539.1 316.8L539.4 316.5ZM531.1 321.4L531.3 324.2L529.3 324.2L529.2 321.0L531.0 317.6L531.5 318.9L533.4 318.9L533.5 321.2L532.0 320.6L531.1 321.4ZM538.1 319.6L538.3 319.8L538.0 319.8L538.1 319.6ZM535.3 319.8L535.2 320.6L535.0 319.9L535.3 319.8ZM535.4 322.4L538.4 321.8L536.4 323.0L536.0 325.8L534.1 324.5L535.3 323.4L534.3 321.5L535.4 321.5L535.4 322.4ZM534.0 321.9L533.2 323.3L532.7 322.7L534.0 321.9ZM535.2 325.2L535.5 325.9L534.7 325.7L535.2 325.2ZM538.0 325.3L538.1 326.1L537.7 325.9L538.0 325.3ZM548.7 327.0L548.4 328.0L548.0 327.7L548.7 327.0ZM608.0 365.9L610.5 363.7L613.0 363.7L610.9 363.4L614.4 360.3L615.4 361.1L614.3 362.7L615.8 361.6L613.7 363.6L615.5 365.1L611.8 366.7L611.1 368.7L609.2 368.4L603.1 371.1L602.3 367.7L607.3 366.6L608.0 365.9ZM599.3 368.1L599.7 368.8L598.7 368.3L599.3 368.1ZM600.8 368.6L601.0 368.7L600.7 368.8L600.8 368.6ZM606.2 370.4L606.1 370.8L605.9 370.5L606.2 370.4ZM605.5 370.6L605.0 371.0L605.0 370.6L605.5 370.6ZM603.6 371.6L603.8 372.6L603.0 371.7L603.6 371.6ZM578.9 314.8L579.6 315.9L578.1 315.9L578.4 315.0L578.9 314.8ZM596.2 317.7L595.7 317.5L596.0 317.3L596.2 317.7ZM593.1 317.7L594.1 318.1L593.4 319.1L592.2 317.8L593.1 317.7ZM535.8 347.4L535.4 346.4L531.3 345.6L529.7 346.8L525.2 345.9L521.9 344.2L519.8 341.2L524.9 337.8L534.7 337.2L538.2 338.3L541.2 335.7L544.4 339.8L547.0 340.3L547.9 343.6L549.3 344.2L552.4 342.9L554.5 344.7L557.0 348.9L559.9 350.6L560.5 353.0L557.1 355.9L554.0 356.1L552.2 357.8L550.0 356.4L546.1 356.2L542.8 353.8L541.5 350.6L538.0 349.4L535.8 347.4ZM650.4 316.0L636.5 318.3L634.8 317.5L636.4 314.8L639.6 313.3L636.3 314.4L637.2 311.8L638.8 311.1L640.5 311.2L640.6 312.7L650.9 311.7L651.9 315.3L650.4 316.0ZM628.3 315.1L629.4 315.0L630.0 316.8L633.0 312.6L634.6 312.5L634.1 315.5L630.7 320.0L628.8 320.1L628.4 317.5L625.8 317.9L626.9 315.9L628.3 315.1ZM635.2 314.4L634.7 315.4L634.4 314.8L635.2 314.4ZM623.8 316.3L624.0 317.4L623.6 317.1L623.8 316.3ZM625.2 317.6L625.1 318.0L625.0 317.7L625.2 317.6ZM633.8 318.6L633.6 319.0L633.4 318.6L633.8 318.6ZM575.1 326.7L574.8 327.8L574.6 327.4L575.1 326.7ZM608.3 317.1L606.5 317.3L606.3 316.4L609.5 313.4L613.5 314.2L612.6 316.8L608.3 317.1ZM606.8 318.7L603.9 321.5L603.9 319.8L605.9 317.8L610.0 317.8L608.1 318.9L606.8 318.7Z"},{"name":"PAPUA","d":"M982.7 191.0L984.0 192.2L983.1 194.2L989.4 193.7L989.4 272.6L985.8 280.4L987.2 284.2L989.0 285.0L989.4 332.3L987.1 331.6L975.6 318.4L967.7 312.5L967.2 311.2L969.7 309.9L969.5 306.9L969.4 309.9L966.5 310.8L962.0 310.6L954.1 312.9L951.6 310.6L948.3 310.9L946.6 312.8L945.9 311.9L946.9 314.8L945.4 315.2L943.3 311.0L945.2 310.1L945.0 306.8L947.2 305.4L949.3 299.3L946.0 298.3L944.0 294.1L939.8 291.5L950.4 292.3L952.0 290.5L952.5 292.1L955.8 292.2L954.3 290.8L955.4 290.0L958.3 293.3L960.6 291.0L961.0 293.5L964.5 289.1L961.5 293.3L960.3 290.5L958.8 292.9L957.6 292.9L956.9 290.4L945.5 282.7L943.3 282.7L943.1 280.7L934.7 273.7L933.3 267.4L930.9 263.4L934.1 262.4L937.0 263.6L934.6 262.9L934.1 260.3L934.2 262.1L933.0 262.5L929.0 261.8L930.5 259.8L934.5 258.7L932.8 258.6L933.4 257.8L932.1 257.2L933.0 256.4L930.7 257.4L930.5 256.1L931.9 255.9L930.7 254.6L931.5 253.4L929.8 254.9L929.1 254.0L928.2 256.0L927.3 256.0L927.5 254.2L927.4 255.8L926.7 255.4L926.8 252.9L929.0 252.9L931.6 250.4L928.5 252.6L928.0 251.5L929.4 249.7L928.2 252.6L926.7 252.7L926.1 254.0L925.3 252.5L928.7 250.4L928.6 248.8L928.7 250.4L925.2 252.6L926.1 255.4L922.9 252.4L927.4 249.6L926.5 248.7L928.1 246.8L925.4 250.7L924.5 248.9L923.6 251.5L923.6 250.4L922.1 250.7L923.8 248.3L926.0 247.7L924.5 247.6L920.0 252.7L921.4 248.5L924.9 246.5L924.1 245.6L924.7 246.7L922.0 247.4L921.7 249.6L920.7 250.4L920.8 249.0L920.6 250.6L919.6 250.6L918.8 249.0L922.5 245.8L920.2 247.6L919.9 246.6L921.9 245.7L919.9 246.5L920.4 245.7L919.2 245.9L920.2 244.9L918.5 246.1L919.1 244.6L916.4 247.0L916.6 245.3L918.7 244.5L917.3 244.3L918.7 241.8L916.9 242.1L917.7 243.0L916.7 242.6L916.9 244.9L916.0 247.2L914.8 246.4L914.8 247.8L913.9 246.2L916.3 243.7L915.3 244.8L914.9 241.8L915.2 244.8L913.4 247.2L914.0 242.3L911.4 245.6L910.4 244.9L913.3 242.8L912.5 242.6L913.6 241.3L912.1 242.8L911.3 241.4L912.1 243.1L910.5 243.7L910.3 245.2L909.3 244.5L911.1 242.3L909.8 241.8L909.1 243.8L909.2 240.8L908.1 244.9L907.1 242.7L908.8 241.4L907.6 242.0L907.5 239.9L906.5 244.2L905.5 243.4L907.0 241.3L906.2 240.2L905.6 243.0L904.4 242.4L903.8 243.4L902.7 242.4L904.5 241.1L901.8 241.7L901.8 240.1L900.7 240.8L901.1 238.8L901.0 241.0L899.7 241.1L900.5 240.1L898.8 239.1L899.7 240.3L898.3 240.5L899.3 240.7L898.8 242.0L897.7 240.3L895.1 240.4L896.0 239.9L895.3 239.1L894.6 240.2L892.7 237.9L892.2 238.9L889.9 237.6L890.4 236.9L887.9 237.5L887.9 235.8L887.4 237.4L886.0 236.9L887.0 236.5L885.8 236.7L886.5 235.2L885.4 236.7L884.9 235.3L884.1 235.9L884.5 233.0L883.4 235.1L881.0 233.7L869.3 232.2L866.0 233.3L859.1 228.8L867.2 218.2L844.8 210.5L846.3 207.2L849.5 204.5L849.5 202.3L854.5 198.4L856.2 201.9L858.6 199.7L857.5 204.9L858.8 205.5L858.8 207.5L860.3 207.9L860.9 206.9L861.1 208.8L864.1 210.3L872.4 209.7L874.7 206.0L878.4 204.5L877.3 203.5L882.2 200.6L881.0 199.3L883.4 195.6L888.6 192.8L891.3 185.5L894.0 184.9L895.7 186.6L898.0 185.7L898.9 186.6L900.1 184.6L902.4 184.8L903.0 183.4L905.0 185.2L905.6 184.4L904.4 183.6L905.5 182.9L907.4 183.8L906.8 183.0L908.2 183.5L908.4 182.3L909.7 183.3L909.9 181.7L908.8 181.5L909.7 181.1L908.3 180.7L909.9 180.6L908.1 179.5L909.7 178.8L907.5 176.0L909.1 175.5L910.6 177.2L914.4 177.4L911.3 174.3L914.0 173.7L914.3 172.5L915.3 173.9L914.4 172.3L916.6 171.4L917.9 172.9L916.9 171.3L919.7 170.1L921.1 171.2L920.0 169.8L922.1 169.4L924.1 169.3L924.9 170.9L923.7 171.4L924.8 171.1L925.5 173.1L924.6 173.5L925.5 172.5L928.3 173.3L925.1 170.8L932.8 174.8L939.4 176.3L943.9 180.1L946.8 180.3L962.8 188.5L971.1 187.7L975.3 190.8L975.5 189.3L981.1 190.2L982.7 191.0ZM925.3 171.7L926.0 172.7L925.1 172.0L925.3 171.7ZM925.1 172.0L925.8 172.5L925.0 171.7L925.1 172.0ZM940.8 171.9L941.4 172.9L940.7 172.6L940.8 171.9ZM942.5 173.7L942.5 174.6L942.3 173.9L942.5 173.7ZM947.0 179.4L947.2 179.8L946.8 179.5L947.0 179.4ZM917.7 246.4L919.0 245.9L920.0 247.6L918.5 249.3L916.0 248.3L918.4 247.2L918.4 246.3L917.1 246.9L917.7 246.4ZM919.7 246.3L919.8 247.1L919.5 246.9L919.7 246.3ZM916.5 247.0L917.7 247.4L915.9 247.7L916.5 247.0ZM920.8 247.0L919.3 248.6L920.4 246.9L920.8 247.0ZM920.6 252.3L922.2 250.8L923.2 251.7L922.1 252.7L920.6 252.3ZM928.9 254.5L930.6 254.2L931.4 257.5L929.4 260.2L927.4 260.6L926.5 257.4L928.4 256.1L928.9 254.5ZM933.5 258.1L930.3 259.3L930.7 257.7L932.7 257.4L933.5 258.1ZM879.2 161.0L877.2 154.8L875.4 157.2L871.6 154.1L873.2 156.9L869.4 151.7L874.4 153.2L875.4 152.4L877.6 154.0L879.9 153.2L884.1 156.5L886.6 160.5L888.4 159.9L891.2 161.2L886.0 163.8L883.0 162.6L880.3 163.3L878.8 161.7L879.2 161.0ZM858.8 162.4L857.3 160.3L858.4 158.1L860.5 158.9L860.1 161.2L861.1 159.8L860.7 162.3L858.8 162.4ZM896.1 162.7L895.8 163.3L895.7 162.6L896.1 162.7ZM895.7 163.6L895.5 164.4L895.2 163.8L895.7 163.6ZM895.8 164.4L895.9 165.0L895.6 164.8L895.8 164.4ZM896.8 165.1L897.1 166.9L895.8 166.4L896.2 164.8L896.8 165.1ZM941.2 279.8L943.0 281.0L943.2 282.8L945.6 283.6L943.3 283.6L939.8 281.4L939.8 279.6L941.2 279.8ZM939.9 282.0L942.5 283.7L940.0 284.5L940.4 283.2L939.1 281.5L939.9 282.0ZM954.2 291.3L956.0 291.9L952.6 291.9L951.9 290.2L950.6 291.8L943.7 290.6L938.6 287.5L937.6 285.5L945.4 283.9L954.1 288.3L954.9 289.7L954.0 290.8L954.2 291.3ZM963.4 289.6L963.1 289.8L963.5 289.4L963.4 289.6ZM941.8 290.8L940.7 289.7L941.7 290.3L941.8 290.8ZM942.4 290.7L942.2 290.4L942.7 290.6L942.4 290.7ZM946.6 291.5L947.4 292.0L946.0 291.4L946.6 291.5ZM960.7 291.6L961.2 293.4L960.4 292.0L960.7 291.6ZM866.8 169.9L867.1 170.7L868.9 169.8L867.0 170.9L863.7 170.2L864.2 169.4L866.4 170.4L866.8 169.9ZM887.0 178.1L877.9 175.5L877.3 174.2L871.8 174.1L870.4 172.4L899.8 175.3L902.2 176.5L901.0 177.2L887.9 178.9L887.0 178.1ZM879.0 176.3L878.8 177.0L878.6 176.6L879.0 176.3ZM904.8 177.3L905.4 178.1L903.2 177.4L904.8 177.3ZM889.0 178.5L889.3 179.5L888.4 179.5L889.0 178.5ZM890.0 178.9L890.7 180.1L890.0 179.5L890.0 178.9ZM959.2 291.5L959.0 292.5L959.4 291.3L959.2 291.5ZM930.6 297.1L941.5 295.1L945.0 298.6L948.7 299.4L946.7 305.3L944.6 306.4L945.0 310.1L940.0 311.7L935.5 316.0L932.8 316.6L932.6 314.9L931.9 316.9L922.8 316.5L918.2 318.0L919.3 312.2L926.6 300.0L930.6 297.1ZM969.3 308.5L969.6 309.5L969.2 309.0L969.3 308.5ZM944.5 316.8L937.3 315.3L940.0 312.1L942.9 311.5L943.5 314.1L945.0 314.9L944.5 316.8ZM943.7 312.9L944.5 314.2L943.6 313.9L943.7 312.9ZM943.6 313.9L944.7 314.5L944.3 314.6L943.6 313.9ZM945.5 315.3L946.4 315.7L945.8 315.8L945.5 315.3ZM935.7 316.2L931.1 317.4L936.2 315.4L935.7 316.2ZM945.2 315.4L946.2 316.3L945.2 316.2L945.2 315.4ZM887.5 236.7L887.5 237.3L887.5 236.5L887.5 236.7ZM897.5 241.0L896.8 241.0L897.3 240.7L897.5 241.0ZM899.7 241.2L899.5 241.9L899.3 241.6L899.7 241.2ZM901.1 241.1L902.2 242.0L900.7 242.9L900.2 241.1L901.1 241.1ZM905.7 241.8L905.5 242.4L905.4 241.5L905.7 241.8ZM913.0 243.8L914.4 243.2L912.9 247.0L911.4 245.8L913.0 243.8ZM917.4 243.8L917.4 245.2L916.5 244.4L917.4 243.8ZM915.1 248.4L915.0 248.9L914.8 248.6L915.1 248.4ZM857.8 195.4L858.8 195.9L857.5 196.0L857.8 195.4ZM878.1 200.7L876.8 201.6L877.2 200.9L878.1 200.7ZM872.2 158.1L872.5 158.9L872.2 158.8L872.2 158.1ZM912.0 175.8L912.8 176.3L911.9 177.4L909.4 175.4L911.6 174.4L912.0 175.8ZM906.9 178.5L906.2 177.2L907.2 176.0L907.7 179.4L906.9 178.5ZM910.1 176.4L911.1 177.1L910.6 177.1L910.1 176.4ZM907.8 178.0L908.0 176.7L908.8 178.5L907.8 178.0ZM908.1 178.3L909.7 178.9L908.0 179.6L908.1 178.3ZM908.5 180.3L908.8 180.5L908.4 180.6L908.5 180.3ZM888.7 185.6L888.3 185.7L888.5 185.5L888.7 185.6Z"},{"name":"PAPUA BARAT","d":"M845.4 175.4L844.0 179.8L843.6 177.2L844.8 175.3L845.4 175.4ZM854.5 198.4L849.5 202.3L849.5 204.5L846.3 207.2L844.8 210.5L867.2 218.2L859.1 228.8L855.8 227.6L856.2 226.0L853.8 225.9L854.3 224.5L854.2 225.5L855.8 224.6L854.5 223.0L856.7 222.2L857.8 223.1L856.8 222.0L858.9 223.4L860.9 222.3L854.8 221.7L851.2 224.4L849.8 221.7L847.5 220.9L847.9 222.7L846.2 222.1L847.5 223.9L846.6 224.4L844.0 221.2L842.7 221.2L844.5 219.9L843.3 217.9L839.6 220.5L836.9 214.0L835.6 214.4L836.5 217.6L835.1 215.9L833.8 216.4L834.2 215.0L832.4 212.3L834.1 211.5L833.4 207.0L834.1 205.8L835.7 206.7L836.9 202.5L838.8 204.7L837.2 201.5L838.5 200.7L836.1 200.1L836.0 202.7L832.9 204.8L832.6 211.0L830.6 211.2L829.5 208.7L829.4 211.5L827.4 209.3L828.2 211.3L830.9 211.8L831.5 214.3L827.9 216.9L829.1 213.1L828.1 213.0L828.4 214.8L826.2 213.7L824.1 214.8L826.1 213.9L827.7 214.8L827.5 218.0L828.9 220.4L826.6 221.3L824.2 217.9L825.2 219.3L824.3 220.2L827.7 221.4L826.1 223.1L825.3 222.3L826.2 223.2L824.5 225.0L820.8 224.6L818.2 225.7L815.1 222.2L813.3 215.7L816.8 215.8L817.9 213.9L816.9 212.0L815.2 211.6L815.8 208.5L814.3 207.6L813.4 209.3L812.0 208.9L810.6 207.0L811.6 206.2L805.3 200.8L802.3 200.1L799.7 201.3L799.1 199.8L797.5 200.5L798.7 198.7L797.4 198.5L799.2 197.6L796.8 197.2L802.1 195.8L800.2 195.6L802.1 194.7L807.2 195.3L807.1 196.5L808.2 195.3L810.2 195.5L813.1 197.8L814.7 197.7L820.1 191.4L823.7 189.6L825.6 190.3L825.7 191.7L823.6 192.5L825.7 192.5L826.0 190.8L826.9 191.6L826.1 192.2L827.3 192.1L827.1 195.2L825.5 194.6L824.0 196.2L827.4 195.1L828.2 197.0L827.3 195.8L828.2 191.6L828.2 195.3L829.5 196.3L828.5 194.6L830.3 195.5L830.5 193.8L832.5 194.5L831.3 193.0L832.7 193.2L832.8 192.2L833.0 194.0L833.3 192.7L833.5 195.9L832.0 196.3L832.9 196.6L832.0 198.0L832.9 199.3L833.0 196.8L834.3 197.5L833.3 196.5L833.8 194.0L835.2 194.1L835.7 196.9L836.1 194.7L836.4 196.5L836.9 195.0L838.9 196.0L837.2 195.8L838.2 195.3L837.1 195.0L838.1 194.7L837.5 193.8L837.1 194.9L836.2 194.5L835.8 191.2L837.7 191.7L836.0 191.1L836.6 190.3L839.7 190.8L840.7 193.2L839.3 189.8L841.1 188.1L839.5 188.3L840.4 186.0L839.1 185.0L840.7 184.2L839.1 184.3L839.7 182.5L838.3 183.7L839.3 181.8L838.4 183.1L838.5 182.1L837.8 183.2L837.1 182.3L835.8 184.1L836.5 183.0L834.8 183.0L835.5 184.3L834.7 183.5L833.2 185.2L833.5 183.8L832.4 185.8L831.4 184.9L833.4 183.7L831.3 184.6L828.8 182.9L831.5 184.3L831.0 185.6L830.0 185.8L830.7 184.5L829.3 184.8L829.3 183.5L829.5 185.8L828.0 185.6L828.2 184.2L828.3 185.5L826.1 185.5L825.0 184.2L818.3 187.1L815.4 186.0L811.7 187.0L810.1 184.9L804.6 186.9L800.9 184.0L800.7 182.6L800.7 183.8L798.7 182.4L803.7 179.5L799.7 181.3L799.7 178.1L801.5 178.7L805.1 176.9L801.5 178.7L799.7 178.1L798.8 181.4L797.2 180.1L798.6 179.4L797.3 179.0L797.3 177.6L799.4 177.6L796.8 177.9L798.2 176.7L796.2 176.9L797.8 175.3L798.7 176.4L798.4 174.8L799.8 176.4L798.7 175.1L799.8 174.5L798.0 174.2L801.0 171.8L798.9 173.3L800.1 171.7L799.5 170.6L799.0 173.7L796.0 174.9L797.0 173.5L795.3 173.2L797.9 171.4L797.6 168.5L797.2 171.3L795.1 172.0L796.2 170.7L795.2 170.4L793.8 172.7L794.1 168.7L793.6 171.3L791.4 171.4L792.4 169.2L790.5 168.2L792.2 167.4L791.9 165.8L790.8 169.5L790.1 167.2L790.2 169.1L787.8 169.8L788.0 167.1L789.1 166.9L788.7 164.7L789.0 166.9L787.5 167.6L787.6 169.7L786.1 169.0L786.2 170.5L784.7 169.2L786.2 168.1L784.9 168.3L785.9 167.0L784.7 168.1L784.0 165.7L783.5 167.1L782.5 166.3L783.3 167.5L782.1 167.5L783.8 168.9L782.6 170.3L775.1 168.7L777.7 165.0L780.4 164.3L781.9 161.3L783.0 157.8L781.4 155.8L787.4 153.8L787.4 154.8L794.6 153.3L801.5 147.4L806.8 145.6L813.2 146.0L814.9 147.2L814.2 148.8L814.9 147.2L818.2 147.9L827.6 154.1L839.8 153.6L843.3 156.7L841.5 156.8L840.6 158.7L846.4 166.9L845.0 168.3L844.7 171.3L841.9 173.9L843.8 180.1L842.6 181.9L844.1 188.2L847.2 191.7L850.2 199.2L851.6 197.7L850.2 192.6L852.5 191.2L851.3 190.9L853.8 191.0L854.5 193.9L854.5 198.4ZM847.8 184.4L847.1 182.5L848.7 180.7L849.2 182.4L847.8 184.4ZM856.1 181.2L856.1 182.0L855.8 181.4L856.1 181.2ZM852.7 188.0L852.4 190.3L851.1 188.5L852.4 188.7L852.4 186.8L852.7 188.0ZM848.5 192.0L848.7 193.1L848.3 192.6L848.5 192.0ZM807.9 194.1L808.7 194.8L807.3 194.5L807.9 194.1ZM804.0 201.8L801.5 201.5L804.7 202.0L804.0 201.8ZM807.3 204.2L809.5 205.3L807.9 204.9L807.3 204.2ZM813.7 211.2L813.7 210.5L813.9 211.0L813.7 211.2ZM813.0 211.9L812.8 213.0L811.3 210.8L812.0 210.7L813.0 211.9ZM813.9 211.6L813.8 212.3L813.6 211.5L813.9 211.6ZM835.7 203.3L836.0 204.5L835.3 203.8L835.7 203.3ZM832.2 211.1L832.3 211.8L831.9 211.3L832.2 211.1ZM838.6 220.4L837.7 217.4L838.8 220.7L838.6 220.4ZM841.5 221.8L844.9 224.0L842.2 223.1L841.5 221.8ZM855.0 222.1L856.1 222.4L855.2 222.6L855.0 222.1ZM858.4 222.4L858.7 223.1L858.1 222.6L858.4 222.4ZM849.2 224.0L848.1 224.1L848.4 222.9L850.0 223.8L849.2 224.0ZM829.9 227.7L832.7 230.1L830.8 228.4L828.9 228.8L826.2 227.3L825.9 225.5L829.9 227.7ZM782.2 158.3L781.8 158.5L782.1 158.0L782.2 158.3ZM842.5 157.2L842.8 157.9L842.3 157.4L842.5 157.2ZM752.4 131.4L753.7 132.3L752.8 132.4L752.4 131.4ZM756.1 134.3L756.9 134.9L755.3 134.5L756.1 134.3ZM756.9 135.1L757.0 135.6L756.7 135.4L756.9 135.1ZM760.6 136.0L761.2 136.2L760.6 136.2L760.6 136.0ZM773.9 137.4L774.6 137.9L774.1 138.0L773.9 137.4ZM757.5 139.8L757.2 138.3L758.3 138.0L758.1 140.4L757.5 139.8ZM764.5 142.6L763.3 142.2L764.4 141.1L761.7 142.0L761.6 140.3L762.8 140.0L763.0 141.2L763.2 139.9L764.1 140.7L767.4 139.1L771.7 139.4L771.1 138.8L772.3 138.4L775.9 139.6L777.6 138.7L777.3 139.6L783.0 141.7L783.8 144.5L781.7 146.4L778.8 144.9L775.7 145.8L773.8 143.3L772.3 143.4L770.2 140.0L768.5 140.0L770.9 144.6L774.9 144.8L775.4 145.8L774.0 147.3L770.8 147.7L769.8 144.5L767.6 145.1L767.1 147.5L766.5 143.6L764.6 144.5L760.0 142.7L763.7 143.2L764.5 142.6ZM760.8 141.5L761.6 142.4L760.8 142.3L760.8 141.5ZM760.1 144.2L760.2 145.1L759.6 144.8L760.1 144.2ZM773.8 144.6L774.5 144.9L773.5 144.8L773.8 144.6ZM765.9 144.7L766.5 145.1L765.9 145.4L765.9 144.7ZM769.5 144.8L769.6 145.4L769.3 145.2L769.5 144.8ZM758.5 144.9L758.5 145.3L758.2 145.0L758.5 144.9ZM766.5 148.3L768.4 146.7L770.2 147.8L767.9 149.7L767.6 148.2L765.0 149.2L766.2 148.7L765.5 147.6L766.5 148.3ZM752.2 147.2L753.7 147.1L752.6 148.9L752.2 147.2ZM761.1 150.3L761.2 150.8L760.6 149.9L761.1 150.3ZM774.2 154.7L775.0 155.0L773.4 156.6L763.6 157.9L765.6 155.1L766.9 156.2L767.4 155.2L772.7 155.9L772.4 154.3L773.4 154.6L774.2 154.7ZM772.0 154.4L771.8 155.4L771.5 154.8L772.0 154.4ZM771.2 154.9L770.6 154.8L771.3 154.6L771.2 154.9ZM766.5 155.3L766.8 155.9L766.2 155.7L766.5 155.3ZM769.0 158.9L774.5 157.2L775.2 158.3L777.7 158.1L778.5 159.8L776.0 167.1L773.6 166.9L771.4 164.9L769.8 161.9L770.6 161.3L769.0 158.9ZM769.1 158.2L769.4 158.5L768.9 158.4L769.1 158.2ZM778.3 161.2L779.7 159.5L779.0 161.3L778.3 161.2ZM779.3 160.7L779.2 161.2L778.9 160.8L779.3 160.7ZM780.3 161.1L780.0 161.3L780.3 160.9L780.3 161.1ZM750.3 163.2L754.9 163.2L751.8 164.9L752.9 163.8L749.6 163.7L750.3 163.2ZM749.9 162.9L748.4 163.8L748.4 163.4L749.9 162.9ZM741.6 163.0L742.0 163.6L741.4 163.5L741.6 163.0ZM742.4 163.0L742.2 163.8L742.1 163.3L742.4 163.0ZM743.9 163.2L743.6 163.7L743.5 163.2L743.9 163.2ZM748.1 165.1L748.2 165.5L747.9 165.4L748.1 165.1ZM750.1 165.2L750.4 165.4L750.0 165.5L750.1 165.2ZM732.5 167.6L732.3 168.1L732.2 167.8L732.5 167.6ZM759.3 182.2L752.4 180.4L749.3 178.3L756.6 175.0L763.2 174.0L762.8 175.3L765.0 177.3L762.6 179.2L765.5 181.0L763.2 181.8L763.9 180.9L762.6 179.9L761.0 182.0L759.3 182.2ZM747.3 176.0L747.4 176.5L747.1 176.2L747.3 176.0ZM748.0 176.7L748.0 177.4L747.7 177.1L748.0 176.7ZM767.0 180.6L768.1 181.0L766.9 180.8L767.0 180.6ZM768.4 180.9L768.9 181.0L768.1 181.0L768.4 180.9ZM764.1 185.2L765.8 185.6L764.0 185.4L764.1 185.2ZM797.0 177.4L797.3 179.2L796.3 178.1L797.0 177.4ZM799.7 179.9L799.2 181.4L799.1 180.1L799.7 179.9ZM777.8 163.7L777.6 164.1L777.4 163.8L777.8 163.7ZM780.4 163.8L779.7 164.3L780.5 163.6L780.4 163.8ZM783.8 167.1L783.4 168.6L783.0 167.2L783.8 167.1ZM791.8 168.7L791.9 170.7L790.2 171.2L789.1 170.0L790.8 169.5L791.8 168.7ZM837.7 183.6L837.0 183.1L837.5 183.0L837.7 183.6ZM838.2 183.1L837.7 183.7L837.7 183.2L838.2 183.1ZM839.0 183.7L837.7 184.3L837.9 183.9L839.0 183.7ZM837.3 184.2L837.2 185.0L836.9 184.3L837.3 184.2ZM834.6 184.6L833.5 185.8L834.7 185.2L834.6 184.6ZM836.8 186.0L838.4 185.0L838.1 186.5L837.2 186.9L837.3 185.9L836.5 187.1L836.3 186.0L836.8 186.0ZM838.7 184.8L838.7 186.7L838.6 186.0L838.7 184.8ZM832.4 185.8L831.8 185.7L832.0 185.5L832.4 185.8ZM840.1 186.5L836.7 187.9L840.2 185.7L840.1 186.5ZM834.6 186.2L834.5 186.6L834.3 186.3L834.6 186.2ZM838.5 186.6L838.8 187.3L837.6 187.0L838.5 186.6ZM839.2 187.8L840.1 189.1L837.3 188.5L839.2 187.8ZM836.5 188.0L837.2 188.2L836.3 188.4L836.5 188.0ZM839.3 190.8L837.0 189.3L839.1 189.3L839.9 191.0L839.3 190.8ZM834.6 190.1L836.9 189.6L837.6 190.6L835.5 191.1L834.6 190.1ZM832.3 191.5L831.1 191.8L829.5 189.7L831.9 190.6L832.3 191.5ZM828.3 191.2L828.2 191.5L828.1 191.2L828.3 191.2ZM833.2 191.3L833.3 192.6L832.1 191.8L833.2 191.3ZM834.0 191.5L835.1 192.7L834.2 192.5L834.0 191.5ZM829.1 192.8L829.7 194.5L829.0 194.1L829.1 192.8ZM835.4 191.8L836.2 194.3L835.3 192.6L835.4 191.8ZM831.0 191.9L830.4 193.8L829.8 192.5L831.0 191.9ZM835.9 194.2L835.1 195.1L833.9 192.3L835.2 192.7L835.9 194.2ZM827.7 192.5L828.0 194.5L827.9 193.9L827.7 192.5ZM827.8 194.0L827.6 195.0L827.4 193.2L827.8 194.0ZM830.1 193.5L830.1 194.6L829.8 193.8L830.1 193.5Z"},{"name":"RIAU","d":"M157.7 157.9L156.3 159.2L152.1 158.2L146.0 152.3L139.8 149.0L138.2 145.0L136.3 146.2L135.0 145.5L132.6 139.2L135.0 138.0L134.3 132.6L129.9 134.4L126.6 133.4L125.0 130.8L123.0 131.2L121.4 125.9L122.5 123.2L119.8 121.1L118.8 118.3L120.5 117.0L119.2 115.1L120.9 114.4L118.2 109.3L123.7 108.2L123.2 106.9L125.1 107.4L126.3 106.1L126.0 100.7L123.1 99.7L124.7 91.5L123.6 88.1L124.0 84.5L126.2 89.9L130.8 93.4L133.5 94.0L133.8 89.6L139.4 89.7L144.8 94.9L147.0 102.2L150.2 103.5L154.3 102.9L162.7 109.0L162.2 114.4L163.4 112.1L164.5 117.1L168.2 121.0L171.7 122.6L178.6 122.8L183.1 128.6L171.8 134.7L170.1 133.0L168.2 133.9L169.9 133.2L172.0 135.0L174.3 133.0L177.9 133.0L187.8 126.7L193.3 129.9L193.6 132.0L194.7 131.1L196.9 133.4L198.1 138.5L193.9 138.4L192.2 140.0L190.6 139.3L191.5 141.4L189.9 142.7L191.9 142.8L190.3 145.8L192.5 142.9L195.9 143.7L197.6 145.6L192.6 146.5L193.7 147.4L192.6 148.9L189.4 149.3L190.0 151.4L188.8 152.2L189.8 152.5L188.6 153.1L191.2 154.7L181.0 154.4L173.2 162.2L167.7 160.2L166.1 157.8L163.9 158.5L159.7 157.0L157.7 157.9ZM185.3 123.4L187.2 126.6L184.5 127.7L184.0 124.2L185.3 123.4ZM183.2 124.1L183.1 124.9L182.8 124.4L183.2 124.1ZM182.3 126.3L181.6 124.3L182.6 125.7L182.3 126.3ZM180.1 130.8L179.7 131.7L179.5 131.1L180.1 130.8ZM147.1 99.2L146.4 97.7L147.8 94.5L149.3 95.2L152.2 93.1L154.8 96.0L155.0 97.1L153.8 97.0L154.8 97.3L153.9 100.8L151.4 102.4L148.0 101.6L147.1 99.2ZM146.9 99.4L146.9 100.9L146.7 100.2L146.9 99.4ZM160.4 104.1L169.4 106.0L170.4 111.6L165.8 107.9L161.4 106.8L159.5 104.6L160.4 104.1ZM169.0 115.3L169.8 118.3L167.8 118.9L165.5 117.0L164.1 108.2L165.8 108.2L169.9 112.9L169.0 115.3ZM173.6 116.2L175.2 113.7L178.2 114.2L180.9 115.5L184.1 120.3L182.4 120.6L176.7 117.2L177.1 116.0L178.3 116.1L177.8 115.2L176.1 116.6L172.9 116.8L173.6 116.2ZM171.0 114.3L172.5 116.9L170.2 118.2L169.9 114.3L171.0 114.3ZM178.0 115.8L177.1 115.9L177.5 115.5L178.0 115.8ZM178.8 121.7L171.5 121.9L168.3 119.4L175.3 116.6L172.9 119.1L174.1 117.9L176.2 119.0L174.4 118.4L176.1 116.9L181.8 120.8L181.9 123.0L180.7 123.6L178.8 121.7ZM182.8 120.9L182.6 121.4L182.4 120.8L182.8 120.9ZM183.1 121.3L182.7 123.0L182.6 121.8L183.1 121.3ZM192.5 128.8L193.4 129.6L192.7 129.3L192.5 128.8ZM194.2 138.7L194.6 139.4L193.6 138.8L194.2 138.7ZM195.0 139.4L194.4 138.7L195.3 139.1L195.0 139.4ZM191.1 139.5L192.1 140.1L190.7 139.3L191.1 139.5ZM132.7 92.6L132.8 90.2L133.7 93.2L132.7 92.6ZM130.6 91.1L131.6 92.3L130.5 91.6L130.6 91.1Z"},{"name":"SULAWESI BARAT","d":"M524.8 212.5L521.2 214.2L519.3 213.3L516.5 204.4L517.8 203.9L518.9 199.8L516.4 199.3L516.1 197.6L517.4 194.0L519.4 195.0L524.3 190.9L523.9 187.7L525.8 180.8L528.3 180.1L529.0 177.8L527.3 174.3L528.2 172.1L527.7 165.4L533.1 156.6L534.3 162.3L533.7 165.1L530.3 167.2L536.1 169.2L535.3 170.3L537.8 174.3L537.4 175.7L539.7 176.0L540.6 177.3L538.7 181.8L534.3 185.2L534.0 187.1L536.5 189.2L536.2 192.6L537.5 195.3L535.0 197.0L531.8 196.6L534.7 204.5L529.7 206.2L531.7 212.4L527.8 211.2L526.3 212.3L524.8 212.5ZM519.0 193.9L518.9 194.8L518.7 194.2L519.0 193.9Z"},{"name":"SULAWESI SELATAN","d":"M533.9 235.2L534.9 222.6L533.7 222.9L533.8 224.3L530.9 217.3L532.3 214.3L529.6 206.7L534.7 204.7L531.8 196.6L535.0 197.0L537.5 195.4L536.2 192.6L536.5 189.2L534.0 187.1L534.7 184.3L542.5 180.1L549.7 182.0L551.1 178.4L557.6 185.4L563.3 186.0L579.1 192.7L580.9 196.0L577.8 199.5L570.3 203.6L567.5 201.4L566.0 197.3L563.2 198.3L565.9 196.1L564.6 195.6L565.0 193.2L564.0 195.3L559.6 193.8L554.6 195.1L552.2 198.4L546.6 201.5L548.0 205.5L551.5 207.8L550.6 212.9L552.0 217.9L550.2 220.2L549.6 225.6L550.9 230.5L550.0 232.5L552.3 237.4L550.7 241.3L549.0 242.0L548.3 247.8L551.2 252.0L552.6 258.0L549.3 255.5L545.3 257.2L541.2 256.3L538.0 259.6L535.0 259.2L534.3 257.7L533.2 258.5L532.2 256.1L530.6 257.4L528.8 251.6L530.0 247.1L531.9 247.2L530.8 246.5L532.2 242.3L533.2 242.4L531.5 239.4L533.9 235.2ZM551.7 258.3L551.7 258.8L551.5 258.5L551.7 258.3ZM503.3 247.4L502.9 247.4L503.1 247.1L503.3 247.4ZM498.5 252.2L498.9 253.4L498.4 253.0L498.5 252.2ZM527.9 255.6L527.0 254.4L528.1 255.3L527.2 255.2L527.9 255.6ZM552.3 274.3L552.8 272.0L551.6 269.8L553.0 261.0L554.6 267.2L552.9 276.6L552.3 274.3ZM551.7 268.2L551.4 270.4L550.9 269.8L551.7 268.2ZM551.9 278.7L551.6 279.6L551.5 278.7L551.9 278.7ZM559.6 282.7L559.5 284.4L559.1 283.0L559.6 282.7ZM556.0 287.3L559.3 288.5L558.9 290.1L556.0 290.1L555.4 288.8L556.0 287.3ZM554.5 288.8L555.6 289.1L554.5 289.2L554.5 288.8ZM579.8 292.0L579.7 292.3L579.5 292.1L579.8 292.0ZM561.8 293.2L565.2 293.6L563.8 294.3L559.5 293.0L561.8 293.2ZM580.1 292.8L579.3 293.5L579.4 293.2L580.1 292.8ZM565.9 293.7L567.4 294.8L565.9 295.7L565.1 295.2L565.9 293.7ZM581.3 294.3L581.4 295.7L579.9 296.3L579.9 294.6L581.3 294.3Z"},{"name":"SULAWESI TENGAH","d":"M577.2 140.9L577.7 142.4L576.5 142.8L575.8 141.7L577.2 140.9ZM591.1 143.8L590.0 142.8L593.2 144.1L593.5 146.6L592.4 144.4L591.1 143.8ZM588.4 143.4L589.6 142.8L589.1 143.6L590.3 144.5L588.9 144.3L588.4 143.4ZM588.4 146.6L586.5 147.4L587.0 144.1L588.4 146.6ZM582.5 147.1L583.0 145.4L586.4 145.8L586.1 147.4L583.5 147.9L582.5 147.1ZM581.2 147.0L581.2 146.6L581.4 146.8L581.2 147.0ZM583.4 148.6L582.7 149.8L579.5 148.9L577.8 150.4L580.1 147.1L583.3 147.7L583.4 148.6ZM580.3 154.0L580.2 154.4L579.9 154.1L580.3 154.0ZM565.1 169.0L574.0 157.5L577.3 155.5L579.0 158.5L584.0 159.5L585.2 158.3L587.4 158.6L589.4 155.1L598.2 154.5L600.6 155.6L605.5 154.4L600.5 152.4L605.4 152.0L607.6 150.3L614.8 152.0L616.1 154.7L613.2 160.7L609.4 158.6L608.5 156.1L608.0 157.4L602.2 158.3L600.3 162.5L593.4 170.1L589.8 172.4L582.2 173.9L582.7 174.6L581.0 175.1L578.2 179.7L575.6 179.9L573.3 176.7L570.7 175.8L570.2 176.6L570.1 177.8L571.5 178.2L570.5 179.3L571.1 181.0L572.5 178.9L573.8 181.5L575.2 181.9L575.6 184.5L578.2 184.5L581.4 187.1L585.9 194.9L585.3 196.1L589.0 198.4L589.5 200.0L591.8 200.2L590.4 202.6L593.1 205.1L595.1 205.3L594.2 208.1L587.4 201.4L583.2 201.8L578.2 199.8L580.9 195.9L578.8 192.5L562.6 185.8L557.6 185.4L551.1 178.4L549.7 182.0L544.5 180.1L538.6 181.8L540.6 176.6L537.4 175.7L535.5 168.7L532.5 168.7L530.3 167.1L533.6 165.1L534.3 162.3L533.0 156.6L535.8 154.6L535.3 153.6L536.8 152.0L539.1 157.0L540.0 156.6L537.4 148.7L538.5 141.2L536.2 141.3L534.1 138.5L535.4 137.9L537.8 140.7L539.1 140.5L539.9 136.6L537.7 133.8L540.5 133.6L539.3 130.9L540.4 128.1L543.5 127.4L543.4 123.0L547.6 121.3L548.6 117.3L550.1 117.4L549.5 120.1L550.5 119.8L551.0 121.5L555.2 122.3L556.1 118.3L559.8 116.3L559.7 110.1L561.8 109.4L561.6 110.6L562.7 109.6L569.2 112.1L573.6 110.4L572.8 113.1L575.7 115.7L578.9 116.2L579.0 115.3L583.6 114.8L584.8 116.6L586.5 115.5L589.7 116.6L585.4 118.4L581.5 117.5L575.0 120.2L570.4 120.6L567.3 123.7L571.2 126.2L571.1 128.2L561.7 129.9L557.2 127.4L553.3 127.4L549.1 129.4L545.4 134.2L542.7 143.2L544.9 154.0L549.2 158.9L551.2 157.9L553.4 159.5L555.0 162.0L554.7 165.0L557.0 168.4L559.7 167.1L560.9 168.4L563.4 168.1L565.1 169.0ZM550.8 115.4L550.8 116.9L550.3 116.4L550.8 115.4ZM555.6 115.6L556.9 116.8L555.3 115.9L555.6 115.6ZM612.7 162.7L612.4 163.4L612.3 162.9L612.7 162.7ZM609.1 166.3L604.4 172.3L601.9 169.8L604.4 163.4L605.8 164.2L608.7 163.0L609.5 164.0L610.4 162.8L611.7 164.5L610.3 166.4L611.5 168.0L614.3 164.3L618.3 165.6L616.1 170.6L613.9 170.7L613.3 168.5L611.8 169.0L611.5 173.4L611.2 172.3L609.8 173.2L608.5 172.4L610.3 170.5L609.9 166.0L609.1 166.3ZM613.1 163.3L612.8 165.6L612.2 164.1L613.1 163.3ZM618.3 170.2L618.4 169.7L618.4 170.4L618.3 170.2ZM617.6 169.8L618.3 172.3L619.6 172.9L618.5 175.1L616.8 174.8L616.6 171.2L617.6 169.8ZM612.1 176.3L614.5 173.9L612.9 176.3L612.1 176.3ZM609.5 177.3L607.5 179.2L608.4 175.8L609.5 176.6L609.5 177.3ZM627.7 176.8L628.3 178.6L627.4 177.1L627.7 176.8ZM622.7 178.0L622.8 178.4L622.5 178.2L622.7 178.0ZM623.8 179.1L624.8 180.5L623.9 181.4L623.0 178.3L623.8 179.1ZM620.2 178.6L620.4 180.2L620.1 179.9L620.2 178.6ZM621.9 178.7L621.4 180.1L621.3 179.5L621.9 178.7ZM616.7 180.4L616.9 180.9L616.5 180.9L616.7 180.4ZM624.7 181.1L625.3 182.7L624.3 182.2L624.7 181.1ZM615.9 183.4L616.0 183.7L615.7 183.6L615.9 183.4ZM620.1 183.5L620.0 183.8L619.8 183.6L620.1 183.5ZM572.5 177.4L571.7 177.8L572.0 177.4L572.5 177.4ZM571.9 178.8L571.6 179.2L571.6 178.8L571.9 178.8ZM592.1 202.1L592.8 202.5L592.4 202.7L592.1 202.1ZM593.8 202.5L594.1 203.4L593.4 202.9L593.8 202.5ZM595.5 203.4L596.2 204.0L595.5 203.8L595.5 203.4ZM608.5 212.9L607.6 213.3L607.6 213.1L608.5 212.9ZM609.6 214.0L610.1 215.3L607.3 214.8L609.6 214.0Z"},{"name":"SULAWESI TENGGARA","d":"M618.8 249.9L620.1 251.0L619.5 252.9L617.5 250.1L618.8 249.9ZM634.7 251.5L635.1 252.1L634.7 252.0L634.7 251.5ZM616.4 251.6L617.9 252.7L616.6 252.3L616.4 251.6ZM619.4 253.2L620.1 253.8L618.8 253.5L619.4 253.2ZM622.8 254.4L623.1 254.9L622.6 254.8L622.8 254.4ZM622.8 256.8L621.1 254.7L623.8 257.5L622.8 256.8ZM624.3 256.4L625.2 257.1L624.1 257.2L624.3 256.4ZM627.7 261.0L625.4 260.2L627.3 260.3L627.7 261.0ZM625.6 261.7L626.5 262.1L626.0 262.2L625.6 261.7ZM627.5 263.4L629.2 266.5L627.3 265.2L627.5 263.4ZM597.3 256.0L599.0 251.6L602.4 249.4L600.8 248.4L602.2 245.3L600.8 245.8L602.8 243.0L603.6 234.6L608.1 231.2L607.4 232.4L610.8 236.5L610.9 241.7L608.8 238.1L608.8 240.4L607.0 238.7L604.7 248.5L605.4 249.3L607.1 247.6L611.1 251.0L609.2 253.2L606.7 254.1L605.9 253.1L603.7 254.4L603.1 255.8L604.2 255.7L604.1 256.7L602.2 259.5L601.1 258.3L600.5 259.4L600.3 257.9L598.6 259.5L597.3 256.0ZM576.6 240.2L574.6 239.1L573.7 236.5L576.8 224.8L571.3 223.2L570.0 220.8L569.2 221.7L569.1 219.8L567.4 219.7L561.3 213.4L561.0 211.3L565.3 206.5L565.5 199.3L563.6 198.6L565.6 197.3L569.9 203.6L577.8 199.5L583.2 201.8L587.5 201.4L592.3 206.2L591.0 208.8L593.4 210.8L592.8 212.0L592.1 210.1L590.2 210.5L591.5 212.1L590.3 212.1L591.1 213.8L589.3 215.1L592.4 218.0L594.5 218.1L596.3 221.2L599.3 221.2L597.8 223.0L596.4 222.8L599.1 223.6L599.5 226.8L602.9 226.7L601.4 224.6L604.0 226.1L603.9 232.2L602.8 233.0L599.2 230.6L601.2 232.5L600.9 234.3L599.8 233.4L599.4 234.2L597.6 231.9L595.9 233.1L587.4 234.2L585.5 237.2L586.1 239.7L587.7 240.8L585.6 242.4L578.7 241.6L577.2 240.0L576.6 240.2ZM583.1 253.3L580.7 250.3L582.8 245.9L583.7 247.0L584.5 246.1L586.7 249.6L585.9 249.8L586.2 254.5L584.1 255.2L583.1 253.3ZM598.7 252.2L596.4 254.1L596.6 250.3L595.0 253.3L593.2 251.8L594.6 251.4L592.1 253.1L590.8 251.6L591.9 247.2L593.9 246.6L591.9 241.0L593.1 239.2L595.2 239.2L599.4 236.4L600.9 237.2L600.5 241.4L601.5 242.6L597.6 248.1L598.5 249.0L597.4 250.0L598.7 250.3L598.7 252.2ZM600.1 250.3L599.6 251.0L600.3 249.8L600.1 250.3ZM586.7 254.7L586.9 255.2L586.6 255.1L586.7 254.7ZM596.2 255.3L595.5 256.7L595.1 256.0L596.2 255.3ZM596.0 258.0L596.7 259.3L594.8 259.5L596.0 258.0ZM599.8 269.8L600.6 270.4L599.3 269.9L599.8 269.8ZM594.7 212.5L593.9 210.6L595.0 212.1L594.7 212.5ZM591.5 213.5L592.9 214.4L591.1 214.8L591.5 213.5ZM611.6 226.2L608.7 228.9L606.2 227.7L605.0 224.9L606.7 222.9L611.8 224.8L611.6 226.2ZM571.7 225.2L571.9 225.6L571.4 225.3L571.7 225.2ZM573.2 227.0L572.2 226.9L572.6 225.2L573.8 225.8L573.0 226.2L573.2 227.0ZM574.3 227.5L573.9 228.2L573.8 227.8L574.3 227.5ZM600.2 234.6L600.9 235.7L599.9 235.3L600.2 234.6ZM592.7 237.5L592.5 236.9L592.8 237.1L592.7 237.5ZM591.7 238.0L591.5 238.7L591.3 238.4L591.7 238.0ZM609.1 238.9L609.3 239.3L609.0 239.2L609.1 238.9ZM609.4 239.7L609.7 239.9L609.3 239.9L609.4 239.7ZM607.7 241.3L608.9 240.4L608.8 241.5L607.7 241.3Z"},{"name":"SULAWESI UTARA","d":"M654.1 106.4L650.4 109.4L649.4 114.0L646.5 117.6L642.9 119.3L637.3 128.9L620.8 132.0L616.8 131.7L616.8 124.8L613.9 124.2L608.9 118.9L611.6 117.9L611.9 118.8L626.7 120.5L634.0 116.8L635.2 113.5L640.0 113.0L640.7 111.6L638.6 110.6L639.0 109.5L645.3 107.1L644.8 104.8L648.2 102.6L648.5 101.1L649.6 102.5L652.7 102.4L652.0 104.1L654.1 106.4ZM652.7 108.6L655.2 105.3L654.5 108.2L652.7 108.6ZM661.8 57.6L662.5 57.8L661.5 58.1L661.8 57.6ZM661.1 62.0L663.2 64.0L662.0 67.3L661.1 65.2L660.2 65.8L659.2 64.5L659.7 61.6L657.7 60.8L657.5 59.2L659.7 59.1L661.2 61.6L661.1 62.0ZM664.0 64.3L663.9 64.9L663.6 64.6L664.0 64.3ZM658.7 69.0L658.6 69.5L658.5 69.1L658.7 69.0ZM659.9 70.4L660.3 71.1L659.6 71.0L659.9 70.4ZM657.1 82.0L656.6 79.7L657.6 78.5L658.7 79.4L657.3 81.1L658.1 81.9L657.1 82.0ZM657.3 87.6L658.6 87.9L658.4 89.0L657.0 88.5L657.3 87.6ZM657.0 88.8L656.7 89.6L656.3 89.3L657.0 88.8ZM657.7 92.9L656.2 94.2L657.2 93.3L657.7 92.9ZM642.6 103.2L642.3 103.9L642.2 103.4L642.6 103.2ZM643.7 103.7L644.3 104.4L643.3 103.9L643.7 103.7ZM651.0 98.1L650.0 99.9L650.3 98.8L651.0 98.1ZM651.8 99.0L653.0 100.0L652.1 101.4L651.3 99.8L651.8 99.0ZM643.9 101.1L644.0 102.3L643.2 101.7L643.9 101.1ZM643.5 101.2L643.5 101.5L643.4 101.0L643.5 101.2ZM649.5 102.0L649.6 102.4L649.3 102.3L649.5 102.0ZM694.3 37.6L694.3 36.6L694.6 37.2L694.3 37.6ZM692.9 37.4L693.3 37.9L692.7 37.7L692.9 37.4ZM688.5 45.6L689.6 47.5L687.2 50.0L687.4 52.5L684.7 53.4L687.0 48.6L684.7 46.0L686.0 41.6L688.4 42.8L688.5 45.6ZM683.9 53.2L685.6 55.0L685.0 57.2L683.2 52.3L683.9 53.2ZM686.4 56.3L688.1 57.7L687.7 59.0L686.2 57.8L686.4 56.3Z"},{"name":"SUMATERA BARAT","d":"M99.4 170.3L102.0 173.1L101.7 175.6L100.0 173.2L100.9 176.5L98.0 176.9L93.1 174.0L87.2 164.0L89.1 158.7L93.8 157.7L94.4 160.9L99.0 168.2L99.4 169.6L98.2 169.0L99.4 170.3ZM107.9 180.6L108.1 180.9L107.7 180.8L107.9 180.6ZM107.7 180.9L108.0 181.4L107.5 181.2L107.7 180.9ZM111.0 184.4L114.0 189.4L108.0 186.1L107.0 184.2L107.9 184.0L107.6 181.8L110.5 182.5L111.0 184.4ZM111.3 188.6L111.4 189.3L110.8 188.8L111.3 188.6ZM117.0 197.8L116.9 191.5L121.8 196.8L120.1 198.8L117.6 199.0L117.0 197.8ZM126.7 209.6L121.0 201.9L121.1 197.7L127.0 202.6L127.1 205.2L124.8 205.7L126.9 208.8L126.7 209.6ZM127.6 205.2L128.3 206.4L127.5 206.1L127.6 205.2ZM130.6 212.1L131.4 212.5L130.6 212.4L130.6 212.1ZM141.0 174.0L141.3 178.8L143.8 182.0L144.8 185.9L143.5 188.2L138.9 191.2L134.5 184.5L135.5 179.5L130.7 172.8L129.0 166.6L125.6 165.4L126.2 163.8L124.4 163.2L125.8 160.5L123.4 155.4L113.1 144.7L111.5 138.9L104.2 135.1L103.3 133.4L99.3 133.4L106.4 126.8L109.4 126.7L111.0 128.6L116.2 127.3L115.3 123.9L113.3 122.9L114.3 119.0L122.3 122.9L121.4 125.9L123.1 131.3L125.0 130.8L126.7 133.5L130.7 134.5L134.3 132.6L135.0 138.0L132.6 139.2L135.0 145.5L136.3 146.2L138.2 145.0L139.8 149.0L146.0 152.3L152.1 158.2L155.7 159.0L155.9 161.6L157.2 161.7L155.6 164.2L153.4 164.8L153.2 169.6L148.9 173.9L141.7 174.4L141.0 174.0ZM125.4 164.4L125.2 163.6L125.6 164.0L125.4 164.4ZM124.2 163.6L124.2 164.1L124.0 163.9L124.2 163.6Z"},{"name":"SUMATERA SELATAN","d":"M221.9 188.4L223.6 187.9L224.1 189.3L227.9 187.8L235.5 189.6L233.9 190.5L236.6 189.2L236.4 193.5L237.8 195.3L240.0 195.4L240.6 200.3L245.7 201.9L246.7 207.2L243.0 209.5L240.9 214.8L241.1 217.3L243.9 219.7L241.4 226.7L238.3 226.3L237.5 224.4L236.3 224.5L236.3 222.1L234.5 220.0L231.0 219.2L230.3 217.7L229.3 220.8L226.4 222.1L223.7 227.1L218.9 229.0L215.4 228.0L210.0 230.9L208.3 237.9L209.9 240.4L209.2 241.9L206.3 241.7L204.5 243.0L200.7 242.2L200.3 243.8L198.8 242.9L198.4 240.4L195.4 238.9L194.0 234.8L191.4 235.7L189.5 234.4L190.7 230.3L182.4 228.8L182.5 227.7L179.4 225.4L180.9 223.7L177.1 222.8L172.8 219.2L175.2 217.9L176.9 213.3L178.8 215.2L179.9 214.2L180.8 210.0L178.8 210.2L176.4 208.2L172.0 209.1L170.0 207.3L169.4 203.7L165.0 202.8L160.9 197.3L164.4 195.6L165.0 194.1L169.4 195.8L172.2 195.4L176.4 192.3L178.2 189.7L178.2 187.5L183.5 188.5L185.2 187.7L184.3 185.8L185.6 183.8L190.4 188.5L190.5 184.6L192.7 183.8L191.9 181.5L193.3 177.8L199.5 175.4L204.1 176.3L209.5 175.3L210.9 173.0L213.7 176.1L211.3 176.7L212.9 176.7L211.8 179.1L209.6 179.0L212.0 178.9L210.3 179.8L212.0 179.5L211.0 180.3L212.6 179.2L210.9 181.5L212.9 180.2L211.8 181.2L213.2 180.4L214.0 180.8L212.5 181.5L214.2 180.9L215.0 181.8L216.0 180.1L216.7 182.0L217.4 180.7L219.8 180.9L221.3 185.0L217.9 188.5L215.8 188.9L218.6 189.2L221.3 186.8L221.8 189.5L221.9 188.4ZM212.8 179.8L213.8 177.7L215.8 179.2L215.0 180.1L214.2 178.7L214.9 180.9L212.8 179.8ZM221.7 188.4L221.8 189.4L221.5 188.7L221.7 188.4Z"},{"name":"SUMATERA UTARA","d":"M89.7 58.1L96.9 61.3L106.1 67.1L107.5 69.3L111.8 70.8L114.0 73.7L112.8 74.7L113.5 75.7L113.0 74.7L114.7 73.6L116.8 75.3L115.9 80.9L117.7 82.6L115.3 85.1L117.8 82.7L116.3 80.8L117.2 80.2L118.8 80.6L120.0 84.9L119.6 81.6L121.7 80.7L124.0 84.5L123.6 88.1L124.7 91.1L123.1 99.7L125.9 100.6L126.7 103.6L125.2 107.4L123.3 106.8L123.7 108.2L118.2 109.3L120.9 114.4L119.2 115.1L120.5 117.0L118.8 118.3L120.9 122.1L113.5 119.4L113.5 123.4L115.3 123.9L116.2 127.3L111.0 128.6L109.4 126.7L106.4 126.8L99.3 133.3L97.0 122.5L95.1 120.3L92.6 110.4L89.6 105.1L91.7 104.9L92.1 102.7L90.3 100.4L88.7 100.6L90.1 101.8L89.0 101.4L84.3 96.0L80.1 95.2L77.7 92.6L78.5 88.9L76.1 83.5L77.2 81.7L76.8 78.9L73.5 76.6L73.0 73.1L74.1 71.9L71.8 69.2L75.1 67.4L70.2 59.1L72.6 57.0L72.4 55.1L73.4 55.5L75.0 53.8L75.9 47.8L78.7 46.7L79.9 47.2L78.6 48.3L79.6 47.5L79.9 48.9L77.9 49.9L77.5 49.1L77.5 52.1L79.8 50.4L81.1 51.6L79.7 53.0L81.9 51.5L83.6 52.2L82.5 53.8L83.7 52.3L84.9 53.6L85.9 52.9L85.1 54.9L85.8 55.7L86.7 54.5L86.1 55.5L87.7 55.0L87.5 56.1L88.8 55.1L89.6 57.5L87.7 58.4L89.7 57.5L89.9 58.9L89.7 58.1ZM80.1 49.5L79.5 50.1L79.7 49.5L80.1 49.5ZM86.3 53.9L85.9 54.4L86.2 53.5L86.3 53.9ZM87.4 104.0L83.9 102.6L86.4 102.6L87.4 104.0ZM86.6 104.0L87.0 104.4L86.6 104.3L86.6 104.0ZM72.4 119.7L72.3 125.0L70.8 126.7L68.1 126.3L66.0 120.4L61.8 118.3L58.8 111.8L54.5 108.2L59.1 108.1L60.6 105.5L62.2 106.0L73.3 117.9L72.4 119.7ZM87.6 136.5L85.7 135.2L87.5 134.4L92.7 135.8L90.4 136.8L87.6 136.5ZM82.4 140.7L80.7 138.7L83.3 138.3L86.7 144.3L86.3 146.6L82.4 140.7ZM85.7 139.0L86.1 139.8L85.7 139.5L85.7 139.0ZM80.3 139.1L80.5 140.3L80.1 139.6L80.3 139.1ZM81.1 139.3L82.1 140.2L80.8 139.8L81.1 139.3ZM81.5 140.3L81.8 141.4L81.3 141.0L81.5 140.3ZM81.0 140.3L81.3 140.8L80.9 140.7L81.0 140.3ZM78.7 140.6L78.5 141.4L78.3 140.9L78.7 140.6ZM82.8 145.5L83.3 143.4L85.6 146.0L85.2 150.1L83.6 149.8L83.4 151.0L80.6 149.4L81.9 149.3L82.8 145.5ZM85.2 151.0L85.5 151.9L84.9 151.4L85.2 151.0ZM60.0 120.0L60.2 120.3L59.8 120.2L60.0 120.0ZM60.6 120.4L60.8 121.0L60.3 120.7L60.6 120.4Z"}],"centroids":{"ACEH":[4.6951,96.7494],"SUMATERA UTARA":[2.1153,99.5451],"SUMATERA BARAT":[-0.7393,100.8],"RIAU":[0.2933,101.7068],"KEPULAUAN RIAU":[3.9457,108.1429],"JAMBI":[-1.6101,103.6131],"SUMATERA SELATAN":[-3.3194,103.9145],"KEPULAUAN BANGKA BELITUNG":[-2.7411,106.4406],"BENGKULU":[-3.5778,102.3464],"LAMPUNG":[-4.5586,105.4068],"DKI JAKARTA":[-6.2088,106.8456],"BANTEN":[-6.4058,106.064],"JAWA BARAT":[-7.0905,107.6688],"JAWA TENGAH":[-7.15,110.1403],"DAERAH ISTIMEWA YOGYAKARTA":[-7.7956,110.3695],"JAWA TIMUR":[-7.536,112.2384],"BALI":[-8.4095,115.1889],"NUSA TENGGARA BARAT":[-8.6529,117.3616],"NUSA TENGGARA TIMUR":[-8.6573,121.0794],"KALIMANTAN BARAT":[-0.0263,109.3425],"KALIMANTAN TENGAH":[-1.6814,113.3823],"KALIMANTAN SELATAN":[-3.3194,114.595],"KALIMANTAN TIMUR":[0.5371,116.4194],"KALIMANTAN UTARA":[3.0731,116.0413],"SULAWESI UTARA":[1.3,124.8333],"GORONTALO":[0.5435,123.0568],"SULAWESI TENGAH":[-1.43,121.4456],"SULAWESI BARAT":[-2.6925,119.0],"SULAWESI SELATAN":[-3.6688,119.9743],"SULAWESI TENGGARA":[-4.15,122.575],"MALUKU":[-3.2385,130.1453],"MALUKU UTARA":[1.5709,127.8088],"PAPUA BARAT":[-1.3361,133.1747],"PAPUA":[-4.2699,138.0804]}}</script>
+<!-- Build hanya mengganti data JSON berikut; renderer tidak menyimpan naskah presentasi. -->
+<script id="deck-data" type="application/json">{
+  "version": 1,
+  "meta": {
+    "title": "Perkembangan ngeShare",
+    "brand": "ngeShare",
+    "label": "Untuk sahabat \u0026 komunitas",
+    "description": "Kabar terbaru ngeShare: jumlah fasilitator, sebaran, fitur terbaru, ngeShare Online, dan hal-hal unik yang pernah terjadi — plus cara ikut bergerak.",
+    "language": "id",
+    "editorial": "Deck promosi untuk orang yang belum mengenal ngeShare. Semua angka diberi label dan tanggal data; istilah mengikuti CONTEXT.md. Nama orang memakai nama depan saja, dengan izin. Fitur yang belum rilis disebut sedang disiapkan.",
+    "sources": [
+      {
+        "path": "Tabel analisis lokal ngeshare_local (sudah direkonsiliasi dengan produksi)",
+        "asOf": "2026-09-27",
+        "use": "Seluruh angka deck: grup, status, sebaran provinsi/kota, badge, dan data mode ONLINE."
+      },
+      {
+        "path": "operations/dashboards/kaderisasi/data.json",
+        "asOf": "2026-09-27",
+        "use": "Asal dan keaktifan fasilitator, latensi promosi, konversi member, dan 18 slide lampiran dash-* setelah penutup."
+      },
+      {
+        "path": "Database produksi (SELECT saja, sesi read-only, dijeda antar-query)",
+        "asOf": "2026-09-27",
+        "use": "Pemeriksaan konsistensi; angka grup dan badge sama dengan tabel analisis."
+      },
+      {
+        "path": "operations/misc/facilitator-jabodetabek-2026-09-15.html",
+        "asOf": "2026-09-15",
+        "use": "Pembanding lama sebaran Jabodetabek (210 orang). Angka di deck memakai data produksi per 26 September 2026."
+      },
+      {
+        "path": "operations/meetings/leader-sharing/2026-04-april/artikel-sharing-my-happiness.md",
+        "asOf": "2026-04",
+        "use": "Kisah Mbak Alfi (Leader Sharing #61)."
+      },
+      {
+        "path": "operations/meetings/leader-sharing/2026-07-Jul/ngeShare meeting 73-large-v3.txt",
+        "asOf": "2026-07",
+        "use": "Kisah Mas Nugroho dan lingkaran kantor."
+      },
+      {
+        "path": "operations/meetings/transcripts/ngeShare_meeting_75_cpp/ngeShare_meeting_75.txt",
+        "asOf": "2026-08-17",
+        "use": "Peluncuran Feed dan Vibes, serta konteks fitur."
+      },
+      {
+        "path": "operations/slides/fitur-mengulang-mandiri.html",
+        "asOf": "2026-07",
+        "use": "Alur fitur Mengulang Mandiri."
+      },
+      {
+        "path": "faster-app/doc/production-preparation-ho-online-web.md",
+        "asOf": "2026-09-26",
+        "use": "Status teknis ngeShare Online (web dan desktop)."
+      },
+      {
+        "path": "faster-web/docs/plans/ngeshare-2.0-post-login-facilitator-design.md",
+        "asOf": "2026",
+        "use": "Rencana tarbiyah dan jenjang fasilitator (sedang disiapkan)."
+      },
+      {
+        "path": "nge.id/nge/src/pages/ngeshare/",
+        "asOf": "2026-09",
+        "use": "Definisi publik, jadwal onboarding, dan kanal resmi."
+      },
+      {
+        "path": "misc/Ngeshare_Timeline.xlsx",
+        "asOf": "2026-09",
+        "use": "Rencana tarbiyah, modul, dan brand (September–November 2026)."
+      }
+    ]
+  },
+  "slides": [
+    {
+      "id": "pembuka",
+      "layout": "hero",
+      "eyebrow": "Untuk sahabat \u0026 komunitas",
+      "title": "Perkembangan ngeShare",
+      "lead": "Dari lingkaran-lingkaran kecil di ruang tamu dan sudut kantor, ngeShare kini berjalan di 21 provinsi. Ini kabar terbarunya — dan cara ikut bergerak.",
+      "quote": "“Bagikan kebahagiaan bersama orang-orang terdekatmu.”",
+      "footnote": "Disusun dari data internal ngeShare · September 2026",
+      "notes": "Buka dengan satu pertanyaan: siapa yang ingin dakwahnya tidak berhenti di diri sendiri? Deck ini menjawabnya dengan data dan cerita."
+    },
+    {
+      "id": "apa-itu",
+      "eyebrow": "01 / Berkenalan",
+      "title": "Apa itu ngeShare?",
+      "lead": "Cara berdakwah dari lingkaran terdekat: seorang Fasilitator mengumpulkan 2–6 orang yang sudah ia kenal, bertemu rutin tiap pekan, dan belajar dari materi ustad yang terkurasi.",
+      "cards": [
+        {
+          "title": "Fasilitator",
+          "text": "Teman biasa — bukan ustad. Ia mengumpulkan, memandu jalannya pertemuan, dan ikut belajar bersama."
+        },
+        {
+          "title": "Member",
+          "text": "2–6 orang terdekat: keluarga, kerabat, teman, atau rekan kerja yang sudah saling percaya."
+        },
+        {
+          "title": "Hangout",
+          "text": "Pertemuan mingguan yang fokus: menonton materi, berdiskusi dengan panduan, absensi, dan kuis."
+        }
+      ],
+      "footnote": "Materi disusun dan divalidasi oleh ustad; Fasilitator tidak perlu merasa harus punya semua jawaban."
+    },
+    {
+      "id": "cara-kerja",
+      "eyebrow": "02 / Cara kerjanya",
+      "title": "Satu lingkaran, empat langkah sederhana.",
+      "steps": [
+        {
+          "title": "Mengajak",
+          "text": "Fasilitator mengajak orang terdekatnya — tanpa memaksa, tanpa hard selling."
+        },
+        {
+          "title": "Berkumpul",
+          "text": "Menyepakati waktu yang realistis, lalu bertemu rutin tiap pekan."
+        },
+        {
+          "title": "Belajar bersama",
+          "text": "Menonton materi yang terkurasi, lalu berdiskusi dengan panduan yang sudah disiapkan."
+        },
+        {
+          "title": "Menumbuhkan",
+          "text": "Menjaga ritme sampai ada yang siap mengambil peran berikutnya."
+        }
+      ],
+      "callout": "Yang dibina hari ini, kelak membina orang lain."
+    },
+    {
+      "id": "angka",
+      "layout": "bars",
+      "eyebrow": "03 / Jejak yang terbentuk",
+      "title": "Bukan janji — ini yang sudah berjalan.",
+      "lead": "Angka-angka ini menunjukkan rantai orang yang bergerak, bukan popularitas sesaat.",
+      "bars": [
+        {
+          "label": "Pernah hadir sebagai Member",
+          "value": 1137,
+          "display": "1.137 orang"
+        },
+        {
+          "label": "Pernah memegang peran Fasilitator",
+          "value": 488,
+          "display": "488 orang"
+        },
+        {
+          "label": "Grup yang pernah berjalan",
+          "value": 699,
+          "display": "699 grup"
+        },
+        {
+          "label": "Grup aktif bulan ini",
+          "value": 117,
+          "display": "117 grup"
+        }
+      ],
+      "footnote": "Data tabel analisis per 26 September 2026. “Aktif” = ada presensi yang dihitung dalam 28 hari terakhir; untuk sesi Aqidah, absensi episode 1 tidak dihitung."
+    },
+    {
+      "id": "fasilitator",
+      "eyebrow": "04 / Orangnya",
+      "title": "Jumlah Fasilitator.",
+      "lead": "Tiga cara membaca jumlah fasilitator, sesuai definisinya masing-masing.",
+      "cards": [
+        {
+          "title": "488 pernah memegang peran",
+          "text": "Pemegang badge Fasilitator se-Indonesia — termasuk yang grupnya sudah selesai."
+        },
+        {
+          "title": "96 aktif bulan ini",
+          "text": "Ada presensi yang dihitung di grupnya dalam 28 hari terakhir. Ini ukuran yang paling ketat."
+        },
+        {
+          "title": "215 di Jabodetabek",
+          "text": "Data profil: Jakarta 67, Tangerang 65, Bekasi 38, Depok 26, Bogor 19."
+        }
+      ],
+      "footnote": "Ketiga angka memakai definisi berbeda (pernah, aktif, sebaran); jangan dibandingkan langsung.",
+      "notes": "Jangan menyebut ketiga angka sebagai satu angka. Sebut definisinya singkat: pernah memegang peran, aktif bulan ini, dan sebaran di Jabodetabek."
+    },
+    {
+      "id": "peta",
+      "layout": "map",
+      "eyebrow": "05 / Sebarannya",
+      "title": "Tumbuh dari kota ke kota.",
+      "lead": "Titik pada peta menunjukkan jumlah Hangout Group di tiap provinsi.",
+      "map": {
+        "items": [
+          {
+            "province": "JAWA BARAT",
+            "value": 122,
+            "display": "122"
+          },
+          {
+            "province": "JAWA TIMUR",
+            "value": 94,
+            "display": "94"
+          },
+          {
+            "province": "BANTEN",
+            "value": 87,
+            "display": "87"
+          },
+          {
+            "province": "DKI JAKARTA",
+            "value": 69,
+            "display": "69"
+          },
+          {
+            "province": "JAWA TENGAH",
+            "value": 38,
+            "display": "38"
+          },
+          {
+            "province": "DAERAH ISTIMEWA YOGYAKARTA",
+            "value": 31,
+            "display": "31"
+          },
+          {
+            "province": "SUMATERA UTARA",
+            "value": 30,
+            "display": "30"
+          },
+          {
+            "province": "SULAWESI SELATAN",
+            "value": 23,
+            "display": "23"
+          },
+          {
+            "province": "SUMATERA SELATAN",
+            "value": 19,
+            "display": "19"
+          },
+          {
+            "province": "RIAU",
+            "value": 17,
+            "display": "17"
+          },
+          {
+            "province": "ACEH",
+            "value": 5,
+            "display": "5"
+          },
+          {
+            "province": "KEPULAUAN BANGKA BELITUNG",
+            "value": 5,
+            "display": "5"
+          },
+          {
+            "province": "NUSA TENGGARA BARAT",
+            "value": 5,
+            "display": "5"
+          },
+          {
+            "province": "KALIMANTAN UTARA",
+            "value": 4,
+            "display": "4"
+          },
+          {
+            "province": "KALIMANTAN SELATAN",
+            "value": 4,
+            "display": "4"
+          },
+          {
+            "province": "KEPULAUAN RIAU",
+            "value": 4,
+            "display": "4"
+          },
+          {
+            "province": "KALIMANTAN TIMUR",
+            "value": 3,
+            "display": "3"
+          },
+          {
+            "province": "SUMATERA BARAT",
+            "value": 3,
+            "display": "3"
+          },
+          {
+            "province": "NUSA TENGGARA TIMUR",
+            "value": 2,
+            "display": "2"
+          },
+          {
+            "province": "KALIMANTAN TENGAH",
+            "value": 2,
+            "display": "2"
+          },
+          {
+            "province": "LAMPUNG",
+            "value": 2,
+            "display": "2"
+          }
+        ],
+        "caption": "Makin besar bulatannya, makin banyak grupnya. Pulau Jawa diperbesar di panel kanan.",
+        "note": "21 provinsi sudah menjalankan grup. 130 grup lainnya belum mengisi provinsi."
+      },
+      "footnote": "Sumber: tabel analisis — grup yang dihitung (di luar grup uji), per 26 September 2026.",
+      "notes": "Peta memakai lokasi grup, bukan lokasi fasilitator. Dari 699 grup yang dihitung, 130 belum mengisi provinsi."
+    },
+    {
+      "id": "kota",
+      "layout": "bars",
+      "eyebrow": "06 / Kota-kotanya",
+      "title": "Kota dengan grup terbanyak.",
+      "lead": "Grup tersebar di 73 kota. Ini yang paling ramai.",
+      "bars": [
+        {
+          "label": "Kota Tangerang Selatan",
+          "value": 57,
+          "display": "57 grup"
+        },
+        {
+          "label": "Jakarta Selatan",
+          "value": 39,
+          "display": "39 grup"
+        },
+        {
+          "label": "Kab. Kediri",
+          "value": 34,
+          "display": "34 grup"
+        },
+        {
+          "label": "Kota Bekasi",
+          "value": 28,
+          "display": "28 grup"
+        },
+        {
+          "label": "Kota Kediri",
+          "value": 28,
+          "display": "28 grup"
+        },
+        {
+          "label": "Kota Depok",
+          "value": 27,
+          "display": "27 grup"
+        }
+      ],
+      "footnote": "Sumber: tabel analisis — grup yang dihitung (di luar grup uji), per 26 September 2026."
+    },
+    {
+      "id": "luar-jawa",
+      "layout": "compare",
+      "eyebrow": "07 / Bukan hanya di satu pulau",
+      "title": "Gelombangnya sudah menyeberang.",
+      "compare": {
+        "left": {
+          "label": "Jabodetabek · 215 fasilitator",
+          "items": [
+            "Jakarta — 67",
+            "Tangerang — 65",
+            "Bekasi — 38",
+            "Depok — 26",
+            "Bogor — 19",
+            "Sumber: data profil di tabel analisis"
+          ]
+        },
+        "right": {
+          "label": "Kota di luar Jawa · jumlah grup",
+          "items": [
+            "Makassar — 21",
+            "Pekanbaru — 17",
+            "Pematang Siantar — 13",
+            "Muara Enim — 10",
+            "Palembang — 7",
+            "Padangsidimpuan — 6"
+          ]
+        }
+      },
+      "footnote": "Dua kolom memakai satuan berbeda: kiri jumlah fasilitator, kanan jumlah grup."
+    },
+    {
+      "id": "kurikulum",
+      "eyebrow": "08 / Isi perjalanan",
+      "title": "Empat sesi, 36 episode.",
+      "lead": "Perjalanan belajar yang tertata, dari dasar sampai siap bergerak.",
+      "cards": [
+        {
+          "title": "01 · Aqidah",
+          "text": "9 episode — fondasi: mengenal dan memahami dasar iman."
+        },
+        {
+          "title": "02 · Hijrah",
+          "text": "9 episode — melangkah menuju hidup yang lebih baik."
+        },
+        {
+          "title": "03 · Sejarah",
+          "text": "11 episode — menelusuri perjalanan umat."
+        },
+        {
+          "title": "04 · Dakwah",
+          "text": "7 episode — tiba giliran ikut bergerak."
+        }
+      ],
+      "callout": "Urutannya dijaga: Aqidah → Hijrah → Sejarah → Dakwah.",
+      "footnote": "Jumlah episode termasuk ujian akhir sesi."
+    },
+    {
+      "id": "funnel",
+      "layout": "bars",
+      "eyebrow": "09 / Yang berjalan sampai kini",
+      "title": "Perjalanan yang ditempuh bersama.",
+      "lead": "Semakin dalam sesinya, semakin sedikit yang sampai — dan itu wajar untuk perjalanan panjang.",
+      "bars": [
+        {
+          "label": "Lulus Sesi Aqidah",
+          "value": 640,
+          "display": "640 orang"
+        },
+        {
+          "label": "Lulus Sesi Hijrah",
+          "value": 376,
+          "display": "376 orang"
+        },
+        {
+          "label": "Lulus Sesi Sejarah",
+          "value": 209,
+          "display": "209 orang"
+        },
+        {
+          "label": "Lulus Sesi Dakwah",
+          "value": 125,
+          "display": "125 orang"
+        }
+      ],
+      "footnote": "Pemegang badge Alumni per sesi (jumlah orang), per 26 September 2026."
+    },
+    {
+      "id": "status-grup",
+      "layout": "bars",
+      "eyebrow": "10 / Kondisi grup",
+      "title": "Grup yang pernah berjalan.",
+      "lead": "Sebagian sudah lulus, sebagian masih berjalan, sebagian berhenti di tengah jalan.",
+      "bars": [
+        {
+          "label": "Pernah berjalan",
+          "value": 699,
+          "display": "699 grup"
+        },
+        {
+          "label": "Sudah menuntaskan sesinya",
+          "value": 469,
+          "display": "469 grup"
+        },
+        {
+          "label": "Aktif bulan ini",
+          "value": 117,
+          "display": "117 grup"
+        },
+        {
+          "label": "Tertahan lebih dari 28 hari",
+          "value": 113,
+          "display": "113 grup"
+        }
+      ],
+      "callout": "469 grup sudah menuntaskan sesinya — dari 699 yang pernah berjalan.",
+      "footnote": "“Lulus” = mencapai episode terakhir sesi. “Aktif” memakai presensi yang dihitung: untuk sesi Aqidah mulai episode 2, untuk sesi lain semua episode. Grup yang tertahan masih bisa dilanjutkan lagi."
+    },
+    {
+      "id": "fitur-baru",
+      "eyebrow": "11 / Fitur baru",
+      "title": "Tiga hal baru di aplikasi.",
+      "cards": [
+        {
+          "title": "Feed",
+          "text": "Konten pilihan untuk dibaca dan dibagikan; bisa disukai dan dikomentari."
+        },
+        {
+          "title": "Vibes",
+          "text": "Kabar otomatis dari penjuru negeri: ada hangout baru, episode berjalan, atau kuis bernilai 100."
+        },
+        {
+          "title": "Mengulang mandiri",
+          "text": "Member yang belum lengkap syarat fasilitator bisa menuntaskan episode yang kurang, dengan materi versi terbaru."
+        }
+      ],
+      "footnote": "Fitur dirilis bertahap; catatan rilis menyusul di kanal resmi ngeShare."
+    },
+    {
+      "id": "fitur-harian",
+      "eyebrow": "12 / Menemani tiap pekan",
+      "title": "Yang dipakai Fasilitator dan Member.",
+      "cards": [
+        {
+          "title": "Materi \u0026 panduan",
+          "text": "Video ustad yang terkurasi, plus panduan diskusi untuk setiap pertemuan."
+        },
+        {
+          "title": "Absensi \u0026 progres",
+          "text": "Member memindai kode dari perangkat Fasilitator; kehadiran dan progres tercatat."
+        },
+        {
+          "title": "Kuis \u0026 nilai",
+          "text": "Kuis setelah pertemuan, nilai akhir sesi, dan riwayat belajar masing-masing."
+        },
+        {
+          "title": "Bisa di mana saja",
+          "text": "Aplikasi di HP, web, dan desktop. Materi bisa diunduh lebih dulu agar tetap lancar tanpa internet."
+        }
+      ],
+      "footnote": "Jadwal fleksibel: dua kali geser jadwal, satu booster, dan satu libur per sesi."
+    },
+    {
+      "id": "online-cara",
+      "eyebrow": "13 / ngeShare Online",
+      "title": "Kumpul dari mana saja.",
+      "lead": "Mode online menghadirkan pertemuan tatap maya yang berjalan sinkron — bukan sekadar tautan rapat.",
+      "steps": [
+        {
+          "title": "Ruang tunggu",
+          "text": "Peserta berkumpul lebih dulu; materi disiapkan otomatis di perangkat."
+        },
+        {
+          "title": "Video sinkron",
+          "text": "Fasilitator memegang kendali pemutaran; semua peserta menonton di posisi yang sama."
+        },
+        {
+          "title": "Chat \u0026 reaksi",
+          "text": "Diskusi tetap hidup lewat obrolan dan reaksi selama pertemuan."
+        },
+        {
+          "title": "Kuis di tengah tayangan",
+          "text": "Kuis pop-up muncul untuk semua peserta pada saat yang sama."
+        }
+      ],
+      "footnote": "Materi diunduh lebih dulu, lalu diputar paralel di semua perangkat. Konten tidak disiarkan ulang."
+    },
+    {
+      "id": "online-angka",
+      "layout": "bars",
+      "eyebrow": "14 / ngeShare Online",
+      "title": "Sudah mulai dipakai.",
+      "bars": [
+        {
+          "label": "Grup online dibuat",
+          "value": 77,
+          "display": "77 grup"
+        },
+        {
+          "label": "Dibuat sejak Juni 2026",
+          "value": 73,
+          "display": "73 grup"
+        },
+        {
+          "label": "Grup online yang aktif bulan ini",
+          "value": 29,
+          "display": "29 grup"
+        },
+        {
+          "label": "Belajar mandiri sendiri",
+          "value": 37,
+          "display": "37 orang"
+        }
+      ],
+      "callout": "Mode online membuka ruang baru — tapi tidak menggantikan kekuatan bertemu langsung.",
+      "footnote": "Data mode ONLINE per 26 September 2026. “Aktif” = ada presensi yang dihitung dalam 28 hari terakhir (sesi Aqidah mulai episode 2). Rilis ke seluruh pengguna berjalan bertahap dan masih disempurnakan.",
+      "notes": "Sebut bahwa mode online masih disempurnakan. Angka ini snapshot, bukan target."
+    },
+    {
+      "id": "disiapkan",
+      "eyebrow": "15 / Sedang disiapkan",
+      "title": "Yang sedang kami rapikan.",
+      "cards": [
+        {
+          "title": "Tarbiyah berjenjang",
+          "text": "Pembinaan untuk Fasilitator dalam beberapa tahap, dengan video materi dan kuis."
+        },
+        {
+          "title": "Jenjang fasilitator",
+          "text": "Usulan jalur peran — Calon Fasilitator, Invitator, Fasilitator, Inspirator, Leader — masih diuji."
+        },
+        {
+          "title": "Belajar mandiri",
+          "text": "Materi yang bisa dipelajari Fasilitator kapan saja, sesuai kebutuhan dan waktunya."
+        },
+        {
+          "title": "Brand \u0026 kanal baru",
+          "text": "Wajah dan bahasa ngeShare sedang disegarkan untuk menyapa lebih banyak orang."
+        }
+      ],
+      "callout": "Bentuk dan jadwalnya masih disusun; kabar menyusul di kanal resmi ngeShare.",
+      "footnote": "Belum ada tanggal rilis yang ditetapkan untuk semua hal di slide ini."
+    },
+    {
+      "id": "kisah-alfi",
+      "eyebrow": "16 / Jejak nyata",
+      "title": "Dari keresahan pribadi menjadi gerakan kecil.",
+      "lead": "Mbak Alfi, fasilitator dari Pematang Siantar, pernah gelisah: materi yang mengubah hidupnya berhenti di dirinya sendiri. Ia tidak berhenti di situ.",
+      "cards": [
+        {
+          "title": "Mencatat \u0026 mengajak",
+          "text": "Nama teman yang merespons dicatat satu per satu, lalu didekati pelan-pelan."
+        },
+        {
+          "title": "Lingkaran pertama",
+          "text": "Grup pertamanya terbentuk awal 2025. Salah satu member-nya kini memegang dua grup."
+        },
+        {
+          "title": "Menular ke kotanya",
+          "text": "Dari lingkaran itu, makin banyak teman di Siantar ikut bergerak."
+        }
+      ],
+      "quote": "“Aku tuh kayak pengen naik ke bukit, pakai toa, terus bilang: ini bagus banget, kalian semua harus ikut!”",
+      "footnote": "Cerita Mbak Alfi, Leader Sharing #61 (April 2026). Nama depan dipakai dengan izin.",
+      "notes": "Sebut bahwa Mbak Popi — member Mbak Alfi — kini memegang dua grup. Di situlah inti efek multiplikasi."
+    },
+    {
+      "id": "kisah-nugroho",
+      "eyebrow": "17 / Jejak nyata",
+      "title": "Pekerja kantoran pun bisa.",
+      "lead": "Mas Nugroho, pekerja 9–5, mengumpulkan rekan-rekan sekantornya.",
+      "cards": [
+        {
+          "title": "Waktu yang realistis",
+          "text": "Lingkarannya bertemu di sela hari kerja — di luar jam kerja justru lebih sulit."
+        },
+        {
+          "title": "Dari rekan kerja",
+          "text": "Member-nya orang yang sudah ia temui setiap hari, jadi tidak perlu meyakinkan dari nol."
+        },
+        {
+          "title": "Sampai tiga lingkaran",
+          "text": "Dari satu lingkaran kantor, ia menjalankan hingga tiga hangout."
+        }
+      ],
+      "quote": "“Kalau di kantor, semua sudah di tempat yang sama. Fokusnya tinggal menjaga waktu.”",
+      "footnote": "Cerita Mas Nugroho, Leader Sharing (Juli 2026). Nama depan dipakai dengan izin."
+    },
+    {
+      "id": "unik",
+      "eyebrow": "18 / Hal-hal unik",
+      "title": "Nama grup yang bikin senyum.",
+      "lead": "Fasilitator bebas menamai lingkarannya. Dari 73 kota, muncul nama-nama ini.",
+      "cards": [
+        {
+          "title": "KOPDES · Tarakan",
+          "text": "Nama panjangnya: Komunitas Pengajian Episode Subuh — nama buatan sendiri, bukan nama kajian biasa."
+        },
+        {
+          "title": "BIKERS SEJARAH · Tapanuli",
+          "text": "Nama khas dari komunitasnya sendiri di Tapanuli Selatan, Sumatera Utara."
+        },
+        {
+          "title": "Hijrah Kincang Kupang · NTT",
+          "text": "Lingkaran di Kota Kupang — bukti gelombangnya sampai ke Nusa Tenggara Timur."
+        },
+        {
+          "title": "RADIKAL · Pematang Siantar",
+          "text": "Nama lingkaran pertama Mbak Alfi — yang memulai kisah di dua slide sebelumnya."
+        }
+      ],
+      "callout": "Ada juga yang belajar mandiri: 37 orang menjalankan sesinya sendiri lewat mode online.",
+      "footnote": "Nama grup dikutip dari data internal; nama anggota tidak ditampilkan."
+    },
+    {
+      "id": "multiplikasi",
+      "layout": "loop",
+      "eyebrow": "19 / Mesin pertumbuhannya",
+      "title": "Kalau setiap lingkaran melahirkan fasilitator baru…",
+      "loop": [
+        {
+          "title": "Lingkaran dibuka",
+          "text": "Fasilitator mengajak orang terdekat dan memulai hangout pertama."
+        },
+        {
+          "title": "Member bertumbuh",
+          "text": "Menjalani sesi demi sesi, tumbuh bersama lingkarannya."
+        },
+        {
+          "title": "Yang siap disiapkan",
+          "text": "Mengambil peran sebagai Fasilitator berikutnya, dengan pendampingan."
+        },
+        {
+          "title": "Lingkaran baru",
+          "text": "Dan rantai itu berlanjut, dari lingkaran ke lingkaran."
+        }
+      ],
+      "callout": "…pergerakannya bisa berlipat. Inilah efek multiplikasi — logikanya, bukan janji angkanya.",
+      "footnote": "Satu fasilitator bisa menjalankan hingga tiga grup; ada yang melahirkan fasilitator baru dari lingkarannya."
+    },
+    {
+      "id": "asal-aktif",
+      "layout": "compare",
+      "eyebrow": "20 / Kaderisasi",
+      "title": "Yang tumbuh dari dalam, lebih bertahan.",
+      "lead": "Fasilitator dari member dibanding dari luar. Basis: 264 tercatat fasilitator grup.",
+      "compare": {
+        "left": {
+          "label": "Dari member · 80 orang",
+          "items": [
+            "37 aktif bulan ini",
+            "Tingkat aktif 46,3%",
+            "Tumbuh lewat lingkaran sendiri"
+          ]
+        },
+        "right": {
+          "label": "Dari luar · 184 orang",
+          "items": [
+            "59 aktif bulan ini",
+            "Tingkat aktif 32,1%",
+            "Masuk lewat jalur ngeSlow dkk"
+          ]
+        }
+      },
+      "callout": "Native lebih sedikit, tetapi lebih aktif.",
+      "footnote": "Per 26 September 2026. “Aktif” = presensi yang dihitung 28 hari terakhir."
+    },
+    {
+      "id": "waktu-kaderisasi",
+      "layout": "bars",
+      "eyebrow": "21 / Waktu kaderisasi",
+      "title": "Dari member ke fasilitator: median 31 minggu.",
+      "lead": "Sebaran jeda promosi 80 fasilitator native.",
+      "bars": [
+        {
+          "label": "Di bawah 2 bulan",
+          "value": 3,
+          "display": "3 orang"
+        },
+        {
+          "label": "2–4 bulan",
+          "value": 7,
+          "display": "7 orang"
+        },
+        {
+          "label": "4–8 bulan",
+          "value": 42,
+          "display": "42 orang"
+        },
+        {
+          "label": "8–12 bulan",
+          "value": 18,
+          "display": "18 orang"
+        },
+        {
+          "label": "Lebih dari 12 bulan",
+          "value": 10,
+          "display": "10 orang"
+        }
+      ],
+      "callout": "Kaderisasi butuh horizon bulanan, bukan mingguan.",
+      "footnote": "80 fasilitator native, per 26 September 2026."
+    },
+    {
+      "id": "konversi-member",
+      "layout": "bars",
+      "eyebrow": "22 / Mesin kaderisasi",
+      "title": "Setiap 100 member melahirkan 6 fasilitator.",
+      "bars": [
+        {
+          "label": "Pernah tercatat sebagai Member",
+          "value": 1240,
+          "display": "1.240 orang"
+        },
+        {
+          "label": "Promosi menjadi Fasilitator",
+          "value": 80,
+          "display": "80 orang"
+        }
+      ],
+      "callout": "Basis member yang besar dan aktif adalah bahan bakar multiplikasi.",
+      "footnote": "Batas bawah: member baru belum matang (median 31 minggu)."
+    },
+    {
+      "id": "terlibat",
+      "eyebrow": "23 / Cara ikut bergerak",
+      "title": "Ummat bukan penonton.\nUmmat pelakunya.",
+      "lead": "Ada tempat untuk setiap orang. Pilih peran yang bisa kita pegang hari ini.",
+      "cards": [
+        {
+          "title": "Jadi Fasilitator",
+          "text": "Kumpulkan 2–6 orang terdekat. Ikuti onboarding dua kali sebulan, malam setelah Isya."
+        },
+        {
+          "title": "Jadi Member",
+          "text": "Gabung ke lingkaran teman, atau mulai lingkaran sendiri dan ikut belajar di dalamnya."
+        },
+        {
+          "title": "Jadi Sponsor",
+          "text": "Dukung materi, perangkat, dan operasional agar makin banyak orang terlayani."
+        },
+        {
+          "title": "Buat hal serupa",
+          "text": "Bawa cara ini ke kotamu, komunitasmu, atau organisasimu — kami bantu membuka jalannya."
+        }
+      ],
+      "callout": "Hubungi: t.me/tanyaMasSlow · Instagram @nge.share · ngeshare.id",
+      "footnote": "Aplikasi ngeShare tersedia di App Store dan Google Play. Onboarding: minggu ke-1 dan ke-3, malam setelah Isya.",
+      "notes": "Tutup dengan satu ajakan konkret. Tanyakan peran mana yang mereka ambil, lalu arahkan ke kanal resmi."
+    },
+    {
+      "id": "peran-member",
+      "eyebrow": "24 / Peran",
+      "title": "Jadi Member: mulai dari lingkaran terdekat.",
+      "lead": "Cara termudah terlibat: ikut belajar di lingkaran teman.",
+      "cards": [
+        {
+          "title": "Hadir tiap pekan",
+          "text": "Ikut hangout mingguan: menonton materi ustad, berdiskusi, kuis. Cukup datang dan terlibat."
+        },
+        {
+          "title": "Lulus sesi demi sesi",
+          "text": "Menempuh Aqidah → Hijrah → Sejarah → Dakwah bersama lingkaranmu."
+        },
+        {
+          "title": "Dampaknya",
+          "text": "Ilmu menempel lewat diskusi, bukan sekadar menonton. Dari 1.240 member, 80 tumbuh menjadi fasilitator."
+        }
+      ],
+      "callout": "Semua fasilitator mulai sebagai member."
+    },
+    {
+      "id": "peran-fasilitator",
+      "eyebrow": "25 / Peran",
+      "title": "Jadi Fasilitator: kumpulkan lingkaranmu.",
+      "lead": "Peran inti gerakan: mengajak orang terdekat dan memandu belajarnya.",
+      "cards": [
+        {
+          "title": "Ajak 2–6 orang",
+          "text": "Keluarga, kerabat, atau teman yang sudah percaya padamu. Tanpa memaksa."
+        },
+        {
+          "title": "Pandu tiap pekan",
+          "text": "Materi, panduan diskusi, dan absensi sudah disiapkan. Kamu ikut belajar bersama."
+        },
+        {
+          "title": "Dampaknya",
+          "text": "Satu lingkaran melahirkan lingkaran baru. Fasilitator dari member bertahan paling aktif (46,3%)."
+        }
+      ],
+      "callout": "Onboarding dua kali sebulan, malam setelah Isya."
+    },
+    {
+      "id": "peran-penyelenggara",
+      "eyebrow": "26 / Peran",
+      "title": "Jadi Penyelenggara: putar rodanya.",
+      "lead": "Di balik layar, gerakan ini digerakkan banyak tangan.",
+      "cards": [
+        {
+          "title": "Tim media sosial",
+          "text": "Mengelola TikTok dan kanal lain: dokumentasi kegiatan, testimoni, dan ajakan yang konsisten."
+        },
+        {
+          "title": "Video editor",
+          "text": "Mengolah rekaman kajian dan kegiatan menjadi materi yang siap tonton dan siap bagikan."
+        },
+        {
+          "title": "MC conference online",
+          "text": "Memandu acara online rutin agar berjalan hangat dan tertib."
+        }
+      ],
+      "callout": "Cocok untuk yang ingin berkontribusi keahlian dan waktu."
+    },
+    {
+      "id": "peran-donatur",
+      "eyebrow": "27 / Peran",
+      "title": "Jadi Donatur: layani lebih banyak lingkaran.",
+      "lead": "Dukunganmu membiayai server dan kebutuhan teknologi.",
+      "cards": [
+        {
+          "title": "Server \u0026 infrastruktur",
+          "text": "Menopang aplikasi, data, dan layanan online yang dipakai ratusan lingkaran."
+        },
+        {
+          "title": "Kebutuhan teknologi",
+          "text": "Perangkat dan layanan pendukung pengembangan ke depan."
+        },
+        {
+          "title": "Dampaknya",
+          "text": "Layanan tetap hidup dan berkembang tanpa membebani peserta."
+        }
+      ],
+      "callout": "Besar atau kecil, setiap dukungan memperluas jangkauan."
+    },
+    {
+      "id": "peran-investor",
+      "eyebrow": "28 / Peran",
+      "title": "Jadi Investor: besarkan gelombangnya.",
+      "lead": "Untuk yang ingin mendorong skala gerakan, bukan sekadar program.",
+      "cards": [
+        {
+          "title": "Tim penuh waktu",
+          "text": "Penyelenggara yang fokus penuh agar gerak konsisten, bukan sambilan."
+        },
+        {
+          "title": "Tiga hasilnya",
+          "text": "Whitelabel untuk ustad lain. Model bisnis agar sustain. Fitur lebih cepat: chat, AI, lebih banyak perangkat."
+        },
+        {
+          "title": "Dampaknya",
+          "text": "Gerakan melesat dari ratusan ke ribuan lingkaran di seluruh Indonesia."
+        }
+      ],
+      "callout": "Skema kerja sama dibicarakan langsung dengan tim ngeShare."
+    },
+    {
+      "id": "penutup",
+      "layout": "hero",
+      "eyebrow": "Penutup",
+      "title": "Dari penonton, menjadi pelaku.\nDari lingkaran kecil, menjadi gelombang.",
+      "lead": "ngeShare mengajak kita membayangkan dakwah yang tidak berhenti pada ceramah — tapi tumbuh dari orang ke orang, dari lingkaran ke lingkaran.",
+      "quote": "“Bagikan kebahagiaan bersama orang-orang terdekatmu.”"
+    },
+    {
+      "id": "dash-pertumbuhan",
+      "layout": "lines",
+      "title": "Fasilitator baru dan total kumulatif.",
+      "lead": "Bulan Feb 25 mencatat 57 fasilitator baru. Angka ini tertinggi dalam periode ini. Total kumulatif pemegang badge mencapai 488 pada Sep 26.",
+      "lines": {
+        "labels": [
+          "Jan 25",
+          "Feb 25",
+          "Mar 25",
+          "Apr 25",
+          "Mei 25",
+          "Jun 25",
+          "Jul 25",
+          "Agu 25",
+          "Sep 25",
+          "Okt 25",
+          "Nov 25",
+          "Des 25",
+          "Jan 26",
+          "Feb 26",
+          "Mar 26",
+          "Apr 26",
+          "Mei 26",
+          "Jun 26",
+          "Jul 26",
+          "Agu 26",
+          "Sep 26"
+        ],
+        "series": [
+          {
+            "label": "Baru · native",
+            "type": "bar",
+            "values": [
+              0,
+              0,
+              1,
+              2,
+              0,
+              0,
+              2,
+              2,
+              1,
+              0,
+              6,
+              1,
+              3,
+              3,
+              1,
+              3,
+              3,
+              13,
+              18,
+              15,
+              6
+            ]
+          },
+          {
+            "label": "Baru · luar",
+            "type": "bar",
+            "values": [
+              0,
+              57,
+              9,
+              8,
+              5,
+              1,
+              5,
+              13,
+              9,
+              5,
+              19,
+              10,
+              11,
+              4,
+              0,
+              7,
+              4,
+              8,
+              3,
+              3,
+              3
+            ]
+          },
+          {
+            "label": "Kumulatif pemegang badge",
+            "type": "line",
+            "axis": 2,
+            "values": [
+              1,
+              69,
+              100,
+              102,
+              103,
+              106,
+              130,
+              179,
+              191,
+              195,
+              347,
+              370,
+              380,
+              393,
+              400,
+              418,
+              435,
+              446,
+              464,
+              468,
+              488
+            ]
+          }
+        ]
+      },
+      "callout": "Enam bulan terakhir, 67,4% fasilitator baru berasal dari member. Kaderisasi internal kini menjadi sumber utama.",
+      "eyebrow": "29 / Data kaderisasi"
+    },
+    {
+      "id": "dash-asal-peran",
+      "layout": "doughnut",
+      "title": "Asal fasilitator grup: 80 native, 184 luar.",
+      "lead": "Dari 264 fasilitator tercatat grup, 80 berasal dari member (30,3%).",
+      "doughnut": {
+        "center": "264",
+        "items": [
+          {
+            "label": "Native",
+            "value": 80,
+            "display": "80 orang"
+          },
+          {
+            "label": "Luar",
+            "value": 184,
+            "display": "184 orang"
+          }
+        ]
+      },
+      "callout": "Pangsa native di grup (30,3%) jauh lebih besar daripada di pemegang badge (9,8%). Member yang tumbuh lebih sering sampai ke peran grup nyata.",
+      "eyebrow": "30 / Data kaderisasi"
+    },
+    {
+      "id": "dash-asal-badge",
+      "layout": "doughnut",
+      "title": "Asal pemegang badge: 48 native, 440 luar.",
+      "lead": "Dari 488 pemegang badge, hanya 48 yang berasal dari member (9,8%).",
+      "doughnut": {
+        "center": "488",
+        "items": [
+          {
+            "label": "Native",
+            "value": 48,
+            "display": "48 orang"
+          },
+          {
+            "label": "Luar",
+            "value": 440,
+            "display": "440 orang"
+          }
+        ]
+      },
+      "callout": "Sisa 440 pemegang badge luar adalah kolam rekrutmen. Dekati mereka untuk membuka grup baru.",
+      "eyebrow": "31 / Data kaderisasi"
+    },
+    {
+      "id": "dash-asal-aktif",
+      "layout": "doughnut",
+      "title": "Asal fasilitator aktif: 37 native, 59 luar.",
+      "lead": "Dari 96 fasilitator aktif, 37 berasal dari member (38,5%).",
+      "doughnut": {
+        "center": "96",
+        "items": [
+          {
+            "label": "Native",
+            "value": 37,
+            "display": "37 orang"
+          },
+          {
+            "label": "Luar",
+            "value": 59,
+            "display": "59 orang"
+          }
+        ]
+      },
+      "callout": "Pangsa native di kelompok aktif (38,5%) lebih tinggi daripada di total (30,3%). Fasilitator native lebih mungkin bertahan aktif.",
+      "eyebrow": "32 / Data kaderisasi"
+    },
+    {
+      "id": "dash-aktif-bulanan",
+      "layout": "lines",
+      "title": "Fasilitator aktif tiap bulan.",
+      "lead": "Aktif native muncul dan mencapai 37 pada Sep 26. Aktif luar bergerak di kisaran 0–64.",
+      "lines": {
+        "labels": [
+          "Jan 25",
+          "Feb 25",
+          "Mar 25",
+          "Apr 25",
+          "Mei 25",
+          "Jun 25",
+          "Jul 25",
+          "Agu 25",
+          "Sep 25",
+          "Okt 25",
+          "Nov 25",
+          "Des 25",
+          "Jan 26",
+          "Feb 26",
+          "Mar 26",
+          "Apr 26",
+          "Mei 26",
+          "Jun 26",
+          "Jul 26",
+          "Agu 26",
+          "Sep 26"
+        ],
+        "series": [
+          {
+            "label": "Aktif · native",
+            "values": [
+              0,
+              0,
+              0,
+              0,
+              1,
+              1,
+              0,
+              0,
+              4,
+              4,
+              5,
+              9,
+              12,
+              14,
+              15,
+              16,
+              17,
+              20,
+              33,
+              36,
+              37
+            ]
+          },
+          {
+            "label": "Aktif · luar",
+            "values": [
+              0,
+              38,
+              44,
+              48,
+              43,
+              47,
+              34,
+              44,
+              54,
+              58,
+              52,
+              57,
+              64,
+              55,
+              46,
+              50,
+              56,
+              58,
+              54,
+              61,
+              59
+            ]
+          }
+        ]
+      },
+      "callout": "Kurva native menanjak tanpa jeda panjang. Pembinaan member menghasilkan keaktifan yang stabil.",
+      "eyebrow": "33 / Data kaderisasi"
+    },
+    {
+      "id": "dash-tingkat-aktif",
+      "layout": "lines",
+      "title": "Tingkat keaktifan native vs luar.",
+      "lead": "Bulan Sep 26: native 46,3%, luar 32,1%. Sejak Des 25, tingkat native selalu di atas luar.",
+      "lines": {
+        "labels": [
+          "Jan 25",
+          "Feb 25",
+          "Mar 25",
+          "Apr 25",
+          "Mei 25",
+          "Jun 25",
+          "Jul 25",
+          "Agu 25",
+          "Sep 25",
+          "Okt 25",
+          "Nov 25",
+          "Des 25",
+          "Jan 26",
+          "Feb 26",
+          "Mar 26",
+          "Apr 26",
+          "Mei 26",
+          "Jun 26",
+          "Jul 26",
+          "Agu 26",
+          "Sep 26"
+        ],
+        "unit": "%",
+        "series": [
+          {
+            "label": "% aktif · native",
+            "values": [
+              null,
+              null,
+              0,
+              0,
+              33.3,
+              33.3,
+              0,
+              0,
+              50,
+              50,
+              35.7,
+              60,
+              66.7,
+              66.7,
+              68.2,
+              64,
+              60.7,
+              48.8,
+              55.9,
+              48.6,
+              46.3
+            ]
+          },
+          {
+            "label": "% aktif · luar",
+            "values": [
+              null,
+              66.7,
+              66.7,
+              64.9,
+              54.4,
+              58.8,
+              40,
+              44.9,
+              50.5,
+              51.8,
+              39.7,
+              40.4,
+              42.1,
+              35.3,
+              29.5,
+              30.7,
+              33.5,
+              33.1,
+              30.3,
+              33.7,
+              32.1
+            ]
+          }
+        ]
+      },
+      "callout": "Basis native lebih kecil tetapi proporsinya lebih aktif. Kaderisasi internal terbayar dalam retensi.",
+      "eyebrow": "34 / Data kaderisasi"
+    },
+    {
+      "id": "dash-latensi",
+      "layout": "bars",
+      "title": "Jeda member ke fasilitator.",
+      "lead": "Kelompok terbesar (52,5%) promosi setelah 4–8 bulan menjadi member.",
+      "bars": [
+        {
+          "label": "\u003c2 bulan",
+          "value": 3,
+          "display": "3 orang"
+        },
+        {
+          "label": "2–4 bulan",
+          "value": 7,
+          "display": "7 orang"
+        },
+        {
+          "label": "4–8 bulan",
+          "value": 42,
+          "display": "42 orang"
+        },
+        {
+          "label": "8–12 bulan",
+          "value": 18,
+          "display": "18 orang"
+        },
+        {
+          "label": "\u003e12 bulan",
+          "value": 10,
+          "display": "10 orang"
+        }
+      ],
+      "callout": "Jeda promosi normalnya hitungan bulan, bukan minggu. Rancang target dengan horizon ini.",
+      "eyebrow": "35 / Data kaderisasi"
+    },
+    {
+      "id": "dash-latensi-kuartal",
+      "layout": "lines",
+      "title": "Median latensi per kuartal.",
+      "lead": "Median kuartal promosi bergerak 4,1–47,3 minggu. Kuartal terakhir 2026-Q3: 31,6 minggu.",
+      "lines": {
+        "labels": [
+          "2025-Q1",
+          "2025-Q2",
+          "2025-Q3",
+          "2025-Q4",
+          "2026-Q1",
+          "2026-Q2",
+          "2026-Q3"
+        ],
+        "unit": " mgg",
+        "series": [
+          {
+            "label": "Median (minggu)",
+            "type": "bar",
+            "values": [
+              4.1,
+              8.4,
+              29.1,
+              29.1,
+              47.3,
+              31.4,
+              31.6
+            ]
+          },
+          {
+            "label": "p90 (minggu)",
+            "values": [
+              4.1,
+              10,
+              30,
+              40.6,
+              55,
+              62,
+              44.4
+            ]
+          }
+        ]
+      },
+      "callout": "Median memanjang. Periksa hambatan pada kuartal terakhir.",
+      "eyebrow": "36 / Data kaderisasi"
+    },
+    {
+      "id": "dash-konversi",
+      "layout": "doughnut",
+      "title": "Dari 1.240 member, 80 jadi fasilitator.",
+      "lead": "Dari 1.240 member yang pernah tercatat, 80 promosi menjadi fasilitator (6,5%). Sisanya belum promosi.",
+      "doughnut": {
+        "center": "1.240",
+        "items": [
+          {
+            "label": "Jadi fasilitator",
+            "value": 80,
+            "display": "80 orang"
+          },
+          {
+            "label": "Tidak promosi",
+            "value": 1160,
+            "display": "1.160 orang"
+          }
+        ]
+      },
+      "callout": "Setiap 100 member menghasilkan sekitar 6 fasilitator. Angka ini batas bawah karena member baru belum matang.",
+      "eyebrow": "37 / Data kaderisasi"
+    },
+    {
+      "id": "dash-ukuran-grup",
+      "layout": "bars",
+      "title": "Ukuran grup 2–6 member.",
+      "lead": "Hanya grup 2–6 member yang dihitung.",
+      "bars": [
+        {
+          "label": "2–3 member",
+          "value": 349,
+          "display": "349 grup"
+        },
+        {
+          "label": "4–5 member",
+          "value": 228,
+          "display": "228 grup"
+        },
+        {
+          "label": "6 member",
+          "value": 74,
+          "display": "74 grup"
+        }
+      ],
+      "callout": "Grup di luar 2–6 tidak masuk hitungan ini. Tangani grup 0–1 dan 7+ secara terpisah.",
+      "eyebrow": "38 / Data kaderisasi"
+    },
+    {
+      "id": "dash-provinsi",
+      "layout": "hbars",
+      "title": "Grup per provinsi.",
+      "lead": "Jawa Barat memimpin dengan 172 grup. Enam provinsi Jawa mencakup 81,4% grup. Grup tanpa provinsi memakai provinsi fasilitatornya.",
+      "hbars": [
+        {
+          "label": "Jawa Barat",
+          "value": 172,
+          "display": "172 grup"
+        },
+        {
+          "label": "Jawa Timur",
+          "value": 109,
+          "display": "109 grup"
+        },
+        {
+          "label": "Banten",
+          "value": 105,
+          "display": "105 grup"
+        },
+        {
+          "label": "DKI Jakarta",
+          "value": 84,
+          "display": "84 grup"
+        },
+        {
+          "label": "Jawa Tengah",
+          "value": 48,
+          "display": "48 grup"
+        },
+        {
+          "label": "Sumatera Utara",
+          "value": 37,
+          "display": "37 grup"
+        },
+        {
+          "label": "Daerah Istimewa Yogyakarta",
+          "value": 33,
+          "display": "33 grup"
+        },
+        {
+          "label": "Sulawesi Selatan",
+          "value": 23,
+          "display": "23 grup"
+        },
+        {
+          "label": "Sumatera Selatan",
+          "value": 21,
+          "display": "21 grup"
+        },
+        {
+          "label": "Riau",
+          "value": 19,
+          "display": "19 grup"
+        },
+        {
+          "label": "Kalimantan Tengah",
+          "value": 6,
+          "display": "6 grup"
+        },
+        {
+          "label": "Sumatera Barat",
+          "value": 5,
+          "display": "5 grup"
+        },
+        {
+          "label": "Aceh",
+          "value": 5,
+          "display": "5 grup"
+        },
+        {
+          "label": "Kepulauan Bangka Belitung",
+          "value": 5,
+          "display": "5 grup"
+        },
+        {
+          "label": "Nusa Tenggara Barat",
+          "value": 5,
+          "display": "5 grup"
+        }
+      ],
+      "callout": "Konsentrasi Jawa tinggi. Perkuat simpul luar Jawa agar sebaran merata.",
+      "eyebrow": "39 / Data kaderisasi"
+    },
+    {
+      "id": "dash-kota",
+      "layout": "hbars",
+      "title": "Grup per kota.",
+      "lead": "Kota KOTA TANGERANG SELATAN memimpin dengan 57 grup.",
+      "hbars": [
+        {
+          "label": "KOTA TANGERANG SELATAN",
+          "value": 57,
+          "display": "57 grup"
+        },
+        {
+          "label": "KOTA ADM. JAKARTA SELATAN",
+          "value": 39,
+          "display": "39 grup"
+        },
+        {
+          "label": "KAB. KEDIRI",
+          "value": 34,
+          "display": "34 grup"
+        },
+        {
+          "label": "KOTA KEDIRI",
+          "value": 28,
+          "display": "28 grup"
+        },
+        {
+          "label": "KOTA BEKASI",
+          "value": 28,
+          "display": "28 grup"
+        },
+        {
+          "label": "KOTA DEPOK",
+          "value": 27,
+          "display": "27 grup"
+        },
+        {
+          "label": "KOTA TANGERANG",
+          "value": 23,
+          "display": "23 grup"
+        },
+        {
+          "label": "KOTA MAKASSAR",
+          "value": 21,
+          "display": "21 grup"
+        },
+        {
+          "label": "KAB. SLEMAN",
+          "value": 17,
+          "display": "17 grup"
+        },
+        {
+          "label": "KOTA PEKANBARU",
+          "value": 17,
+          "display": "17 grup"
+        }
+      ],
+      "callout": "Pola kota besar berulang. Tiru pola kota teratas di kota menengah.",
+      "eyebrow": "40 / Data kaderisasi"
+    },
+    {
+      "id": "dash-mode",
+      "layout": "lines",
+      "title": "Grup baru per bulan: online vs offline.",
+      "lead": "Pangsa online keseluruhan 9,7%. Tiga bulan terakhir 32,1%.",
+      "lines": {
+        "labels": [
+          "Jan 25",
+          "Feb 25",
+          "Mar 25",
+          "Apr 25",
+          "Mei 25",
+          "Jun 25",
+          "Jul 25",
+          "Agu 25",
+          "Sep 25",
+          "Okt 25",
+          "Nov 25",
+          "Des 25",
+          "Jan 26",
+          "Feb 26",
+          "Mar 26",
+          "Apr 26",
+          "Mei 26",
+          "Jun 26",
+          "Jul 26",
+          "Agu 26",
+          "Sep 26"
+        ],
+        "series": [
+          {
+            "label": "OFFLINE",
+            "values": [
+              0,
+              62,
+              13,
+              35,
+              20,
+              12,
+              37,
+              33,
+              25,
+              32,
+              55,
+              26,
+              57,
+              28,
+              11,
+              64,
+              35,
+              43,
+              48,
+              45,
+              34
+            ]
+          },
+          {
+            "label": "ONLINE",
+            "values": [
+              0,
+              0,
+              0,
+              0,
+              1,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              1,
+              2,
+              13,
+              18,
+              20,
+              22
+            ]
+          }
+        ]
+      },
+      "callout": "Mode online menguat. Sesuaikan dukungan teknis.",
+      "eyebrow": "41 / Data kaderisasi"
+    },
+    {
+      "id": "dash-sesi",
+      "layout": "lines",
+      "title": "Grup baru per bulan per sesi.",
+      "lead": "Sesi Aqidah mendominasi grup baru (52,9%). Batang ditumpuk per bulan.",
+      "lines": {
+        "labels": [
+          "Jan 25",
+          "Feb 25",
+          "Mar 25",
+          "Apr 25",
+          "Mei 25",
+          "Jun 25",
+          "Jul 25",
+          "Agu 25",
+          "Sep 25",
+          "Okt 25",
+          "Nov 25",
+          "Des 25",
+          "Jan 26",
+          "Feb 26",
+          "Mar 26",
+          "Apr 26",
+          "Mei 26",
+          "Jun 26",
+          "Jul 26",
+          "Agu 26",
+          "Sep 26"
+        ],
+        "stacked": true,
+        "series": [
+          {
+            "label": "Aqidah",
+            "type": "bar",
+            "values": [
+              0,
+              62,
+              13,
+              14,
+              10,
+              7,
+              13,
+              21,
+              13,
+              9,
+              38,
+              20,
+              26,
+              15,
+              2,
+              22,
+              19,
+              33,
+              27,
+              31,
+              24
+            ]
+          },
+          {
+            "label": "Dakwah",
+            "type": "bar",
+            "values": [
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              5,
+              13,
+              5,
+              2,
+              2,
+              1,
+              3,
+              6,
+              6,
+              8,
+              5,
+              4,
+              10
+            ]
+          },
+          {
+            "label": "Hijrah",
+            "type": "bar",
+            "values": [
+              0,
+              0,
+              0,
+              21,
+              11,
+              1,
+              7,
+              7,
+              2,
+              9,
+              10,
+              2,
+              12,
+              9,
+              4,
+              26,
+              6,
+              6,
+              20,
+              20,
+              14
+            ]
+          },
+          {
+            "label": "Sejarah",
+            "type": "bar",
+            "values": [
+              0,
+              0,
+              0,
+              0,
+              0,
+              4,
+              17,
+              5,
+              5,
+              1,
+              2,
+              2,
+              17,
+              3,
+              2,
+              11,
+              6,
+              9,
+              14,
+              10,
+              8
+            ]
+          }
+        ]
+      },
+      "callout": "Aqidah sebagai pintu masuk berjalan sehat. Jaga konversi ke sesi berikutnya.",
+      "eyebrow": "42 / Data kaderisasi"
+    },
+    {
+      "id": "dash-presensi",
+      "layout": "lines",
+      "title": "Volume presensi bulanan.",
+      "lead": "Puncak pada Agu 26: 1.303 presensi dari 459 orang.",
+      "lines": {
+        "labels": [
+          "Jan 25",
+          "Feb 25",
+          "Mar 25",
+          "Apr 25",
+          "Mei 25",
+          "Jun 25",
+          "Jul 25",
+          "Agu 25",
+          "Sep 25",
+          "Okt 25",
+          "Nov 25",
+          "Des 25",
+          "Jan 26",
+          "Feb 26",
+          "Mar 26",
+          "Apr 26",
+          "Mei 26",
+          "Jun 26",
+          "Jul 26",
+          "Agu 26",
+          "Sep 26"
+        ],
+        "series": [
+          {
+            "label": "Presensi",
+            "type": "bar",
+            "values": [
+              0,
+              313,
+              577,
+              361,
+              648,
+              557,
+              412,
+              625,
+              683,
+              740,
+              768,
+              1020,
+              1071,
+              954,
+              629,
+              871,
+              1137,
+              1144,
+              1098,
+              1303,
+              1237
+            ]
+          },
+          {
+            "label": "User distinct",
+            "axis": 2,
+            "values": [
+              0,
+              132,
+              152,
+              160,
+              158,
+              173,
+              123,
+              148,
+              185,
+              197,
+              204,
+              275,
+              336,
+              295,
+              265,
+              306,
+              364,
+              383,
+              379,
+              459,
+              445
+            ]
+          }
+        ]
+      },
+      "callout": "Bulan terakhir turun. Selaraskan dengan kalender kegiatan.",
+      "eyebrow": "43 / Data kaderisasi"
+    },
+    {
+      "id": "dash-hari",
+      "layout": "hbars",
+      "title": "Presensi per hari.",
+      "lead": "Hari Sabtu mencatat presensi terbanyak (16,3%).",
+      "hbars": [
+        {
+          "label": "Minggu",
+          "value": 2289,
+          "display": "2.289"
+        },
+        {
+          "label": "Senin",
+          "value": 2235,
+          "display": "2.235"
+        },
+        {
+          "label": "Selasa",
+          "value": 2124,
+          "display": "2.124"
+        },
+        {
+          "label": "Rabu",
+          "value": 2502,
+          "display": "2.502"
+        },
+        {
+          "label": "Kamis",
+          "value": 2067,
+          "display": "2.067"
+        },
+        {
+          "label": "Jumat",
+          "value": 2299,
+          "display": "2.299"
+        },
+        {
+          "label": "Sabtu",
+          "value": 2632,
+          "display": "2.632"
+        }
+      ],
+      "callout": "Sebaran hari cukup merata. Pertahankan.",
+      "eyebrow": "44 / Data kaderisasi"
+    },
+    {
+      "id": "dash-jam",
+      "layout": "lines",
+      "title": "Presensi per jam (WIB).",
+      "lead": "Jam 10.00 WIB paling ramai (12,0%). Tiga jam tersibuk mencakup 32,8%.",
+      "lines": {
+        "labels": [
+          "00",
+          "01",
+          "02",
+          "03",
+          "04",
+          "05",
+          "06",
+          "07",
+          "08",
+          "09",
+          "10",
+          "11",
+          "12",
+          "13",
+          "14",
+          "15",
+          "16",
+          "17",
+          "18",
+          "19",
+          "20",
+          "21",
+          "22",
+          "23"
+        ],
+        "series": [
+          {
+            "label": "Presensi",
+            "values": [
+              35,
+              8,
+              5,
+              10,
+              52,
+              135,
+              188,
+              477,
+              1282,
+              1861,
+              1942,
+              1102,
+              684,
+              1487,
+              1043,
+              900,
+              1328,
+              662,
+              743,
+              1168,
+              683,
+              219,
+              105,
+              29
+            ]
+          }
+        ]
+      },
+      "callout": "Pusatkan dukungan operasional pada jam-jam WIB tersebut.",
+      "eyebrow": "45 / Data kaderisasi"
+    },
+    {
+      "id": "dash-episode",
+      "layout": "lines",
+      "title": "Presensi per episode per sesi.",
+      "lead": "Semua presensi per nomor episode. Episode terakhir tiap sesi adalah ujian akhir.",
+      "lines": {
+        "labels": [
+          "Ep 1",
+          "Ep 2",
+          "Ep 3",
+          "Ep 4",
+          "Ep 5",
+          "Ep 6",
+          "Ep 7",
+          "Ep 8",
+          "Ep 9",
+          "Ep 10",
+          "Ep 11"
+        ],
+        "series": [
+          {
+            "label": "Aqidah",
+            "values": [
+              1180,
+              1064,
+              960,
+              930,
+              912,
+              900,
+              850,
+              838,
+              733,
+              null,
+              null
+            ]
+          },
+          {
+            "label": "Hijrah",
+            "values": [
+              582,
+              561,
+              538,
+              497,
+              501,
+              468,
+              454,
+              436,
+              437,
+              null,
+              null
+            ]
+          },
+          {
+            "label": "Sejarah",
+            "values": [
+              341,
+              342,
+              320,
+              309,
+              316,
+              311,
+              295,
+              269,
+              254,
+              261,
+              242
+            ]
+          },
+          {
+            "label": "Dakwah",
+            "values": [
+              198,
+              181,
+              168,
+              180,
+              184,
+              160,
+              156,
+              null,
+              null,
+              null,
+              null
+            ]
+          }
+        ]
+      },
+      "eyebrow": "46 / Data kaderisasi"
+    }
+  ]
+}</script>
+<script>
+'use strict';
+const $ = id => document.getElementById(id);
+let deck = null;
+let current = 0;
+let slides = [];
+let loading = false;
+// BEGIN DECK VALIDATOR
+function validateDeck(value, mapNames) {
+  const object = v => v !== null && typeof v === 'object' && !Array.isArray(v);
+  const text = (v, label, max = 5000) => {
+    if (typeof v !== 'string' || !v.trim() || v.length > max) throw new Error(label + ' harus berupa teks berisi, maksimal ' + max + ' karakter.');
+  };
+  if (!object(value) || value.version !== 1) throw new Error('Format tidak didukung. Gunakan version: 1.');
+  if (!object(value.meta)) throw new Error('meta wajib diisi.');
+  text(value.meta.title, 'meta.title', 200);
+  for (const key of ['brand', 'label', 'description', 'language']) if (value.meta[key] !== undefined) text(value.meta[key], 'meta.' + key, 500);
+  if (!Array.isArray(value.slides) || value.slides.length < 1 || value.slides.length > 100) throw new Error('Konten harus memiliki 1–100 slide.');
+  const ids = new Set();
+  value.slides.forEach((s, i) => {
+    if (!object(s)) throw new Error('Slide ' + (i + 1) + ' tidak valid.');
+    text(s.id, 'id slide', 80);
+    if (!/^[a-z0-9]+(?:-[a-z0-9]+)*$/.test(s.id) || ids.has(s.id)) throw new Error('id slide harus unik, memakai huruf kecil, angka, dan tanda hubung.');
+    ids.add(s.id);
+    text(s.title, 'Judul slide ' + (i + 1), 240);
+    if (s.layout !== undefined && !['hero', 'standard', 'compare', 'bars', 'loop', 'map', 'lines', 'doughnut', 'hbars', 'dtable'].includes(s.layout)) throw new Error('Layout harus hero, standard, compare, bars, loop, map, lines, doughnut, hbars, atau dtable.');
+    for (const key of ['eyebrow', 'lead', 'quote', 'callout', 'footnote', 'notes']) if (s[key] !== undefined) text(s[key], key + ' slide ' + (i + 1));
+    const blocks = ['cards', 'steps', 'compare', 'bars', 'loop', 'map', 'lines', 'doughnut', 'hbars', 'dtable'].filter(key => s[key] !== undefined);
+    if (blocks.length > 1) throw new Error('Pilih satu bentuk isi: cards, steps, compare, bars, loop, map, lines, doughnut, hbars, atau dtable.');
+    for (const key of ['cards', 'steps']) if (s[key] !== undefined) {
+      if (!Array.isArray(s[key]) || s[key].length < 1 || s[key].length > 4) throw new Error(key + ' harus berisi 1–4 item.');
+      s[key].forEach(item => {
+        if (!object(item)) throw new Error('Item ' + key + ' tidak valid.');
+        text(item.title, 'Judul item', 160);
+        text(item.text, 'Teks item', 1500);
+      });
+    }
+    if (s.compare !== undefined) {
+      if (!object(s.compare)) throw new Error('compare harus berupa objek.');
+      for (const side of ['left', 'right']) {
+        const column = s.compare[side];
+        if (!object(column)) throw new Error('compare.' + side + ' wajib diisi.');
+        text(column.label, 'compare.' + side + '.label', 120);
+        if (!Array.isArray(column.items) || column.items.length < 1 || column.items.length > 6) throw new Error('compare.' + side + '.items harus berisi 1–6 item.');
+        column.items.forEach(item => text(item, 'Item compare', 240));
+      }
+    }
+    if (s.bars !== undefined) {
+      if (!Array.isArray(s.bars) || s.bars.length < 1 || s.bars.length > 6) throw new Error('bars harus berisi 1–6 item.');
+      s.bars.forEach(item => {
+        if (!object(item)) throw new Error('Item bars tidak valid.');
+        text(item.label, 'Label bar', 160);
+        if (typeof item.value !== 'number' || !isFinite(item.value) || item.value <= 0) throw new Error('Nilai bar harus angka positif.');
+        text(item.display, 'Tampilan bar', 40);
+      });
+    }
+    if (s.loop !== undefined) {
+      if (!Array.isArray(s.loop) || s.loop.length < 2 || s.loop.length > 6) throw new Error('loop harus berisi 2–6 langkah.');
+      s.loop.forEach(item => {
+        if (!object(item)) throw new Error('Langkah loop tidak valid.');
+        text(item.title, 'Judul langkah loop', 160);
+        text(item.text, 'Teks langkah loop', 1500);
+      });
+    }
+    if (s.map !== undefined) {
+      if (!object(s.map)) throw new Error('map harus berupa objek.');
+      if (s.map.caption !== undefined) text(s.map.caption, 'map.caption', 600);
+      if (s.map.note !== undefined) text(s.map.note, 'map.note', 600);
+      if (!Array.isArray(s.map.items) || s.map.items.length < 1 || s.map.items.length > 24) throw new Error('map.items harus berisi 1–24 item.');
+      s.map.items.forEach(item => {
+        if (!object(item)) throw new Error('Item map tidak valid.');
+        text(item.province, 'map.items[].province', 80);
+        if (!/^[A-Z][A-Z0-9. ]*$/.test(item.province)) throw new Error('Nama provinsi pada peta harus huruf kapital: ' + item.province);
+        if (Array.isArray(mapNames) && mapNames.length && !mapNames.includes(item.province)) throw new Error('Provinsi tidak ada di peta: ' + item.province);
+        if (typeof item.value !== 'number' || !isFinite(item.value) || item.value <= 0) throw new Error('Nilai peta harus angka positif.');
+        text(item.display, 'map.items[].display', 24);
+      });
+    }
+    if (s.lines !== undefined) {
+      if (!object(s.lines)) throw new Error('lines harus berupa objek.');
+      if (!Array.isArray(s.lines.labels) || s.lines.labels.length < 2 || s.lines.labels.length > 24) throw new Error('lines.labels harus berisi 2–24 label.');
+      s.lines.labels.forEach(label => text(label, 'lines.labels[]', 40));
+      if (!Array.isArray(s.lines.series) || s.lines.series.length < 1 || s.lines.series.length > 6) throw new Error('lines.series harus berisi 1–6 deret.');
+      s.lines.series.forEach(sr => {
+        if (!object(sr)) throw new Error('Deret lines tidak valid.');
+        text(sr.label, 'lines.series[].label', 80);
+        if (sr.type !== undefined && sr.type !== 'line' && sr.type !== 'bar') throw new Error('lines.series[].type harus line atau bar.');
+        if (sr.axis !== undefined && sr.axis !== 1 && sr.axis !== 2) throw new Error('lines.series[].axis harus 1 atau 2.');
+        if (!Array.isArray(sr.values) || sr.values.length !== s.lines.labels.length) throw new Error('lines.series[].values harus sepanjang labels.');
+        sr.values.forEach(v => { if (v !== null && (typeof v !== 'number' || !isFinite(v))) throw new Error('Nilai lines harus angka atau null.'); });
+      });
+      if (s.lines.unit !== undefined) text(s.lines.unit, 'lines.unit', 12);
+      if (s.lines.stacked !== undefined && typeof s.lines.stacked !== 'boolean') throw new Error('lines.stacked harus boolean.');
+    }
+    if (s.doughnut !== undefined) {
+      if (!object(s.doughnut)) throw new Error('doughnut harus berupa objek.');
+      if (s.doughnut.center !== undefined) text(s.doughnut.center, 'doughnut.center', 40);
+      if (!Array.isArray(s.doughnut.items) || s.doughnut.items.length < 2 || s.doughnut.items.length > 6) throw new Error('doughnut.items harus berisi 2–6 item.');
+      s.doughnut.items.forEach(item => {
+        if (!object(item)) throw new Error('Item doughnut tidak valid.');
+        text(item.label, 'doughnut.items[].label', 80);
+        if (typeof item.value !== 'number' || !isFinite(item.value) || item.value <= 0) throw new Error('Nilai doughnut harus angka positif.');
+        text(item.display, 'doughnut.items[].display', 40);
+      });
+    }
+    if (s.hbars !== undefined) {
+      if (!Array.isArray(s.hbars) || s.hbars.length < 1 || s.hbars.length > 15) throw new Error('hbars harus berisi 1–15 item.');
+      s.hbars.forEach(item => {
+        if (!object(item)) throw new Error('Item hbars tidak valid.');
+        text(item.label, 'hbars[].label', 160);
+        if (typeof item.value !== 'number' || !isFinite(item.value) || item.value <= 0) throw new Error('Nilai hbars harus angka positif.');
+        text(item.display, 'hbars[].display', 40);
+      });
+    }
+    if (s.dtable !== undefined) {
+      if (!object(s.dtable)) throw new Error('dtable harus berupa objek.');
+      if (!Array.isArray(s.dtable.head) || s.dtable.head.length < 2 || s.dtable.head.length > 4) throw new Error('dtable.head harus berisi 2–4 kolom.');
+      s.dtable.head.forEach(h => text(h, 'dtable.head[]', 80));
+      if (!Array.isArray(s.dtable.rows) || s.dtable.rows.length < 1 || s.dtable.rows.length > 12) throw new Error('dtable.rows harus berisi 1–12 baris.');
+      s.dtable.rows.forEach(row => {
+        if (!Array.isArray(row) || row.length !== s.dtable.head.length) throw new Error('Baris dtable harus sepanjang head.');
+        row.forEach(cell => text(cell, 'dtable.rows[][]', 120));
+      });
+    }
+  });
+  return value;
+}
+// END DECK VALIDATOR
+const SVG_NS = 'http://www.w3.org/2000/svg';
+const JAVA_PROVINCES = ['BANTEN', 'DKI JAKARTA', 'JAWA BARAT', 'JAWA TENGAH', 'DAERAH ISTIMEWA YOGYAKARTA', 'JAWA TIMUR'];
+const JAVA_ZOOM = '219 238 243 95';
+let mapCache = null;
+function mapGeometry() {
+  if (mapCache) return mapCache;
+  try {
+    mapCache = JSON.parse($('map-geometry').textContent);
+  } catch (_) {
+    mapCache = { viewBox: '0 0 1000 383', bounds: {}, provinces: [], centroids: {} };
+  }
+  return mapCache;
+}
+function svgEl(tag, attrs, textContent) {
+  const node = document.createElementNS(SVG_NS, tag);
+  if (attrs) for (const key in attrs) node.setAttribute(key, attrs[key]);
+  if (textContent !== undefined) node.textContent = textContent;
+  return node;
+}
+function projectPoint(lng, lat, bounds, viewBox) {
+  const size = viewBox.split(' ').map(Number);
+  const width = size[2] || 1000;
+  const height = size[3] || 383;
+  return [
+    (lng - bounds.lonMin) / (bounds.lonMax - bounds.lonMin) * width,
+    (bounds.latMax - lat) / (bounds.latMax - bounds.latMin) * height,
+  ];
+}
+function prettyProvince(name) {
+  if (name === 'DKI JAKARTA') return 'DKI Jakarta';
+  return name.toLowerCase().replace(/(^|\s)\S/g, c => c.toUpperCase());
+}
+function mapRadius(value, scale) {
+  return Math.max(4, (4.5 + Math.sqrt(value) * 1.15) * scale);
+}
+function renderMapMarkup(m) {
+  const geometry = mapGeometry();
+  const provinces = geometry.provinces || [];
+  const centroids = geometry.centroids || {};
+  const bounds = geometry.bounds || {};
+  const items = m.items.slice().sort((a, b) => b.value - a.value);
+  const withData = new Set(items.map(item => item.province));
+  const wrap = element('div', 'map-wrap anim-in');
+
+  const drawProvinces = (svg, only) => {
+    const group = svgEl('g');
+    provinces.forEach(province => {
+      if (only && !only.includes(province.name)) return;
+      group.append(svgEl('path', { d: province.d, class: 'province' + (withData.has(province.name) ? ' is-on' : '') }));
+    });
+    svg.append(group);
+  };
+  const drawBubbles = (svg, list, scale, fontSize) => {
+    const group = svgEl('g');
+    list.forEach(item => {
+      const centroid = centroids[item.province];
+      if (!centroid) return;
+      const point = projectPoint(centroid[1], centroid[0], bounds, geometry.viewBox);
+      const radius = mapRadius(item.value, scale);
+      const node = svgEl('g', { class: 'map-bubble' });
+      node.append(svgEl('circle', { cx: point[0].toFixed(1), cy: point[1].toFixed(1), r: radius.toFixed(1) }));
+      const labelWidth = String(item.display).length * fontSize * 0.62;
+      if (labelWidth <= radius * 2.05) node.append(svgEl('text', { x: point[0].toFixed(1), y: point[1].toFixed(1), 'font-size': fontSize.toFixed(1) }, item.display));
+      group.append(node);
+    });
+    svg.append(group);
+  };
+
+  const main = svgEl('svg', { viewBox: geometry.viewBox, class: 'map-svg', role: 'img', 'aria-label': 'Peta Indonesia: sebaran per provinsi' });
+  drawProvinces(main, null);
+  drawBubbles(main, items.filter(item => !JAVA_PROVINCES.includes(item.province)), 1, 13);
+  main.append(svgEl('rect', { x: 219, y: 238, width: 243, height: 95, rx: 6, class: 'map-frame' }));
+  const mainFigure = element('figure', 'map-figure');
+  mainFigure.append(main);
+  if (m.caption) mainFigure.append(element('p', 'map-caption', m.caption));
+
+  const zoom = svgEl('svg', { viewBox: JAVA_ZOOM, class: 'map-svg', role: 'img', 'aria-label': 'Pulau Jawa diperbesar' });
+  drawProvinces(zoom, JAVA_PROVINCES);
+  drawBubbles(zoom, items.filter(item => JAVA_PROVINCES.includes(item.province)), 0.5, 6.5);
+  const zoomBox = element('div', 'map-zoom');
+  zoomBox.append(element('p', '', 'Pulau Jawa — diperbesar'));
+  zoomBox.append(zoom);
+
+  const top = element('div', 'map-top');
+  top.append(mainFigure, zoomBox);
+  wrap.append(top);
+
+  const legend = element('div', 'map-legend');
+  items.forEach(item => {
+    const row = element('div', 'legend-row');
+    row.append(element('span', 'legend-name', prettyProvince(item.province)), element('span', 'legend-value', item.display));
+    legend.append(row);
+  });
+  if (m.note) legend.append(element('p', 'legend-note', m.note));
+  wrap.append(legend);
+  return wrap;
+}
+function element(tag, className, text) {
+  const node = document.createElement(tag);
+  if (className) node.className = className;
+  if (text !== undefined) node.textContent = text;
+  return node;
+}
+const CHART_COLORS = ['#c6502c', '#3f7d6b', '#d9a441', '#6c6cf5', '#4aa3c7', '#e75d8a'];
+function fmtTick(v) {
+  if (!isFinite(v)) return '0';
+  const r = Math.abs(v) >= 100 ? Math.round(v) : Math.round(v * 10) / 10;
+  return r.toLocaleString('id-ID', { maximumFractionDigits: 1 });
+}
+function niceCeil(v) {
+  if (!(v > 0)) return 1;
+  const exp = Math.floor(Math.log10(v));
+  const base = Math.pow(10, exp);
+  const f = v / base;
+  const nf = f <= 1 ? 1 : f <= 2 ? 2 : f <= 2.5 ? 2.5 : f <= 5 ? 5 : 10;
+  return nf * base;
+}
+function legendHtml(entries) {
+  const wrap = element('div', 'chart-legend');
+  entries.forEach(([color, label]) => {
+    const item = element('span', '');
+    const sw = element('span', 'swatch');
+    sw.style.background = color;
+    sw.setAttribute('aria-hidden', 'true');
+    item.append(sw, document.createTextNode(label));
+    wrap.append(item);
+  });
+  return wrap;
+}
+function renderLinesMarkup(l) {
+  const W = 680, H = 300, MT = 10, MB = 44, ML = 64;
+  const useY2 = l.series.some(sr => sr.axis === 2);
+  const MR = useY2 ? 56 : 16;
+  const plotW = W - ML - MR, plotH = H - MT - MB;
+  const n = l.labels.length;
+  const unit = l.unit || '';
+  const vals1 = l.series.filter(sr => (sr.axis || 1) === 1).flatMap(sr => sr.values.filter(v => v !== null));
+  const vals2 = l.series.filter(sr => sr.axis === 2).flatMap(sr => sr.values.filter(v => v !== null));
+  const stacked = l.stacked === true;
+  const stackSums = ax => {
+    const sums = new Array(n).fill(0);
+    l.series.filter(sr => (sr.type || 'line') === 'bar' && (sr.axis || 1) === ax).forEach(sr => {
+      sr.values.forEach((v, i) => { if (v !== null) sums[i] += v; });
+    });
+    return sums;
+  };
+  const max1 = niceCeil(Math.max(0, ...vals1, ...(stacked ? stackSums(1) : [])));
+  const max2 = useY2 ? niceCeil(Math.max(0, ...vals2, ...(stacked ? stackSums(2) : []))) : 1;
+  const x = i => ML + (n === 1 ? plotW / 2 : (i / (n - 1)) * plotW);
+  const yFor = (v, ax) => { const m = ax === 2 ? max2 : max1; return MT + plotH - (Math.max(0, v) / m) * plotH; };
+  const svg = svgEl('svg', { viewBox: '0 0 ' + W + ' ' + H, class: 'lines-svg', role: 'img', 'aria-label': 'Grafik garis: ' + l.series.map(sr => sr.label).join(', ') });
+  for (let g = 0; g <= 4; g++) {
+    const yy = MT + (plotH * g) / 4;
+    svg.append(svgEl('line', { x1: ML, y1: yy.toFixed(1), x2: W - MR, y2: yy.toFixed(1), class: 'grid-line' }));
+    svg.append(svgEl('text', { x: ML - 8, y: (yy + 4).toFixed(1), 'text-anchor': 'end' }, fmtTick(max1 - (max1 * g) / 4) + unit));
+    if (useY2) svg.append(svgEl('text', { x: W - MR + 8, y: (yy + 4).toFixed(1), 'text-anchor': 'start' }, fmtTick(max2 - (max2 * g) / 4) + unit));
+  }
+  svg.append(svgEl('line', { x1: ML, y1: MT + plotH, x2: W - MR, y2: MT + plotH, class: 'axis-line' }));
+  const step = Math.max(1, Math.ceil(n / 10));
+  l.labels.forEach((label, i) => {
+    if (i % step !== 0 && i !== n - 1) return;
+    svg.append(svgEl('text', { x: x(i).toFixed(1), y: (MT + plotH + 20).toFixed(1), 'text-anchor': 'middle' }, label));
+  });
+  const barSeries = l.series.filter(sr => (sr.type || 'line') === 'bar');
+  const slot = plotW / n;
+  const acc = {};
+  barSeries.forEach((sr, bi) => {
+    const color = CHART_COLORS[l.series.indexOf(sr) % CHART_COLORS.length];
+    const ax = sr.axis === 2 ? 2 : 1;
+    if (stacked) {
+      const bw = Math.max(3, Math.min(34, slot * 0.66));
+      sr.values.forEach((v, i) => {
+        if (v === null) return;
+        const key = ax + '_' + i;
+        const base = acc[key] || 0;
+        const top = base + v;
+        acc[key] = top;
+        const bx = x(i);
+        svg.append(svgEl('rect', { x: (bx - bw / 2).toFixed(1), y: yFor(top, ax).toFixed(1), width: bw.toFixed(1), height: Math.max(1, yFor(base, ax) - yFor(top, ax)).toFixed(1), fill: color, opacity: 0.9 }));
+      });
+      return;
+    }
+    const bw = Math.max(3, Math.min(30, (slot * 0.66) / barSeries.length));
+    sr.values.forEach((v, i) => {
+      if (v === null) return;
+      const bx = x(i) - (slot * 0.66) / 2 + (bi + 0.5) * ((slot * 0.66) / barSeries.length);
+      const by = yFor(v, ax);
+      svg.append(svgEl('rect', { x: (bx - bw / 2).toFixed(1), y: by.toFixed(1), width: bw.toFixed(1), height: Math.max(1, MT + plotH - by).toFixed(1), fill: color, opacity: 0.85 }));
+    });
+  });
+  l.series.filter(sr => (sr.type || 'line') === 'line').forEach(sr => {
+    const color = CHART_COLORS[l.series.indexOf(sr) % CHART_COLORS.length];
+    const ax = sr.axis === 2 ? 2 : 1;
+    let seg = [];
+    const flush = () => {
+      if (seg.length > 1) svg.append(svgEl('path', { d: 'M' + seg.join(' L'), fill: 'none', stroke: color, 'stroke-width': 2.5, 'stroke-linejoin': 'round', 'stroke-linecap': 'round', class: 'draw-line', pathLength: 100, style: 'stroke-dasharray:100;stroke-dashoffset:0' }));
+      seg = [];
+    };
+    sr.values.forEach((v, i) => {
+      if (v === null) { flush(); return; }
+      const px = x(i).toFixed(1), py = yFor(v, ax).toFixed(1);
+      seg.push(px + ' ' + py);
+      svg.append(svgEl('circle', { cx: px, cy: py, r: 3.5, fill: color, class: 'dot' }));
+    });
+    flush();
+  });
+  const wrap = element('div', 'lines-wrap anim-in');
+  wrap.append(svg, legendHtml(l.series.map((sr, i) => [CHART_COLORS[i % CHART_COLORS.length], sr.label])));
+  return wrap;
+}
+function renderDoughnutMarkup(dn) {
+  const total = dn.items.reduce((s, item) => s + item.value, 0);
+  const svg = svgEl('svg', { viewBox: '0 0 180 180', class: 'donut-svg', role: 'img', 'aria-label': 'Diagram donat: ' + dn.items.map(item => item.label + ' ' + item.display).join(', ') });
+  let acc = 0;
+  dn.items.forEach((item, i) => {
+    const len = (item.value / total) * 100;
+    const seg = svgEl('circle', { cx: 90, cy: 90, r: 64, fill: 'none', stroke: CHART_COLORS[i % CHART_COLORS.length], 'stroke-width': 30, pathLength: 100, 'stroke-dasharray': Math.max(len - 0.6, 0.4).toFixed(2) + ' 100', 'stroke-dashoffset': (-acc).toFixed(2), transform: 'rotate(-90 90 90)', class: 'donut-seg' });
+    seg.dataset.d = Math.max(len - 0.6, 0.4).toFixed(2) + ' 100';
+    svg.append(seg);
+    acc += len;
+  });
+  svg.append(svgEl('text', { x: 90, y: 86, 'text-anchor': 'middle', style: 'font-size:19px;font-weight:800;fill:var(--ink)' }, dn.center || ''));
+  if (dn.center) svg.append(svgEl('text', { x: 90, y: 106, 'text-anchor': 'middle', style: 'font-size:11px;fill:var(--muted)' }, 'total'));
+  const wrap = element('div', 'donut-wrap anim-in');
+  const legend = element('div', 'donut-legend');
+  dn.items.forEach((item, i) => {
+    const row = element('div', 'donut-row');
+    const sw = element('span', 'swatch');
+    sw.style.background = CHART_COLORS[i % CHART_COLORS.length];
+    sw.setAttribute('aria-hidden', 'true');
+    row.append(sw, element('span', 'donut-name', item.label), element('span', 'donut-value', item.display));
+    legend.append(row);
+  });
+  wrap.append(svg, legend);
+  return wrap;
+}
+function renderHbarsMarkup(items) {
+  const max = Math.max(...items.map(item => item.value));
+  const wrap = element('div', 'hbars anim-in');
+  items.forEach(item => {
+    const row = element('div', 'hbar-row');
+    const track = element('div', 'hbar-track');
+    track.setAttribute('role', 'img');
+    track.setAttribute('aria-label', item.label + ': ' + item.display);
+    const fill = element('div', 'hbar-fill');
+    fill.dataset.w = Math.round(item.value / max * 100) + '%';
+    fill.style.width = fill.dataset.w;
+    track.append(fill);
+    row.append(element('span', 'hbar-label', item.label), track, element('span', 'hbar-value', item.display));
+    wrap.append(row);
+  });
+  return wrap;
+}
+function renderDtableMarkup(t) {
+  const table = element('table', 'dtable anim-in');
+  const thead = document.createElement('thead');
+  const hr = document.createElement('tr');
+  t.head.forEach(h => hr.append(element('th', '', h)));
+  thead.append(hr);
+  table.append(thead);
+  const tb = document.createElement('tbody');
+  t.rows.forEach(row => {
+    const tr = document.createElement('tr');
+    row.forEach(cell => tr.append(element('td', '', cell)));
+    tb.append(tr);
+  });
+  table.append(tb);
+  return table;
+}
+function renderSlide(s, index, total) {
+  const section = element('section', 'slide ' + (s.layout || 'standard'));
+  section.setAttribute('aria-roledescription', 'slide');
+  section.setAttribute('aria-label', (index + 1) + ' dari ' + total + ': ' + s.title.replaceAll('\n', ' '));
+  section.hidden = true;
+  if (s.eyebrow) section.append(element('p', 'eyebrow', s.eyebrow));
+  section.append(element('h1', '', s.title));
+  if (s.lead) section.append(element('p', 'lead', s.lead));
+  if (s.cards) {
+    const grid = element('div', 'cards' + (s.cards.length === 4 ? ' four' : ''));
+    s.cards.forEach((card, i) => {
+      const node = element('div', 'card');
+      const number = element('span', 'card-index', String(i + 1).padStart(2, '0'));
+      number.setAttribute('aria-hidden', 'true');
+      node.append(number, element('h2', '', card.title), element('p', '', card.text));
+      grid.append(node);
+    });
+    section.append(grid);
+  }
+  if (s.steps) {
+    const list = element('ol', 'steps');
+    s.steps.forEach(step => {
+      const item = element('li', 'step');
+      const body = element('div');
+      body.append(element('h2', '', step.title), element('p', '', step.text));
+      item.append(body);
+      list.append(item);
+    });
+    section.append(list);
+  }
+  if (s.compare) {
+    const wrap = element('div', 'compare');
+    [['left', 'is-muted'], ['right', 'is-accent']].forEach(([side, extra]) => {
+      const column = s.compare[side];
+      const node = element('div', 'compare-col ' + extra);
+      node.append(element('p', 'compare-label', column.label));
+      const list = element('ul');
+      column.items.forEach(item => list.append(element('li', '', item)));
+      node.append(list);
+      wrap.append(node);
+    });
+    section.append(wrap);
+  }
+  if (s.bars) {
+    const wrap = element('div', 'bars anim-in');
+    const max = Math.max(...s.bars.map(bar => bar.value));
+    s.bars.forEach(bar => {
+      const row = element('div', 'bar-row');
+      const head = element('div', 'bar-head');
+      head.append(element('span', 'bar-label', bar.label), element('span', 'bar-value', bar.display));
+      const track = element('div', 'bar-track');
+      track.setAttribute('role', 'img');
+      track.setAttribute('aria-label', bar.label + ': ' + bar.display);
+      const fill = element('div', 'bar-fill');
+      fill.dataset.w = Math.round(bar.value / max * 100) + '%';
+      fill.style.width = fill.dataset.w;
+      track.append(fill);
+      row.append(head, track);
+      wrap.append(row);
+    });
+    section.append(wrap);
+  }
+  if (s.loop) {
+    const grid = element('div', 'loop');
+    s.loop.forEach(step => {
+      const node = element('div', 'loop-step');
+      node.append(element('h2', '', step.title), element('p', '', step.text));
+      grid.append(node);
+    });
+    const back = element('div', 'loop-return', '↺');
+    back.setAttribute('aria-hidden', 'true');
+    grid.append(back);
+    section.append(grid);
+  }
+  if (s.map) section.append(renderMapMarkup(s.map));
+  if (s.lines) section.append(renderLinesMarkup(s.lines));
+  if (s.doughnut) section.append(renderDoughnutMarkup(s.doughnut));
+  if (s.hbars) section.append(renderHbarsMarkup(s.hbars));
+  if (s.dtable) section.append(renderDtableMarkup(s.dtable));
+  if (s.quote) section.append(element('blockquote', '', s.quote));
+  if (s.callout) section.append(element('p', 'callout', s.callout));
+  if (s.footnote) section.append(element('p', 'footnote', s.footnote));
+  return section;
+}
+function error(message) { $('error-text').textContent = message; $('error').hidden = false; }
+function fromHash() {
+  if (!deck) return 0;
+  return Math.max(0, deck.slides.findIndex(s => '#' + s.id === location.hash));
+}
+function show(index, updateHash = true) {
+  if (!deck) return;
+  current = Math.max(0, Math.min(index, slides.length - 1));
+  slides.forEach((slide, i) => { slide.hidden = i !== current; });
+  $('main').scrollTop = 0;
+  $('count').textContent = String(current + 1).padStart(2, '0') + ' / ' + String(slides.length).padStart(2, '0');
+  $('fill').style.width = ((current + 1) / slides.length * 100) + '%';
+  $('prev').disabled = current === 0;
+  $('next').disabled = current === slides.length - 1;
+  $('jump').value = String(current);
+  $('status').textContent = 'Slide ' + (current + 1) + ' dari ' + slides.length + '. ' + deck.slides[current].title;
+  $('note-content').textContent = deck.slides[current].notes || 'Tidak ada catatan untuk slide ini.';
+  if (updateHash) {
+    try { history.replaceState(null, '', '#' + deck.slides[current].id); } catch (_) { /* Navigasi tetap bekerja jika history dibatasi. */ }
+  }
+  animateSlide(slides[current]);
+}
+function animateSlide(section) {
+  if (!section || (window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches)) return;
+  section.querySelectorAll('path.draw-line').forEach((p, i) => {
+    p.style.transition = 'none';
+    p.style.strokeDashoffset = '100';
+    requestAnimationFrame(() => requestAnimationFrame(() => {
+      p.style.transition = 'stroke-dashoffset 1s ease ' + Math.min(i * 0.15, 0.6) + 's';
+      p.style.strokeDashoffset = '0';
+    }));
+  });
+  section.querySelectorAll('circle.donut-seg').forEach((seg, i) => {
+    const target = seg.dataset.d;
+    if (!target) return;
+    seg.style.transition = 'none';
+    seg.style.strokeDasharray = '0 100';
+    requestAnimationFrame(() => requestAnimationFrame(() => {
+      seg.style.transition = 'stroke-dasharray .8s ease ' + (i * 0.25) + 's';
+      seg.style.strokeDasharray = target;
+    }));
+  });
+  section.querySelectorAll('circle.dot').forEach((c, i) => {
+    c.style.transition = 'none';
+    c.style.opacity = '0';
+    requestAnimationFrame(() => requestAnimationFrame(() => {
+      c.style.transition = 'opacity .3s ease ' + Math.min(0.2 + i * 0.05, 1.2) + 's';
+      c.style.opacity = '1';
+    }));
+  });
+  section.querySelectorAll('.bar-fill,.hbar-fill').forEach(f => {
+    const w = f.dataset.w || f.style.width;
+    if (!w) return;
+    f.dataset.w = w;
+    f.style.transition = 'none';
+    f.style.width = '0%';
+    requestAnimationFrame(() => requestAnimationFrame(() => {
+      f.style.transition = '';
+      f.style.width = f.dataset.w;
+    }));
+  });
+}
+function mount(value) {
+  const names = (mapGeometry().provinces || []).map(province => province.name);
+  const valid = validateDeck(value, names);
+  const rendered = valid.slides.map((s, i) => renderSlide(s, i, valid.slides.length));
+  const options = valid.slides.map((s, i) => {
+    const option = element('option', '', (i + 1) + '. ' + s.title.replaceAll('\n', ' '));
+    option.value = String(i);
+    return option;
+  });
+  deck = valid;
+  slides = rendered;
+  $('main').replaceChildren(...slides);
+  $('jump').replaceChildren(...options);
+  document.title = deck.meta.title;
+  document.documentElement.lang = deck.meta.language || 'id';
+  $('brand').textContent = deck.meta.brand || 'ngeShare';
+  $('label').textContent = deck.meta.label || 'Presentasi';
+  $('footer').hidden = false;
+  $('notes').disabled = false;
+  $('print').disabled = false;
+  $('error').hidden = true;
+  show(fromHash());
+}
+$('load').onclick = $('load-empty').onclick = () => $('file').click();
+$('file').addEventListener('change', async event => {
+  const file = event.target.files[0];
+  event.target.value = '';
+  if (!file || loading) return;
+  loading = true;
+  try {
+    if (file.size > 2 * 1024 * 1024) throw new Error('Ukuran JSON maksimal 2 MB.');
+    mount(JSON.parse(await file.text()));
+  } catch (e) { error('Konten tidak dimuat: ' + e.message); }
+  finally { loading = false; }
+});
+$('prev').onclick = () => show(current - 1);
+$('next').onclick = () => show(current + 1);
+$('jump').onchange = event => show(Number(event.target.value));
+$('notes').onclick = () => { $('note-dialog').showModal(); };
+$('close-notes').onclick = () => $('note-dialog').close();
+$('dismiss').onclick = () => { $('error').hidden = true; };
+$('print').onclick = () => window.print();
+$('fullscreen').onclick = async () => {
+  try {
+    if (document.fullscreenElement) await document.exitFullscreen();
+    else if (document.documentElement.requestFullscreen) await document.documentElement.requestFullscreen();
+    else error('Layar penuh tidak didukung browser ini. Gunakan menu layar penuh pada browser.');
+  } catch (_) { error('Layar penuh tidak dapat diaktifkan. Gunakan menu layar penuh pada browser.'); }
+};
+document.addEventListener('fullscreenchange', () => { $('fullscreen').textContent = document.fullscreenElement ? 'Keluar layar penuh' : 'Layar penuh'; });
+document.addEventListener('keydown', event => {
+  if (!deck || $('note-dialog').open || event.altKey || event.ctrlKey || event.metaKey || event.shiftKey || event.target.closest('button,select,input,textarea,[contenteditable]')) return;
+  if (['ArrowRight', 'PageDown', 'ArrowLeft', 'PageUp', 'Home', 'End'].includes(event.key)) {
+    event.preventDefault();
+    if (event.key === 'Home') show(0);
+    else if (event.key === 'End') show(slides.length - 1);
+    else show(current + (['ArrowRight', 'PageDown'].includes(event.key) ? 1 : -1));
+  }
+});
+window.addEventListener('hashchange', () => show(fromHash(), false));
+window.addEventListener('beforeprint', () => {
+  document.querySelectorAll('path.draw-line').forEach(p => { p.style.transition = 'none'; p.style.strokeDashoffset = '0'; });
+  document.querySelectorAll('circle.donut-seg').forEach(seg => { seg.style.transition = 'none'; if (seg.dataset.d) seg.style.strokeDasharray = seg.dataset.d; });
+  document.querySelectorAll('.bar-fill,.hbar-fill').forEach(f => { f.style.transition = 'none'; if (f.dataset.w) f.style.width = f.dataset.w; });
+  document.querySelectorAll('circle.dot').forEach(c => { c.style.transition = 'none'; c.style.opacity = '1'; });
+});
+window.addEventListener('afterprint', () => {
+  document.querySelectorAll('path.draw-line').forEach(p => { p.style.transition = ''; });
+  document.querySelectorAll('circle.donut-seg').forEach(seg => { seg.style.transition = ''; seg.style.strokeDasharray = ''; });
+  document.querySelectorAll('.bar-fill,.hbar-fill').forEach(f => { f.style.transition = ''; });
+  document.querySelectorAll('circle.dot').forEach(c => { c.style.transition = ''; c.style.opacity = ''; });
+  if (deck) animateSlide(slides[current]);
+});
+try {
+  const initial = JSON.parse($('deck-data').textContent);
+  if (Object.keys(initial).length) mount(initial);
+} catch (e) { error('Konten bawaan tidak valid: ' + e.message); }
+// Mode pengembangan: dijalankan lewat `node dev.mjs`. renderer.html memuat
+// content.json dari folder yang sama, lalu memuat ulang saat berkas berubah.
+// presentasi.html tidak memakai ini karena kontennya sudah tertanam.
+function devMode() {
+  const embedded = JSON.parse($('deck-data').textContent);
+  return (location.protocol === 'http:' || location.protocol === 'https:') && Object.keys(embedded).length === 0;
+}
+async function loadLocalContent() {
+  try {
+    const response = await fetch('content.json', { cache: 'no-store' });
+    if (!response.ok) return false;
+    // mount() memakai hash alamat, jadi posisi slide tetap setelah muat ulang.
+    mount(await response.json());
+    return true;
+  } catch (_) { return false; }
+}
+if (devMode()) {
+  loadLocalContent();
+  if (typeof EventSource === 'function') {
+    const source = new EventSource('__dev');
+    source.addEventListener('message', event => { if (event.data === 'reload') loadLocalContent(); });
+  }
+}
+</script>
+</body>
+</html>
